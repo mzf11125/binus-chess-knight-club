@@ -1,0 +1,185 @@
+
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import TeamCard from "@/components/TeamCard";
+
+const Team = () => {
+  const organizers = [
+    {
+      name: "Alexander Chen",
+      position: "President",
+      rating: 1850,
+      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop&q=80",
+      bio: "Alex has been leading the BINUS Chess Club since 2023. With a passion for chess strategy and community building."
+    },
+    {
+      name: "Sarah Wijaya",
+      position: "Vice President",
+      rating: 1760,
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80",
+      bio: "Sarah organizes club tournaments and represents us in inter-university competitions."
+    },
+    {
+      name: "Michael Tanoto",
+      position: "Treasurer",
+      rating: 1700,
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+      bio: "Michael manages our financial resources and ensures our events are properly funded."
+    },
+    {
+      name: "Linda Kusuma",
+      position: "Secretary",
+      rating: 1650,
+      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&auto=format&fit=crop&q=80",
+      bio: "Linda keeps our club organized and maintains communication with our members."
+    }
+  ];
+
+  const activists = [
+    {
+      name: "David Sanjaya",
+      position: "Events Coordinator",
+      rating: 1580,
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80",
+      bio: "David plans and coordinates all our chess events and tournaments."
+    },
+    {
+      name: "Anita Rahman",
+      position: "Social Media Manager",
+      rating: 1500,
+      image: "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=400&auto=format&fit=crop&q=80",
+      bio: "Anita manages our online presence and keeps everyone updated about club activities."
+    },
+    {
+      name: "Kevin Hartono",
+      position: "Training Coordinator",
+      rating: 1720,
+      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80",
+      bio: "Kevin organizes training sessions and helps members improve their chess skills."
+    }
+  ];
+
+  const members = [
+    {
+      name: "Jessica Wijaya",
+      position: "Active Member",
+      rating: 1430,
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&auto=format&fit=crop&q=80",
+      bio: "Jessica joined in 2023 and has shown remarkable improvement in her chess skills."
+    },
+    {
+      name: "Budi Santoso",
+      position: "Active Member",
+      rating: 1550,
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80",
+      bio: "Budi specializes in endgame strategies and participates in all club tournaments."
+    },
+    {
+      name: "Dewi Anggraini",
+      position: "Active Member",
+      rating: 1480,
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&auto=format&fit=crop&q=80",
+      bio: "Dewi is a dedicated member who helps organize outreach events."
+    }
+  ];
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      <main className="flex-grow">
+        {/* Hero Section */}
+        <section className="bg-chessBlue text-white py-16">
+          <div className="container mx-auto px-4 text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Team</h1>
+            <p className="text-xl max-w-2xl mx-auto">
+              Meet the dedicated people behind BINUS Chess Club who work hard to create a thriving chess community.
+            </p>
+          </div>
+        </section>
+
+        {/* Organizers Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <h2 className="section-title text-center">Club Organizers</h2>
+            <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
+              Our leadership team is responsible for coordinating club activities and strategic planning.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {organizers.map((organizer, index) => (
+                <TeamCard 
+                  key={index}
+                  name={organizer.name}
+                  position={organizer.position}
+                  rating={organizer.rating}
+                  image={organizer.image}
+                  bio={organizer.bio}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Activists Section */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="section-title text-center">Club Activists</h2>
+            <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
+              Our activists help run club operations and contribute significantly to our community.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {activists.map((activist, index) => (
+                <TeamCard 
+                  key={index}
+                  name={activist.name}
+                  position={activist.position}
+                  rating={activist.rating}
+                  image={activist.image}
+                  bio={activist.bio}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Members Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <h2 className="section-title text-center">Active Members</h2>
+            <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
+              These are some of our dedicated members who regularly participate in club activities.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {members.map((member, index) => (
+                <TeamCard 
+                  key={index}
+                  name={member.name}
+                  position={member.position}
+                  rating={member.rating}
+                  image={member.image}
+                  bio={member.bio}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Join Section */}
+        <section className="py-16 bg-chessGreen text-white">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Want to Join Our Team?</h2>
+            <p className="text-lg max-w-2xl mx-auto mb-8">
+              We're always looking for enthusiastic chess players to join our community.
+              Become a member today and be part of our growing chess family!
+            </p>
+            <div className="inline-block bg-white text-chessGreen hover:bg-gray-100 font-bold px-6 py-3 rounded transition-colors">
+              <a href="/contact">Contact Us</a>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default Team;
