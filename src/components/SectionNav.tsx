@@ -13,8 +13,10 @@ const SectionNav = () => {
         const sectionId = section.getAttribute('id');
         if (!sectionId) return;
         
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
+        // Cast the Element to HTMLElement to access offsetTop property
+        const htmlSection = section as HTMLElement;
+        const sectionTop = htmlSection.offsetTop;
+        const sectionHeight = htmlSection.clientHeight;
         
         if (scrollPosition >= sectionTop && 
             scrollPosition < sectionTop + sectionHeight) {
