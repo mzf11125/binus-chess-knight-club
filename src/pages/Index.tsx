@@ -38,7 +38,7 @@ const Index = () => {
         <Hero />
         
         {/* About Section */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-gray-50 w-full">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2 className="section-title">About BINUS Chess Club</h2>
@@ -46,10 +46,13 @@ const Index = () => {
                 Founded in 2010, BINUS Chess Club is a community of chess enthusiasts at Bina Nusantara University. 
                 We welcome players of all skill levels, from beginners to advanced competitors.
               </p>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-gray-600 mb-8">
                 Our mission is to promote chess as an intellectual sport, create a supportive community,
                 and represent BINUS University in competitive chess events.
               </p>
+              <Button asChild className="bg-chessBlue hover:bg-chessBlue-light">
+                <Link to="/about">Learn More</Link>
+              </Button>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
@@ -87,7 +90,7 @@ const Index = () => {
         </section>
         
         {/* Events Section */}
-        <section className="py-16">
+        <section className="py-16 w-full">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="section-title">Upcoming Events</h2>
@@ -119,7 +122,7 @@ const Index = () => {
         </section>
         
         {/* CTA Section */}
-        <section className="py-16 bg-chessBlue text-white">
+        <section className="py-16 bg-chessBlue text-white w-full">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Join BINUS Chess Club?</h2>
             <p className="text-lg max-w-2xl mx-auto mb-8">
