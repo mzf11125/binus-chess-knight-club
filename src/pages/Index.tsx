@@ -68,20 +68,6 @@ const Index = () => {
           <Hero />
         </div>
         
-        {/* Membership CTA Section - Moved up for visibility */}
-        <section id="join" className="py-16 bg-chessBlue text-white w-full">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Join BINUS Chess Club?</h2>
-            <p className="text-lg max-w-2xl mx-auto mb-8">
-              Whether you're a beginner or an experienced player, we welcome all BINUS students 
-              who share our passion for chess.
-            </p>
-            <Button asChild className="bg-white text-chessBlue hover:bg-gray-100 font-bold px-6 py-3">
-              <Link to="/contact">Join Us Today</Link>
-            </Button>
-          </div>
-        </section>
-        
         {/* About Section */}
         <section id="about" className="py-16 bg-gray-50 w-full">
           <div className="container mx-auto px-4">
@@ -163,6 +149,20 @@ const Index = () => {
                 <Link to="/events">View All Events</Link>
               </Button>
             </div>
+          </div>
+        </section>
+        
+        {/* Membership CTA Section - Moved back to bottom */}
+        <section id="join" className="py-16 bg-chessBlue text-white w-full">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Join BINUS Chess Club?</h2>
+            <p className="text-lg max-w-2xl mx-auto mb-8">
+              Whether you're a beginner or an experienced player, we welcome all BINUS students 
+              who share our passion for chess.
+            </p>
+            <Button asChild className="bg-white text-chessBlue hover:bg-gray-100 font-bold px-6 py-3">
+              <Link to="/contact">Join Us Today</Link>
+            </Button>
           </div>
         </section>
       </main>
