@@ -3,6 +3,16 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <div className="relative bg-chessBlue text-white w-full h-screen flex items-center">
       <div 
@@ -25,8 +35,11 @@ const Hero = () => {
           <Button asChild className="bg-white text-chessBlue hover:bg-gray-100 font-bold px-6 py-3">
             <Link to="/events">Upcoming Events</Link>
           </Button>
-          <Button asChild className="bg-chessGreen hover:bg-chessGreen-light font-bold px-6 py-3">
-            <Link to="/contact">Join Us</Link>
+          <Button 
+            className="bg-chessGreen hover:bg-chessGreen-light font-bold px-6 py-3"
+            onClick={() => scrollToSection('join')}
+          >
+            Join Us
           </Button>
         </div>
       </div>
