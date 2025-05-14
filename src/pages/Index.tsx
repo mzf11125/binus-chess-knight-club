@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import EventCard from "@/components/EventCard";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useEffect } from "react";
+import SectionNav from "@/components/SectionNav";
 
 const Index = () => {
   const upcomingEvents = [
@@ -31,14 +33,57 @@ const Index = () => {
     }
   ];
 
+  // Scroll handling for smooth navigation
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll('section');
+      const scrollPosition = window.scrollY;
+      
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (scrollPosition >= sectionTop - 100 && 
+            scrollPosition < sectionTop + sectionHeight - 100) {
+          section.classList.add('active-section');
+        } else {
+          section.classList.remove('active-section');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
+      <SectionNav />
       <main className="flex-grow">
-        <Hero />
+        {/* Hero Section - Full height */}
+        <div id="home" className="section">
+          <Hero />
+        </div>
+        
+        {/* Membership CTA Section - Moved up for visibility */}
+        <section id="join" className="py-16 bg-chessBlue text-white w-full">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Join BINUS Chess Club?</h2>
+            <p className="text-lg max-w-2xl mx-auto mb-8">
+              Whether you're a beginner or an experienced player, we welcome all BINUS students 
+              who share our passion for chess.
+            </p>
+            <Button asChild className="bg-white text-chessBlue hover:bg-gray-100 font-bold px-6 py-3">
+              <Link to="/contact">Join Us Today</Link>
+            </Button>
+          </div>
+        </section>
         
         {/* About Section */}
-        <section className="py-16 bg-gray-50 w-full">
+        <section id="about" className="py-16 bg-gray-50 w-full">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2 className="section-title">About BINUS Chess Club</h2>
@@ -90,7 +135,7 @@ const Index = () => {
         </section>
         
         {/* Events Section */}
-        <section className="py-16 w-full">
+        <section id="events" className="py-16 w-full">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="section-title">Upcoming Events</h2>
@@ -118,20 +163,6 @@ const Index = () => {
                 <Link to="/events">View All Events</Link>
               </Button>
             </div>
-          </div>
-        </section>
-        
-        {/* CTA Section */}
-        <section className="py-16 bg-chessBlue text-white w-full">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Join BINUS Chess Club?</h2>
-            <p className="text-lg max-w-2xl mx-auto mb-8">
-              Whether you're a beginner or an experienced player, we welcome all BINUS students 
-              who share our passion for chess.
-            </p>
-            <Button asChild className="bg-white text-chessBlue hover:bg-gray-100 font-bold px-6 py-3">
-              <Link to="/contact">Join Us Today</Link>
-            </Button>
           </div>
         </section>
       </main>

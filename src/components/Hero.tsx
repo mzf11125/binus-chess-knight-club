@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="relative bg-chessBlue text-white w-full">
+    <div className="relative bg-chessBlue text-white w-full h-screen flex items-center">
       <div 
         className="absolute inset-0 bg-gradient-to-r from-chessBlue/95 to-chessGreen/95"
         style={{
