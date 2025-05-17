@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TeamCard from "@/components/TeamCard";
@@ -6,56 +5,56 @@ import TeamCard from "@/components/TeamCard";
 const Team = () => {
   const organizers = [
     {
-      name: "Alexander Chen",
-      position: "President",
+      name: "Galvent",
+      position: "President & Founder",
       rating: 1850,
       image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop&q=80",
-      bio: "Alex has been leading the BINUS Chess Club since 2023. With a passion for chess strategy and community building."
+      bio: "Galvent founded the BINUS Chess Club and currently serves as its president, leading with passion and strategic vision."
     },
     {
-      name: "Sarah Wijaya",
-      position: "Vice President",
+      name: "Geoffrey",
+      position: "Secretary",
       rating: 1760,
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=80",
-      bio: "Sarah organizes club tournaments and represents us in inter-university competitions."
+      bio: "Geoffrey manages all club documentation, meeting minutes, and communications with members."
     },
     {
-      name: "Michael Tanoto",
+      name: "Moreno",
       position: "Treasurer",
       rating: 1700,
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
-      bio: "Michael manages our financial resources and ensures our events are properly funded."
+      bio: "Moreno oversees the club's finances, budget planning, and ensures proper fund allocation for events."
     },
     {
-      name: "Linda Kusuma",
-      position: "Secretary",
+      name: "Zidan",
+      position: "IT Staff",
       rating: 1650,
       image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&auto=format&fit=crop&q=80",
-      bio: "Linda keeps our club organized and maintains communication with our members."
+      bio: "Zidan manages the club's digital presence, website, and technical infrastructure for online tournaments."
     }
   ];
 
   const activists = [
     {
-      name: "David Sanjaya",
-      position: "Events Coordinator",
+      name: "Steven",
+      position: "Event Manager",
       rating: 1580,
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80",
-      bio: "David plans and coordinates all our chess events and tournaments."
+      bio: "Steven plans and coordinates all chess events, tournaments, and workshops for the club."
     },
     {
-      name: "Anita Rahman",
-      position: "Social Media Manager",
+      name: "Keven",
+      position: "Marketing Manager",
       rating: 1500,
       image: "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=400&auto=format&fit=crop&q=80",
-      bio: "Anita manages our online presence and keeps everyone updated about club activities."
+      bio: "Keven manages promotional activities, social media, and outreach campaigns for the club."
     },
     {
-      name: "Kevin Hartono",
-      position: "Training Coordinator",
+      name: "Aristo",
+      position: "Event Deputy",
       rating: 1720,
       image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80",
-      bio: "Kevin organizes training sessions and helps members improve their chess skills."
+      bio: "Aristo assists in event planning and execution, ensuring smooth operations during club activities."
     }
   ];
 
