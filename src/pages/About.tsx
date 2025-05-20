@@ -41,7 +41,7 @@ const About = () => {
                 </p>
                 <p className="text-lg text-gray-700">
                   Our club has represented BINUS in various inter-university and
-                  public competitions.
+                  public chess competitions.
                 </p>
               </div>
               <div className="order-1 md:order-2">
