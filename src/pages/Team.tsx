@@ -8,7 +8,7 @@ const Team = () => {
       name: "Galvent",
       position: "President & Founder",
       rating: 1850,
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop&q=80",
+      image: "",
       bio: "Galvent founded the BINUS Chess Club and currently serves as its president, leading with passion and strategic vision."
     },
     {
@@ -118,12 +118,12 @@ const Team = () => {
           </div>
         </section>
 
-        {/* Activists Section */}
+        {/* Staff Section */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <h2 className="section-title text-center">Club Activists</h2>
+            <h2 className="section-title text-center">Club Staff</h2>
             <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
-              Our activists help run club operations and contribute significantly to our community.
+              Our Staff help run club operations and contribute significantly to our community.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {activists.map((activist, index) => (
@@ -143,7 +143,7 @@ const Team = () => {
         {/* Members Section */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
-            <h2 className="section-title text-center">Active Members</h2>
+            <h2 className="section-title text-center">Hall of Fame</h2>
             <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
               These are some of our dedicated members who regularly participate in club activities.
             </p>
