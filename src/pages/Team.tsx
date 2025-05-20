@@ -8,7 +8,7 @@ const Team = () => {
       name: "Galvent",
       position: "President & Founder",
       rating: 1850,
-      image: "",
+      image: "galvent.png",
       bio: "Galvent founded the BINUS Chess Club and currently serves as its president, leading with passion and strategic vision."
     },
     {

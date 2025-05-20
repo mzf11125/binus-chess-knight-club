@@ -1,6 +1,5 @@
-
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import { SiTiktok, SiInstagram } from "@icons-pack/react-simple-icons";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -17,17 +16,25 @@ const Footer = () => {
               <div className="font-bold text-xl">BINUS Chess Club</div>
             </Link>
             <p className="text-gray-300 mb-4">
-              Promoting chess excellence and community at Bina Nusantara University
+              Promoting chess excellence and community at Bina Nusantara
+              University
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-chessGreen transition-colors">
-                <Facebook size={20} />
+              <a
+                href="https://www.tiktok.com/@binuschessclub"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-chessGreen transition-colors"
+              >
+                <SiTiktok size={20} />
               </a>
-              <a href="#" className="hover:text-chessGreen transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="hover:text-chessGreen transition-colors">
-                <Twitter size={20} />
+              <a
+                href="https://instagram.com/binuschessclub"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-chessGreen transition-colors"
+              >
+                <SiInstagram size={20} />
               </a>
             </div>
           </div>
@@ -36,27 +43,42 @@ const Footer = () => {
             <h3 className="font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-gray-300 hover:text-white transition-colors">
+                <Link
+                  to="/"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-300 hover:text-white transition-colors">
+                <Link
+                  to="/about"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/team" className="text-gray-300 hover:text-white transition-colors">
+                <Link
+                  to="/team"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   Our Team
                 </Link>
               </li>
               <li>
-                <Link to="/events" className="text-gray-300 hover:text-white transition-colors">
+                <Link
+                  to="/events"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   Events
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-300 hover:text-white transition-colors">
+                <Link
+                  to="/contact"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   Contact Us
                 </Link>
               </li>
@@ -68,7 +90,7 @@ const Footer = () => {
             <address className="not-italic text-gray-300">
               <p>Bina Nusantara University</p>
               <p>Kemanggisan, Jakarta Barat</p>
-              <p className="mt-2">Email: binuschess@example.com</p>
+              <p className="mt-2">Email: binuschessclub@gmail.com</p>
             </address>
           </div>
         </div>
