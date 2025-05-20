@@ -53,7 +53,7 @@ const Contact = () => {
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="bg-chessBlue text-white py-16">
-          <div className="container mx-auto px-4 text-center">
+          <div className="container mx-auto px-4 md:px-6 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
             <p className="text-xl max-w-2xl mx-auto">
               Have questions about BINUS Chess Club or want to join? Get in
@@ -63,11 +63,26 @@ const Contact = () => {
         </section>
 
         {/* Contact Form Section */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-              <div className="order-2 lg:order-1">
-                <h2 className="text-2xl font-bold text-chessBlue mb-6">
+        <section className="py-16 relative overflow-hidden">
+          {/* Chess Knight Decorative Element - Left */}
+          <div className="absolute top-24 left-0 opacity-5 hidden lg:block">
+            <div className="text-chessBlue" style={{ fontSize: "260px" }}>
+              ♞
+            </div>
+          </div>
+
+          {/* Chess Rook Decorative Element - Right */}
+          <div className="absolute top-1/2 right-0 opacity-5 hidden lg:block">
+            <div className="text-chessBlue" style={{ fontSize: "260px" }}>
+              ♜
+            </div>
+          </div>
+
+          <div className="container mx-auto px-4 md:px-6 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              <div className="order-2 lg:order-1 relative px-0 md:px-4 lg:px-8">
+                <h2 className="text-2xl font-bold text-chessBlue mb-6 flex items-center justify-center md:justify-start">
+                  <span className="text-chessGreen mr-2">♟</span>
                   Send Us a Message
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -159,8 +174,9 @@ const Contact = () => {
                 </form>
               </div>
 
-              <div className="order-1 lg:order-2">
-                <h2 className="text-2xl font-bold text-chessBlue mb-6">
+              <div className="order-1 lg:order-2 relative px-0 md:px-4 lg:px-8">
+                <h2 className="text-2xl font-bold text-chessBlue mb-6 flex items-center justify-center md:justify-start">
+                  <span className="text-chessGreen mr-2">♚</span>
                   Contact Information
                 </h2>
                 <div className="bg-gray-50 p-6 rounded-lg shadow-sm mb-8">
@@ -192,10 +208,10 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <h2 className="text-2xl font-bold text-chessBlue mb-4">
+                <h2 className="text-2xl font-bold text-chessBlue mb-4 text-center md:text-left">
                   Follow Us
                 </h2>
-                <div className="flex space-x-4">
+                <div className="flex space-x-4 justify-center md:justify-start">
                   <a
                     href="https://www.tiktok.com/@binuschessclub"
                     target="_blank"
