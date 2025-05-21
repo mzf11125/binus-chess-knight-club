@@ -21,7 +21,7 @@ const Hero = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundBlendMode: "overlay",
-          filter: "brightness(0.7)",
+          filter: "brightness(0.50)",
         }}
       ></div>
       <div className="container relative mx-auto px-4 py-20 md:py-32 flex flex-col items-center text-center">
