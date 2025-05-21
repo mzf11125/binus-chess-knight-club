@@ -101,7 +101,7 @@ const Index = () => {
                   <span className="text-2xl text-chessBlue">♟️</span>
                 </div>
                 <h3 className="font-bold text-xl text-chessBlue mb-2">
-                  Weekly Meetings
+                  Daily Boards
                 </h3>
                 <p className="text-gray-600">
                   Regular practice sessions and friendly matches to improve your
