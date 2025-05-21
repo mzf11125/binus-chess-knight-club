@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu } from "lucide-react";
@@ -29,10 +28,16 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-chessBlue rounded-full flex items-center justify-center">
-              <span className="text-xl font-bold text-white">♞</span>
+            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center overflow-hidden">
+              <img
+                src="/logo.png"
+                alt="BINUS Chess Club Logo"
+                className="w-full h-full object-cover"
+              />
             </div>
-            <div className="font-bold text-xl text-chessBlue">BINUS Chess Club</div>
+            <div className="font-bold text-xl text-chessBlue">
+              BINUS Chess Club
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

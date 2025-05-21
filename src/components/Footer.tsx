@@ -10,9 +10,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                <span className="text-xl font-bold text-chessBlue">♞</span>
-              </div>
+              <img
+                src="/logo.png"
+                alt="BINUS Chess Club Logo"
+                className="w-20 h-20 object-cover"
+              />
               <div className="font-bold text-xl">BINUS Chess Club</div>
             </Link>
             <p className="text-gray-300 mb-4">
