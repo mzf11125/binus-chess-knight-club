@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -8,20 +7,21 @@ const Hero = () => {
     if (section) {
       window.scrollTo({
         top: section.offsetTop,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     }
   };
 
   return (
     <div className="relative bg-chessBlue text-white w-full h-screen flex items-center">
-      <div 
-        className="absolute inset-0 bg-gradient-to-r from-chessBlue/95 to-chessGreen/95"
+      <div
+        className="absolute inset-0"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1586165368502-1bad197a6461?w=1200&auto=format&fit=crop&q=80')",
+          backgroundImage: "url('together2.jpeg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundBlendMode: "overlay",
+          filter: "brightness(0.7)",
         }}
       ></div>
       <div className="container relative mx-auto px-4 py-20 md:py-32 flex flex-col items-center text-center">
@@ -29,13 +29,20 @@ const Hero = () => {
           Welcome to BINUS Chess Club
         </h1>
         <p className="text-xl md:text-2xl max-w-2xl mb-10 animate-slide-up">
-          Join our community of chess enthusiasts to learn, compete, and grow together.
+          Join our community of chess enthusiasts to learn, compete, and grow
+          together.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 animate-slide-up">
-          <Button asChild className="bg-white text-chessBlue hover:bg-gray-100 font-bold px-6 py-3">
+          <Button
+            asChild
+            className="bg-white text-chessBlue hover:bg-gray-100 font-bold px-6 py-3"
+          >
             <Link to="/events">Upcoming Events</Link>
           </Button>
-          <Button asChild className="bg-chessGreen hover:bg-chessGreen-light font-bold px-6 py-3">
+          <Button
+            asChild
+            className="bg-chessGreen hover:bg-chessGreen-light font-bold px-6 py-3"
+          >
             <Link to="/contact">Join Us</Link>
           </Button>
         </div>
