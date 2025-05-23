@@ -30,8 +30,7 @@ const Team = () => {
       name: "Zidan",
       position: "IT Staff",
       rating: 1200,
-      image:
-        "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&auto=format&fit=crop&q=80",
+      image: "zidan.png",
       bio: "Zidan manages the club's digital presence, website, and technical infrastructure for online tournaments.",
     },
     {
