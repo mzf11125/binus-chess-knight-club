@@ -68,6 +68,4 @@ Simply open [Lovable](https://lovable.dev/projects/fd900fed-255c-41ef-9a61-5bb7d
 
 Yes, you can!
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This is already connected to [Binus Chess Club Domain](https://binuschess.club)
