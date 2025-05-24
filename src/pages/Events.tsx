@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import EventCard from "@/components/EventCard";
@@ -10,44 +9,56 @@ const Events = () => {
       title: "Weekly Club Meeting",
       date: "Every Friday, 4:00 PM",
       location: "BINUS Campus, Room 301",
-      description: "Join us for casual play, puzzles and discussions. All skill levels welcome!",
-      image: "https://images.unsplash.com/photo-1610633389918-7d5b62977dc3?w=800&auto=format&fit=crop&q=80"
+      description:
+        "Join us for casual play, puzzles and discussions. All skill levels welcome!",
+      image:
+        "https://images.unsplash.com/photo-1610633389918-7d5b62977dc3?w=800&auto=format&fit=crop&q=80",
     },
     {
       title: "BINUS Chess Tournament",
       date: "June 15, 2025",
       location: "BINUS Auditorium",
-      description: "Our annual chess tournament with prizes for different categories and skill levels.",
-      image: "https://images.unsplash.com/photo-1581006852262-e4307cf6283a?w=800&auto=format&fit=crop&q=80"
+      description:
+        "Our annual chess tournament with prizes for different categories and skill levels.",
+      image:
+        "https://images.unsplash.com/photo-1581006852262-e4307cf6283a?w=800&auto=format&fit=crop&q=80",
     },
     {
       title: "Grandmaster Workshop",
       date: "July 5, 2025",
       location: "BINUS Conference Room",
-      description: "Learn advanced strategies from an international chess grandmaster.",
-      image: "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=800&auto=format&fit=crop&q=80"
+      description:
+        "Learn advanced strategies from an international chess grandmaster.",
+      image:
+        "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=800&auto=format&fit=crop&q=80",
     },
     {
       title: "Blitz Chess Night",
       date: "May 28, 2025, 6:00 PM",
       location: "BINUS Student Center",
-      description: "Fast-paced blitz games with 5-minute time controls. Fun, casual environment!",
-      image: "https://images.unsplash.com/photo-1637276661836-9998e801a144?w=800&auto=format&fit=crop&q=80"
+      description:
+        "Fast-paced blitz games with 5-minute time controls. Fun, casual environment!",
+      image:
+        "https://images.unsplash.com/photo-1637276661836-9998e801a144?w=800&auto=format&fit=crop&q=80",
     },
     {
       title: "Chess Strategy Seminar",
       date: "June 3, 2025, 3:00 PM",
       location: "Online Zoom Session",
-      description: "Learn key middlegame strategies and tactical patterns to improve your game.",
-      image: "https://images.unsplash.com/photo-1611195974226-a6a9be9dd763?w=800&auto=format&fit=crop&q=80"
+      description:
+        "Learn key middlegame strategies and tactical patterns to improve your game.",
+      image:
+        "https://images.unsplash.com/photo-1611195974226-a6a9be9dd763?w=800&auto=format&fit=crop&q=80",
     },
     {
       title: "Inter-University Chess Match",
       date: "July 25, 2025",
       location: "University of Indonesia",
-      description: "Represent BINUS in this friendly match against other university chess clubs.",
-      image: "https://images.unsplash.com/photo-1587019158091-1a103c5dd17f?w=800&auto=format&fit=crop&q=80"
-    }
+      description:
+        "Represent BINUS in this friendly match against other university chess clubs.",
+      image:
+        "https://images.unsplash.com/photo-1587019158091-1a103c5dd17f?w=800&auto=format&fit=crop&q=80",
+    },
   ];
 
   const pastEvents = [
@@ -55,16 +66,20 @@ const Events = () => {
       title: "BINUS Chess Open 2024",
       date: "February 12, 2025",
       location: "BINUS Auditorium",
-      description: "Our annual open tournament that attracted players from across Jakarta.",
-      image: "https://images.unsplash.com/photo-1604948501466-4e9c339b9c24?w=800&auto=format&fit=crop&q=80"
+      description:
+        "Our annual open tournament that attracted players from across Jakarta.",
+      image:
+        "https://images.unsplash.com/photo-1604948501466-4e9c339b9c24?w=800&auto=format&fit=crop&q=80",
     },
     {
       title: "Simultaneous Exhibition",
       date: "March 5, 2025",
       location: "BINUS Main Hall",
-      description: "Indonesian IM played against 20 club members simultaneously.",
-      image: "https://images.unsplash.com/photo-1628359355624-855775b5c9c4?w=800&auto=format&fit=crop&q=80"
-    }
+      description:
+        "Indonesian IM played against 20 club members simultaneously.",
+      image:
+        "https://images.unsplash.com/photo-1628359355624-855775b5c9c4?w=800&auto=format&fit=crop&q=80",
+    },
   ];
 
   return (
@@ -76,7 +91,8 @@ const Events = () => {
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Events</h1>
             <p className="text-xl max-w-2xl mx-auto">
-              Discover our upcoming chess tournaments, workshops, and community gatherings.
+              Discover our upcoming chess tournaments, workshops, and community
+              gatherings.
             </p>
           </div>
         </section>
@@ -110,10 +126,17 @@ const Events = () => {
           <div className="container mx-auto px-4 text-center">
             <h2 className="section-title">Event Calendar</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-              Check out our full calendar to plan ahead for all our chess activities.
+              Check out our full calendar to plan ahead for all our chess
+              activities.
             </p>
-            <Button className="bg-chessBlue hover:bg-chessBlue-light">
-              View Full Calendar
+            <Button asChild className="bg-chessBlue hover:bg-chessBlue-light">
+              <a
+                href="https://docs.google.com/spreadsheets/d/106VX7b3Eu4mTLt_MMe4MDbuGmixvU_6cMtSxucBpob8/edit?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Full Calendar
+              </a>
             </Button>
           </div>
         </section>
@@ -145,10 +168,12 @@ const Events = () => {
         {/* Host Section */}
         <section className="py-16 bg-chessGreen text-white">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Want to Host a Chess Event?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Want to Host a Chess Event?
+            </h2>
             <p className="text-lg max-w-2xl mx-auto mb-8">
-              We're always open to collaborations and hosting special chess events.
-              Contact us with your ideas!
+              We're always open to collaborations and hosting special chess
+              events. Contact us with your ideas!
             </p>
             <div className="inline-block bg-white text-chessGreen hover:bg-gray-100 font-bold px-6 py-3 rounded transition-colors">
               <a href="/contact">Contact Us</a>
