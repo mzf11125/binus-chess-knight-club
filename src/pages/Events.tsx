@@ -14,72 +14,71 @@ const Events = () => {
       image:
         "https://images.unsplash.com/photo-1610633389918-7d5b62977dc3?w=800&auto=format&fit=crop&q=80",
     },
-    {
-      title: "BINUS Chess Tournament",
-      date: "June 15, 2025",
-      location: "BINUS Auditorium",
-      description:
-        "Our annual chess tournament with prizes for different categories and skill levels.",
-      image:
-        "https://images.unsplash.com/photo-1581006852262-e4307cf6283a?w=800&auto=format&fit=crop&q=80",
-    },
-    {
-      title: "Grandmaster Workshop",
-      date: "July 5, 2025",
-      location: "BINUS Conference Room",
-      description:
-        "Learn advanced strategies from an international chess grandmaster.",
-      image:
-        "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=800&auto=format&fit=crop&q=80",
-    },
-    {
-      title: "Blitz Chess Night",
-      date: "May 28, 2025, 6:00 PM",
-      location: "BINUS Student Center",
-      description:
-        "Fast-paced blitz games with 5-minute time controls. Fun, casual environment!",
-      image:
-        "https://images.unsplash.com/photo-1637276661836-9998e801a144?w=800&auto=format&fit=crop&q=80",
-    },
-    {
-      title: "Chess Strategy Seminar",
-      date: "June 3, 2025, 3:00 PM",
-      location: "Online Zoom Session",
-      description:
-        "Learn key middlegame strategies and tactical patterns to improve your game.",
-      image:
-        "https://images.unsplash.com/photo-1611195974226-a6a9be9dd763?w=800&auto=format&fit=crop&q=80",
-    },
-    {
-      title: "Inter-University Chess Match",
-      date: "July 25, 2025",
-      location: "University of Indonesia",
-      description:
-        "Represent BINUS in this friendly match against other university chess clubs.",
-      image:
-        "https://images.unsplash.com/photo-1587019158091-1a103c5dd17f?w=800&auto=format&fit=crop&q=80",
-    },
+    // {
+    //   title: "BINUS Chess Tournament",
+    //   date: "June 15, 2025",
+    //   location: "BINUS Auditorium",
+    //   description:
+    //     "Our annual chess tournament with prizes for different categories and skill levels.",
+    //   image:
+    //     "https://images.unsplash.com/photo-1581006852262-e4307cf6283a?w=800&auto=format&fit=crop&q=80",
+    // },
+    // {
+    //   title: "Grandmaster Workshop",
+    //   date: "July 5, 2025",
+    //   location: "BINUS Conference Room",
+    //   description:
+    //     "Learn advanced strategies from an international chess grandmaster.",
+    //   image:
+    //     "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=800&auto=format&fit=crop&q=80",
+    // },
+    // {
+    //   title: "Blitz Chess Night",
+    //   date: "May 28, 2025, 6:00 PM",
+    //   location: "BINUS Student Center",
+    //   description:
+    //     "Fast-paced blitz games with 5-minute time controls. Fun, casual environment!",
+    //   image:
+    //     "https://images.unsplash.com/photo-1637276661836-9998e801a144?w=800&auto=format&fit=crop&q=80",
+    // },
+    // {
+    //   title: "Chess Strategy Seminar",
+    //   date: "June 3, 2025, 3:00 PM",
+    //   location: "Online Zoom Session",
+    //   description:
+    //     "Learn key middlegame strategies and tactical patterns to improve your game.",
+    //   image:
+    //     "https://images.unsplash.com/photo-1611195974226-a6a9be9dd763?w=800&auto=format&fit=crop&q=80",
+    // },
+    // {
+    //   title: "Inter-University Chess Match",
+    //   date: "July 25, 2025",
+    //   location: "University of Indonesia",
+    //   description:
+    //     "Represent BINUS in this friendly match against other university chess clubs.",
+    //   image:
+    //     "https://images.unsplash.com/photo-1587019158091-1a103c5dd17f?w=800&auto=format&fit=crop&q=80",
+    // },
   ];
 
   const pastEvents = [
     {
-      title: "BINUS Chess Open 2024",
-      date: "February 12, 2025",
+      title: "Grand Launchin BCC",
+      date: "March 13, 2025",
       location: "BINUS Auditorium",
-      description:
-        "Our annual open tournament that attracted players from across Jakarta.",
+      description: "Our grand launching as official BINUs club.",
       image:
         "https://images.unsplash.com/photo-1604948501466-4e9c339b9c24?w=800&auto=format&fit=crop&q=80",
     },
-    {
-      title: "Simultaneous Exhibition",
-      date: "March 5, 2025",
-      location: "BINUS Main Hall",
-      description:
-        "Indonesian IM played against 20 club members simultaneously.",
-      image:
-        "https://images.unsplash.com/photo-1628359355624-855775b5c9c4?w=800&auto=format&fit=crop&q=80",
-    },
+    // {
+    //   title: "Simultaneous Exhibition",
+    //   date: "March 5, 2025",
+    //   location: "BINUS Main Hall",
+    //   description:
+    //     "Indonesian IM played against 20 club members simultaneously.",
+    //   image:
+    //     "https://images.unsplash.com/photo-1628359355624-855775b5c9c4?w=800&auto=format&fit=crop&q=80",
+    // },
   ];
 
   return (
