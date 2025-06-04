@@ -12,7 +12,7 @@ const Events = () => {
       description:
         "Join us for casual play, puzzles and discussions. All skill levels welcome!",
       image:
-        "https://images.unsplash.com/photo-1610633389918-7d5b62977dc3?w=800&auto=format&fit=crop&q=80",
+        "dailyblitzkrieg.jpeg",
     },
     // {
     //   title: "BINUS Chess Tournament",
@@ -63,12 +63,11 @@ const Events = () => {
 
   const pastEvents = [
     {
-      title: "Grand Launchin BCC",
+      title: "Grand Launching BCC",
       date: "March 13, 2025",
       location: "BINUS Auditorium",
-      description: "Our grand launching as official BINUs club.",
-      image:
-        "https://images.unsplash.com/photo-1604948501466-4e9c339b9c24?w=800&auto=format&fit=crop&q=80",
+      description: "Our grand launching as official BINUS club.",
+      image: "bcclaunch.jpeg",
     },
     // {
     //   title: "Simultaneous Exhibition",

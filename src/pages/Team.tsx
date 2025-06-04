@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TeamCard from "@/components/TeamCard";
@@ -6,11 +5,11 @@ import TeamCard from "@/components/TeamCard";
 const Team = () => {
   const organizers = [
     {
-      name: "Syuja Ardhanu",
-      position: "Club Organizer",
-      rating: 2290,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
-      bio: "Top-rated club organizer leading the BINUS Chess Club with exceptional strategic vision.",
+      name: "Galvent Chiuwen",
+      position: "President & Founder",
+      rating: 2010,
+      image: "galvent.png",
+      bio: "Galvent founded the BINUS Chess Club and currently serves as its president, leading with passion and strategic vision.",
     },
     {
       name: "Alessandro Moreno Lawadinata",
@@ -26,13 +25,7 @@ const Team = () => {
       image: "Geoffrey.png",
       bio: "Geoffrey manages all club documentation, meeting minutes, and communications with members.",
     },
-    {
-      name: "Galvent Chiuwen",
-      position: "President & Founder",
-      rating: 2010,
-      image: "galvent.png",
-      bio: "Galvent founded the BINUS Chess Club and currently serves as its president, leading with passion and strategic vision.",
-    },
+
     {
       name: "Aristo Ardy Wijaya",
       position: "Event Deputy",
@@ -58,7 +51,8 @@ const Team = () => {
       name: "Michaela Zaneta Hwang",
       position: "Event Deputy",
       rating: 400,
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&auto=format&fit=crop&q=80",
       bio: "Michaela assists in event planning and execution, ensuring smooth operations during club activities.",
     },
     {
@@ -72,116 +66,159 @@ const Team = () => {
 
   const activists = [
     {
+      name: "Syuja Ardhanu",
+      position: "Club Activist",
+      rating: 2290,
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80",
+      bio: "Committed member contributing to various club initiatives and activities.",
+    },
+    {
       name: "Hans Kartawinata",
       position: "Club Activist",
       rating: 2160,
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80",
       bio: "Highly skilled activist contributing to club development and member engagement.",
     },
     {
       name: "Stanley Christian Gunawan",
       position: "Club Activist",
       rating: 1630,
-      image: "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=400&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=400&auto=format&fit=crop&q=80",
       bio: "Dedicated activist supporting various club initiatives and activities.",
     },
     {
       name: "Josevan NoeleDave",
       position: "Club Activist",
       rating: 1600,
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80",
       bio: "Active member contributing to the club's growth and community building efforts.",
     },
     {
       name: "Sia Malvino Al Keane",
       position: "Club Activist",
       rating: 1510,
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80",
       bio: "Enthusiastic activist participating in club events and member development.",
     },
     {
       name: "Hibatullah Dony Ananda",
       position: "Club Activist",
       rating: 1480,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
       bio: "Committed activist supporting club operations and community outreach.",
     },
     {
       name: "Dominikus Sebastian Ramli",
       position: "Club Activist",
       rating: 1420,
-      image: "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=400&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=400&auto=format&fit=crop&q=80",
       bio: "Active member contributing to various club initiatives and events.",
     },
     {
       name: "Fahri Fadhil",
       position: "Club Activist",
       rating: 1400,
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80",
       bio: "Dedicated activist supporting club development and member engagement.",
     },
     {
       name: "Melsandi Gunawan",
       position: "Club Activist",
       rating: 1380,
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80",
       bio: "Enthusiastic member contributing to club activities and growth.",
     },
     {
       name: "Owen Siau",
       position: "Club Activist",
       rating: 1270,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
       bio: "Active participant in club events and community building efforts.",
     },
     {
       name: "Nathanael Vitzgerald",
       position: "Club Activist",
       rating: 1250,
-      image: "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=400&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=400&auto=format&fit=crop&q=80",
       bio: "Committed member supporting various club initiatives and activities.",
     },
     {
       name: "Anthony Vriyatama",
       position: "Club Activist",
       rating: 1220,
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80",
       bio: "Dedicated activist contributing to club development and member engagement.",
     },
     {
       name: "Muhammad Reza Alghifari",
       position: "Club Activist",
       rating: 1130,
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80",
       bio: "Active member participating in club events and activities.",
     },
     {
       name: "Frederick Sawedi",
       position: "Club Activist",
       rating: 520,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
       bio: "Enthusiastic member contributing to club community and development.",
     },
     {
       name: "Osel Citta Chen",
       position: "Club Activist",
       rating: 420,
-      image: "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=400&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=400&auto=format&fit=crop&q=80",
       bio: "Dedicated member supporting club activities and growth initiatives.",
     },
     {
       name: "Jeremiah Chang",
       position: "Club Activist",
       rating: 400,
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80",
       bio: "Active participant in club events and community building efforts.",
     },
     {
       name: "Jordan",
       position: "Club Activist",
       rating: 400,
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80",
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80",
       bio: "Committed member contributing to various club initiatives and activities.",
+    },
+  ];
+
+  const HonorableMention = [
+    {
+      name: "Bakti Amirul Jabar",
+      position: "Club Activist",
+      rating: 2160,
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+      bio: "Highly skilled activist contributing to club development and member engagement.",
+    },
+    {
+      name: "Bakti Amirul Jabar",
+      position: "Club Activist",
+      rating: 2160,
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+      bio: "Highly skilled activist contributing to club development and member engagement.",
     },
   ];
 
@@ -192,9 +229,12 @@ const Team = () => {
         {/* Hero Section */}
         <section className="bg-chessBlue text-white py-16">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Hall of Fame</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              Hall of Fame
+            </h1>
             <p className="text-xl max-w-2xl mx-auto">
-              Meet our top-rated chess players and dedicated club members ranked by their chess ratings.
+              Meet our top-rated chess players and dedicated club members ranked
+              by their chess ratings.
             </p>
           </div>
         </section>
@@ -204,7 +244,8 @@ const Team = () => {
           <div className="container mx-auto px-4">
             <h2 className="section-title text-center">Club Organizers</h2>
             <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
-              Our leadership team and organizers who coordinate club activities and strategic planning.
+              Our leadership team and organizers who coordinate club activities
+              and strategic planning.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {organizers.map((organizer, index) => (
@@ -226,7 +267,8 @@ const Team = () => {
           <div className="container mx-auto px-4">
             <h2 className="section-title text-center">Club Activists</h2>
             <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
-              Our dedicated activists who actively participate in club events and contribute to our community.
+              Our dedicated activists who actively participate in club events
+              and contribute to our community.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {activists.map((activist, index) => (
@@ -243,6 +285,29 @@ const Team = () => {
           </div>
         </section>
 
+        {/* hall of fame Section
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="section-title text-center">Honorable Mention</h2>
+            <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
+              Our dedicated activists who actively participate in club events
+              and contribute to our community.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {activists.map((activist, index) => (
+                <TeamCard
+                  key={index}
+                  name={activist.name}
+                  position={activist.position}
+                  rating={activist.rating}
+                  image={activist.image}
+                  bio={activist.bio}
+                />
+              ))}
+            </div>
+          </div>
+        </section> */}
+
         {/* Join Section */}
         <section className="py-16 bg-chessGreen text-white">
           <div className="container mx-auto px-4 text-center">
@@ -251,7 +316,8 @@ const Team = () => {
             </h2>
             <p className="text-lg max-w-2xl mx-auto mb-8">
               We're always looking for enthusiastic chess players to join our
-              community. Become a member today and climb up our Hall of Fame rankings!
+              community. Become a member today and climb up our Hall of Fame
+              rankings!
             </p>
             <div className="inline-block bg-white text-chessGreen hover:bg-gray-100 font-bold px-6 py-3 rounded transition-colors">
               <a href="/contact">Contact Us</a>

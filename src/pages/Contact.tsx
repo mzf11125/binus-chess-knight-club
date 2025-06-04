@@ -29,13 +29,28 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+
+    // Create mailto URL with form data
+    const subject = encodeURIComponent(
+      `BINUS Chess Club - ${formData.subject}`
+    );
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n` +
+        `Email: ${formData.email}\n` +
+        `Subject: ${formData.subject}\n\n` +
+        `Message:\n${formData.message}`
+    );
+
+    const mailtoUrl = `mailto:binuschessclub@gmail.com?subject=${subject}&body=${body}`;
+
+    // Open default email client
+    window.location.href = mailtoUrl;
 
     // Show success toast
     toast({
-      title: "Message Sent",
+      title: "Email Client Opened",
       description:
-        "Thank you for contacting BINUS Chess Club. We'll get back to you soon!",
+        "Your default email client should open with the pre-filled message. Please send the email to complete your inquiry.",
     });
 
     // Reset form
