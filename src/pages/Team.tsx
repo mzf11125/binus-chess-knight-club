@@ -48,14 +48,6 @@ const Team = () => {
       bio: "Steven plans and coordinates all chess events, tournaments, and workshops for the club.",
     },
     {
-      name: "Michaela Zaneta Hwang",
-      position: "Event Deputy",
-      rating: 400,
-      image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&auto=format&fit=crop&q=80",
-      bio: "Michaela assists in event planning and execution, ensuring smooth operations during club activities.",
-    },
-    {
       name: "Keven Wilbert Felik",
       position: "Marketing Manager",
       rating: 1,
@@ -200,6 +192,14 @@ const Team = () => {
       image:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80",
       bio: "Committed member contributing to various club initiatives and activities.",
+    },
+    {
+      name: "Michaela Zaneta Hwang",
+      position: "Event Deputy",
+      rating: 400,
+      image:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&auto=format&fit=crop&q=80",
+      bio: "Michaela assists in event planning and execution, ensuring smooth operations during club activities.",
     },
   ];
 
