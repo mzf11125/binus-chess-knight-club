@@ -61,16 +61,14 @@ const Team = () => {
       name: "Syuja Ardhanu",
       position: "Club Activist",
       rating: 2290,
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80",
+      image: "activist/scaled/syuja.png",
       bio: "Committed member contributing to various club initiatives and activities.",
     },
     {
       name: "Hans Kartawinata",
       position: "Club Activist",
       rating: 2160,
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop&q=80",
+      image: "activist/scaled/hans.png",
       bio: "Highly skilled activist contributing to club development and member engagement.",
     },
     {
@@ -93,16 +91,14 @@ const Team = () => {
       name: "Sia Malvino Al Keane",
       position: "Club Activist",
       rating: 1510,
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80",
+      image: "activist/scaled/malvino.png",
       bio: "Enthusiastic activist participating in club events and member development.",
     },
     {
       name: "Hibatullah Dony Ananda",
       position: "Club Activist",
       rating: 1480,
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+      image: "activist/scaled/hibatullah.png",
       bio: "Committed activist supporting club operations and community outreach.",
     },
     {
@@ -133,8 +129,7 @@ const Team = () => {
       name: "Owen Siau",
       position: "Club Activist",
       rating: 1270,
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+      image: "activist/scaled/owen.png",
       bio: "Active participant in club events and community building efforts.",
     },
     {
@@ -173,16 +168,14 @@ const Team = () => {
       name: "Osel Citta Chen",
       position: "Club Activist",
       rating: 420,
-      image:
-        "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=400&auto=format&fit=crop&q=80",
+      image: "activist/scaled/osel.png",
       bio: "Dedicated member supporting club activities and growth initiatives.",
     },
     {
       name: "Jeremiah Chang",
       position: "Club Activist",
       rating: 400,
-      image:
-        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80",
+      image: "activist/scaled/jeremiah.png",
       bio: "Active participant in club events and community building efforts.",
     },
     {
@@ -197,8 +190,7 @@ const Team = () => {
       name: "Michaela Zaneta Hwang",
       position: "Event Deputy",
       rating: 400,
-      image:
-        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&auto=format&fit=crop&q=80",
+      image: "activist/scaled/michaela.png",
       bio: "Michaela assists in event planning and execution, ensuring smooth operations during club activities.",
     },
   ];
