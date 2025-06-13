@@ -1,3 +1,4 @@
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import EventCard from "@/components/EventCard";
@@ -6,6 +7,7 @@ import { Button } from "@/components/ui/button";
 const Events = () => {
   const upcomingEvents = [
     {
+      id: "weekly-meeting",
       title: "Weekly Club Meeting",
       date: "Every Friday, 4:00 PM",
       location: "BINUS Campus, Room 301",
@@ -62,6 +64,7 @@ const Events = () => {
 
   const pastEvents = [
     {
+      id: "grand-launching",
       title: "Grand Launching BCC",
       date: "March 13, 2025",
       location: "BINUS Auditorium",
@@ -111,7 +114,7 @@ const Events = () => {
                   description={event.description}
                   image={event.image}
                   buttonText="View Details"
-                  buttonLink="#"
+                  buttonLink={`/events/${event.id}`}
                 />
               ))}
             </div>
@@ -155,7 +158,7 @@ const Events = () => {
                   description={event.description}
                   image={event.image}
                   buttonText="View Details"
-                  buttonLink="#"
+                  buttonLink={`/events/${event.id}`}
                 />
               ))}
             </div>
