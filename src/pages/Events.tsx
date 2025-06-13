@@ -11,8 +11,7 @@ const Events = () => {
       location: "BINUS Campus, Room 301",
       description:
         "Join us for casual play, puzzles and discussions. All skill levels welcome!",
-      image:
-        "dailyblitzkrieg.jpeg",
+      image: "dailyblitzkrieg.jpeg",
     },
     // {
     //   title: "BINUS Chess Tournament",
@@ -111,7 +110,7 @@ const Events = () => {
                   location={event.location}
                   description={event.description}
                   image={event.image}
-                  buttonText="Register"
+                  buttonText="View Details"
                   buttonLink="#"
                 />
               ))}
@@ -155,7 +154,7 @@ const Events = () => {
                   location={event.location}
                   description={event.description}
                   image={event.image}
-                  buttonText="View Photos"
+                  buttonText="View Details"
                   buttonLink="#"
                 />
               ))}
