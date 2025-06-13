@@ -1,7 +1,9 @@
+
 import { useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const EventDetail = () => {
   const { id } = useParams();
@@ -30,6 +32,12 @@ const EventDetail = () => {
       type: "past",
       fullDescription:
         "The grand launching of BINUS Chess Club was a momentous occasion that marked our official recognition as a student organization. The event took place in the main auditorium with over 200 attendees, including faculty members, students, and chess enthusiasts. The ceremony featured opening remarks from university officials, a chess exhibition match, and the unveiling of our club charter. This event established our commitment to promoting chess culture within the BINUS community.",
+      gallery: [
+        "/bcclaunch.jpeg",
+        "/together.jpeg",
+        "/together2.jpeg",
+        "/simul.jpeg"
+      ]
     },
   ];
 
@@ -129,6 +137,39 @@ const EventDetail = () => {
             </div>
           </div>
         </section>
+
+        {/* Photo Gallery for Past Events */}
+        {event.type === "past" && event.gallery && (
+          <section className="py-16 bg-gray-50">
+            <div className="container mx-auto px-4">
+              <h2 className="text-3xl font-bold text-center mb-12 text-chessBlue">
+                Event Gallery
+              </h2>
+              <div className="max-w-4xl mx-auto">
+                <Carousel className="w-full">
+                  <CarouselContent>
+                    {event.gallery.map((photo, index) => (
+                      <CarouselItem key={index}>
+                        <div className="p-1">
+                          <img
+                            src={photo}
+                            alt={`${event.title} photo ${index + 1}`}
+                            className="w-full h-96 object-cover rounded-lg shadow-lg"
+                          />
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious />
+                  <CarouselNext />
+                </Carousel>
+                <p className="text-center text-gray-600 mt-4">
+                  {event.gallery.length} photos from {event.title}
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
       </main>
       <Footer />
     </div>
