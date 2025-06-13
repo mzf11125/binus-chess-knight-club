@@ -1,4 +1,3 @@
-
 import { useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -15,7 +14,7 @@ const EventDetail = () => {
       date: "Every Friday, 4:00 PM",
       location: "BINUS Campus, Room 301",
       description: "Join us for casual play, puzzles and discussions. All skill levels welcome!",
-      image: "dailyblitzkrieg.jpeg",
+      image: "/dailyblitzkrieg.jpeg",
       type: "upcoming",
       fullDescription: "Our weekly club meetings are the heart of our chess community. Every Friday at 4:00 PM, we gather in Room 301 for an evening of chess, learning, and friendship. Whether you're a complete beginner or an experienced player, you'll find a welcoming environment to improve your game. We typically start with casual games, followed by puzzle-solving sessions and discussions about chess strategies. Don't forget to bring your chess set if you have one!"
     },
@@ -25,7 +24,7 @@ const EventDetail = () => {
       date: "March 13, 2025",
       location: "BINUS Auditorium",
       description: "Our grand launching as official BINUS club.",
-      image: "bcclaunch.jpeg",
+      image: "/bcclaunch.jpeg",
       type: "past",
       fullDescription: "The grand launching of BINUS Chess Club was a momentous occasion that marked our official recognition as a student organization. The event took place in the main auditorium with over 200 attendees, including faculty members, students, and chess enthusiasts. The ceremony featured opening remarks from university officials, a chess exhibition match, and the unveiling of our club charter. This event established our commitment to promoting chess culture within the BINUS community."
     }
