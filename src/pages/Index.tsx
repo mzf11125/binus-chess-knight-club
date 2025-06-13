@@ -10,31 +10,13 @@ import SectionNav from "@/components/SectionNav";
 const Index = () => {
   const upcomingEvents = [
     {
+      id: "weekly-meeting",
       title: "Weekly Club Meeting",
       date: "Every Friday, 4:00 PM",
       location: "BINUS Campus, Room 301",
       description:
         "Join us for casual play, puzzles and discussions. All skill levels welcome!",
-      image:
-        "https://images.unsplash.com/photo-1610633389918-7d5b62977dc3?w=800&auto=format&fit=crop&q=80",
-    },
-    {
-      title: "BINUS Chess Tournament",
-      date: "June 15, 2025",
-      location: "BINUS Auditorium",
-      description:
-        "Our annual chess tournament with prizes for different categories and skill levels.",
-      image:
-        "https://images.unsplash.com/photo-1581006852262-e4307cf6283a?w=800&auto=format&fit=crop&q=80",
-    },
-    {
-      title: "Grandmaster Workshop",
-      date: "July 5, 2025",
-      location: "BINUS Conference Room",
-      description:
-        "Learn advanced strategies from an international chess grandmaster.",
-      image:
-        "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=800&auto=format&fit=crop&q=80",
+      image: "/dailyblitzkrieg.jpeg",
     },
   ];
 
@@ -157,7 +139,7 @@ const Index = () => {
                   location={event.location}
                   description={event.description}
                   image={event.image}
-                  buttonLink="/events"
+                  buttonLink={`/events/${event.id}`}
                 />
               ))}
             </div>
