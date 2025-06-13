@@ -1,3 +1,4 @@
+
 import { useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -13,9 +14,8 @@ const EventDetail = () => {
       title: "Weekly Club Meeting",
       date: "Every Friday, 4:00 PM",
       location: "BINUS Campus, Room 301",
-      description:
-        "Join us for casual play, puzzles and discussions. All skill levels welcome!",
-      image: "/dailyblitzkrieg.jpeg",
+      description: "Join us for casual play, puzzles and discussions. All skill levels welcome!",
+      image: "dailyblitzkrieg.jpeg",
       type: "upcoming",
       fullDescription:
         "Our weekly club meetings are the heart of our chess community. Every Friday at 4:00 PM, we gather in Room 301 for an evening of chess, learning, and friendship. Whether you're a complete beginner or an experienced player, you'll find a welcoming environment to improve your game. We typically start with casual games, followed by puzzle-solving sessions and discussions about chess strategies. Don't forget to bring your chess set if you have one!",
