@@ -83,8 +83,7 @@ const Team = () => {
       name: "Josevan NoeleDave",
       position: "Club Activist",
       rating: 1600,
-      image:
-        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80",
+      image: "activist/scaled/noele.png",
       bio: "Active member contributing to the club's growth and community building efforts.",
     },
     {
@@ -113,8 +112,7 @@ const Team = () => {
       name: "Fahri Fadhil",
       position: "Club Activist",
       rating: 1400,
-      image:
-        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80",
+      image: "activist/scaled/fahri.png",
       bio: "Dedicated activist supporting club development and member engagement.",
     },
     {
@@ -152,16 +150,14 @@ const Team = () => {
       name: "Muhammad Reza Alghifari",
       position: "Club Activist",
       rating: 1130,
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80",
+      image: "activist/scaled/reza.png",
       bio: "Active member participating in club events and activities.",
     },
     {
       name: "Frederick Sawedi",
       position: "Club Activist",
       rating: 520,
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+      image: "activist/scaled/frederick.png",
       bio: "Enthusiastic member contributing to club community and development.",
     },
     {
