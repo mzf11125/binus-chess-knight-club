@@ -75,8 +75,7 @@ const Team = () => {
       name: "Stanley Christian Gunawan",
       position: "Club Activist",
       rating: 1630,
-      image:
-        "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=400&auto=format&fit=crop&q=80",
+      image: "activist/scaled/stanley.png",
       bio: "Dedicated activist supporting various club initiatives and activities.",
     },
     {
@@ -104,8 +103,7 @@ const Team = () => {
       name: "Dominikus Sebastian Ramli",
       position: "Club Activist",
       rating: 1420,
-      image:
-        "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=400&auto=format&fit=crop&q=80",
+      image: "activist/scaled/sebastian.png",
       bio: "Active member contributing to various club initiatives and events.",
     },
     {
@@ -119,8 +117,7 @@ const Team = () => {
       name: "Melsandi Gunawan",
       position: "Club Activist",
       rating: 1380,
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80",
+      image: "activist/scaled/melsandi.png",
       bio: "Enthusiastic member contributing to club activities and growth.",
     },
     {
@@ -134,16 +131,14 @@ const Team = () => {
       name: "Nathanael Vitzgerald",
       position: "Club Activist",
       rating: 1250,
-      image:
-        "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=400&auto=format&fit=crop&q=80",
+      image: "activist/scaled/nathanael.png",
       bio: "Committed member supporting various club initiatives and activities.",
     },
     {
       name: "Anthony Vriyatama",
       position: "Club Activist",
       rating: 1220,
-      image:
-        "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&auto=format&fit=crop&q=80",
+      image: "activist/scaled/anthony.png",
       bio: "Dedicated activist contributing to club development and member engagement.",
     },
     {
@@ -178,8 +173,7 @@ const Team = () => {
       name: "Jordan",
       position: "Club Activist",
       rating: 400,
-      image:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop&q=80",
+      image: "activist/scaled/jordan.png",
       bio: "Committed member contributing to various club initiatives and activities.",
     },
     {
