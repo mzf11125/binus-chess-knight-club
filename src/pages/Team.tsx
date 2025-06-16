@@ -13,10 +13,10 @@ const Team = () => {
     },
     {
       name: "Alessandro Moreno Lawadinata",
-      position: "Club Organizer",
+      position: "Treasurer",
       rating: 2230,
       image: "alessandromoreno.png",
-      bio: "High-rated organizer contributing significantly to club operations and development.",
+      bio: "High-rated organizer contributing significantly to club treasuries and finances.",
     },
     {
       name: "Geoffrey Antonio Arifin",
