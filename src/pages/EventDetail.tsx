@@ -1,12 +1,14 @@
 
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const EventDetail = () => {
-  const { id } = useParams();
+  const { id } = useParams<{ id: string }>();
+
+  console.log("EventDetail component loaded, id:", id);
 
   // Sample event data - in a real app this would come from an API
   const allEvents = [
@@ -41,9 +43,18 @@ const EventDetail = () => {
     },
   ];
 
+  console.log("Available events:", allEvents.map(e => e.id));
+
+  if (!id) {
+    console.log("No ID parameter found");
+    return <Navigate to="/events" replace />;
+  }
+
   const event = allEvents.find((event) => event.id === id);
+  console.log("Found event:", event);
 
   if (!event) {
+    console.log("Event not found for id:", id);
     return (
       <div className="flex flex-col min-h-screen">
         <Navbar />
