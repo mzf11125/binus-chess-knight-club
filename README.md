@@ -79,7 +79,7 @@ Website improvements are welcome! For content updates, please get in touch with 
 ## 📬 Contact
 
 **Club Contact**  
-[![Email](https://img.shields.io/badge/Email-chess.club@binus.edu-blue?logo=gmail)](mailto:binuschessclub@gmail.com)
+[![Email](https://img.shields.io/badge/Email-binuschessclub@gmail.com-blue?logo=gmail)](mailto:binuschessclub@gmail.com)
 
 **Website Maintainer**  
 Muhammad Zidan Fatonie 
