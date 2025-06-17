@@ -25,14 +25,6 @@
 
 ```bash
 binus-chess-knight-club/
-├── backend/            # Server-side application
-│   ├── src/
-│   │   ├── controllers/  # Business logic
-│   │   ├── models/       # Database models
-│   │   ├── routes/       # API endpoints
-│   │   └── utils/        # Helper functions
-│   ├── package.json
-│   └── .env.example
 │
 ├── frontend/           # Client-side application
 │   ├── public/
@@ -119,13 +111,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## 📬 Contact
 
 **Project Maintainer**  
-Muhammad Zulfikar Fauzan  
-[![Email](https://img.shields.io/badge/Email-zulfikar.fauzan@binus.ac.id-blue?logo=gmail)](mailto:zulfikar.fauzan@binus.ac.id)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://www.linkedin.com/in/muhammad-zulfikar-fauzan-2691a2200/)
-
-**Club Advisor**  
-Dr. Chess Master  
-[![Email](https://img.shields.io/badge/Email-chess.master@binus.edu-blue?logo=gmail)](mailto:chess.master@binus.edu)
+Muhammad Zidan Fatonie 
+[![Email](https://img.shields.io/badge/Email-zulfikar.fauzan@binus.ac.id-blue?logo=gmail)](mailto:muhammad.fatonie@binus.ac.id)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://www.linkedin.com/in/mzidanfatonie/)
 
 ## ♟️ Join Us!
 
