@@ -1,71 +1,140 @@
-# Welcome to your Lovable project
+# Binus Chess Knight Club 🏰♟️
 
-## Project info
+![GitHub last commit](https://img.shields.io/github/last-commit/mzf11125/binus-chess-knight-club)
+![GitHub contributors](https://img.shields.io/github/contributors/mzf11125/binus-chess-knight-club)
+![GitHub repo size](https://img.shields.io/github/repo-size/mzf11125/binus-chess-knight-club)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-**URL**: https://lovable.dev/projects/fd900fed-255c-41ef-9a61-5bb7d95fee3c
+> Official platform for BINUS University's premier chess club - advancing chess skills, hosting tournaments, and building strategic minds.
 
-## How can I edit this code?
+## 🚀 Features
 
-There are several ways of editing your application.
+<div align="center">
+  
+| Feature | Description |
+|---------|-------------|
+| **🧠 Player Profiles** | Track ratings, match history and skill progression |
+| **🏆 Tournament System** | Swiss-style tournaments with automatic pairing |
+| **📊 Leaderboards** | Real-time rankings of club members |
+| **📅 Event Calendar** | Never miss a club meeting or competition |
+| **📚 Learning Resources** | Chess tutorials, puzzles and strategy guides |
 
-**Use Lovable**
+</div>
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/fd900fed-255c-41ef-9a61-5bb7d95fee3c) and start prompting.
+## 🧩 Project Structure
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```bash
+binus-chess-knight-club/
+├── backend/            # Server-side application
+│   ├── src/
+│   │   ├── controllers/  # Business logic
+│   │   ├── models/       # Database models
+│   │   ├── routes/       # API endpoints
+│   │   └── utils/        # Helper functions
+│   ├── package.json
+│   └── .env.example
+│
+├── frontend/           # Client-side application
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/      # Images, fonts, etc.
+│   │   ├── components/  # Reusable UI components
+│   │   ├── pages/       # Application views
+│   │   ├── services/    # API services
+│   │   └── styles/      # Global styles
+│   ├── package.json
+│   └── .env.example
+│
+├── chess-engine/       # Core game logic
+│   ├── src/
+│   │   ├── board/       # Board representation
+│   │   ├── moves/       # Move generation
+│   │   ├── ai/          # AI algorithms
+│   │   └── utils/       # Chess utilities
+│   └── package.json
+│
+├── docs/               # Documentation
+├── .github/            # CI/CD workflows
+├── .gitignore
+├── LICENSE
+└── README.md
 ```
 
-**Edit a file directly in GitHub**
+## ⚙️ Installation Guide
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Prerequisites
+- Node.js v18+
+- MongoDB Atlas account
+- Git
 
-**Use GitHub Codespaces**
+### Setup Instructions
+```bash
+# Clone the repository
+git clone https://github.com/mzf11125/binus-chess-knight-club.git
+cd binus-chess-knight-club
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Install dependencies
+cd backend && npm install
+cd ../frontend && npm install
+cd ../chess-engine && npm install
 
-## What technologies are used for this project?
+# Configure environment variables
+cp backend/.env.example backend/.env
+cp frontend/.env.example frontend/.env
 
-This project is built with:
+# Start development servers
+cd backend && npm run dev
+cd ../frontend && npm start
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🛠️ Tech Stack
 
-## How can I deploy this project?
+### Core Technologies
+![Node.js](https://img.shields.io/badge/Node.js-339933?logo=nodedotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?logo=express&logoColor=white)
 
-Simply open [Lovable](https://lovable.dev/projects/fd900fed-255c-41ef-9a61-5bb7d95fee3c) and click on Share -> Publish.
+### Additional Tools
+![Socket.io](https://img.shields.io/badge/Socket.io-010101?logo=socketdotio&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)
+![Jest](https://img.shields.io/badge/Jest-C21325?logo=jest&logoColor=white)
 
-## Can I connect a custom domain to my Lovable project?
+## 🤝 Contributing
 
-Yes, you can!
+We welcome contributions from all chess enthusiasts! To contribute:
 
-This is already connected to [Binus Chess Club Domain](https://binuschess.club)
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a pull request
+
+Please read our [contribution guidelines](CONTRIBUTING.md) for details.
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## 📬 Contact
+
+**Project Maintainer**  
+Muhammad Zulfikar Fauzan  
+[![Email](https://img.shields.io/badge/Email-zulfikar.fauzan@binus.ac.id-blue?logo=gmail)](mailto:zulfikar.fauzan@binus.ac.id)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://www.linkedin.com/in/muhammad-zulfikar-fauzan-2691a2200/)
+
+**Club Advisor**  
+Dr. Chess Master  
+[![Email](https://img.shields.io/badge/Email-chess.master@binus.edu-blue?logo=gmail)](mailto:chess.master@binus.edu)
+
+## ♟️ Join Us!
+
+Ready to make your move? Join the Binus Chess Knight Club today!
+
+[![Join Club](https://img.shields.io/badge/Join_Club-Apply_Now-blueviolet?style=for-the-badge&logo=chess)]([https://forms.gle/examplelink](https://docs.google.com/forms/d/e/1FAIpQLSedmsFPyJ-sg19VR41Z4FWj1N1VVsYLPoGy49DDdui9AE8gkA/viewform))
+
+<p align="center">
+  <img src="https://media.giphy.com/media/l0HlG8vJXW0X5yX4s/giphy.gif" width="300">
+  <br>
+  <em>"Chess is life in miniature" - Garry Kasparov</em>
+</p>
