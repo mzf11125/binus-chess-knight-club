@@ -83,7 +83,7 @@ Website improvements are welcome! For content updates, please get in touch with 
 
 **Website Maintainer**  
 Muhammad Zidan Fatonie 
-[![Email](https://img.shields.io/badge/Email-zulfikar.fauzan@binus.ac.id-blue?logo=gmail)](mailto:muhammad.fatonie@binus.ac.id)
+[![Email](https://img.shields.io/badge/Email-muhammad.fatonie@binus.ac.id-blue?logo=gmail)](mailto:muhammad.fatonie@binus.ac.id)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://www.linkedin.com/in/mzidanfatonie/)
 
 ## ♟️ Join Us!
