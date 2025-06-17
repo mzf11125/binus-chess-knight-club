@@ -6,14 +6,12 @@
 
 > Official landing page for BINUS University's Chess Knight Club - your gateway to chess events, resources, and community.
 
-<a href="https://mzf11125.github.io/binus-chess-knight-club/">
+<a href="https://binuschess.club">
   <img src="https://img.shields.io/badge/Visit_Site-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Visit Site">
 </a>
 <a href="#join-us">
   <img src="https://img.shields.io/badge/Join_Club-blueviolet?style=for-the-badge&logo=chess-knight&logoColor=white" alt="Join Club">
 </a>
-
-![Binus Chess Knight Club Banner](img/banner.png)
 
 ## ✨ About This Page
 
