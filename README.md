@@ -1,4 +1,4 @@
-# Binus Chess Knight Club 🏰♟️
+# Binus Chess Club 🏰♟️
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/mzf11125/binus-chess-knight-club)
 ![GitHub contributors](https://img.shields.io/github/contributors/mzf11125/binus-chess-knight-club)
