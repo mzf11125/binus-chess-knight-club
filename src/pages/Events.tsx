@@ -8,9 +8,9 @@ const Events = () => {
   const upcomingEvents = [
     {
       id: "weekly-meeting",
-      title: "Weekly Club Meeting",
-      date: "Every Friday, 4:00 PM",
-      location: "BINUS Campus, Room 301",
+      title: "Blitz Krieg",
+      date: "Time: TBA in WhatsApp group",
+      location: "BINUS Anggrek Campus, Student Corner 4th floor",
       description:
         "Join us for casual play, puzzles and discussions. All skill levels welcome!",
       image: "dailyblitzkrieg.jpeg",

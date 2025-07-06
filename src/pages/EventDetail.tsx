@@ -14,15 +14,15 @@ const EventDetail = () => {
   const allEvents = [
     {
       id: "weekly-meeting",
-      title: "Weekly Club Meeting",
-      date: "Every Friday, 4:00 PM",
-      location: "BINUS Campus, Room 301",
+      title: "Blitz Krieg",
+      date: "Time: TBA in WhatsApp group",
+      location: "BINUS Anggrek Campus, Student Corner 4th floor",
       description:
         "Join us for casual play, puzzles and discussions. All skill levels welcome!",
       image: "/dailyblitzkrieg.jpeg",
       type: "upcoming",
       fullDescription:
-        "Our weekly club meetings are the heart of our chess community. Every Friday at 4:00 PM, we gather in Room 301 for an evening of chess, learning, and friendship. Whether you're a complete beginner or an experienced player, you'll find a welcoming environment to improve your game. We typically start with casual games, followed by puzzle-solving sessions and discussions about chess strategies. Don't forget to bring your chess set if you have one!",
+        "Our Blitz Krieg events are the heart of our chess community. We gather at the Student Corner on the 4th floor of BINUS Anggrek Campus for fast-paced chess action. Whether you're a complete beginner or an experienced player, you'll find a welcoming environment to improve your game through rapid-fire games. Time and date will be announced in our WhatsApp group, so make sure to join us there for updates!",
     },
     {
       id: "grand-launching",
