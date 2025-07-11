@@ -74,12 +74,15 @@ const fetchChessComRating = async (username: string): Promise<number | null> => 
     
     const data: ChessComStats = await response.json();
     
-    // Try to get rating from rapid, blitz, or bullet (in that order)
-    const rating = data.chess_rapid?.last?.rating || 
-                  data.chess_blitz?.last?.rating || 
-                  data.chess_bullet?.last?.rating;
+    // Get all available ratings
+    const ratings = [
+      data.chess_rapid?.last?.rating,
+      data.chess_blitz?.last?.rating,
+      data.chess_bullet?.last?.rating,
+    ].filter((rating): rating is number => rating !== undefined);
     
-    return rating || null;
+    // Return the highest rating, or null if no ratings found
+    return ratings.length > 0 ? Math.max(...ratings) : null;
   } catch (error) {
     console.log(`Failed to fetch rating for ${username}:`, error);
     return null;
