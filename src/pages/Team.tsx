@@ -18,7 +18,7 @@ const Team = () => {
       rating: 2230,
       image: "alessandromoreno.png",
       bio: "High-rated organizer contributing significantly to club treasuries and finances.",
-      chessComUsername: "alessandromoreno", // Add actual username if available
+      chessComUsername: "AlessandroMoreno96", // Add actual username if available
     },
     {
       name: "Geoffrey Antonio Arifin",
@@ -106,6 +106,7 @@ const Team = () => {
       rating: 1420,
       image: "activist/scaled/sebastian.png",
       bio: "Active member contributing to various club initiatives and events.",
+      chessComUsername: "Bas77z",
     },
     {
       name: "Fahri Fadhil",
@@ -264,6 +265,7 @@ const Team = () => {
                   rating={activist.rating}
                   image={activist.image}
                   bio={activist.bio}
+                  chessComUsername={activist.chessComUsername}
                 />
               ))}
             </div>
