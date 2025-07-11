@@ -18,7 +18,7 @@ const Team = () => {
       rating: 2230,
       image: "alessandromoreno.png",
       bio: "High-rated organizer contributing significantly to club treasuries and finances.",
-      chessComUsername: "alessandromoreno", // Add actual username if available
+      chessComUsername: "AlessandroMoreno96", // Add actual username if available
     },
     {
       name: "Geoffrey Antonio Arifin",
@@ -33,6 +33,7 @@ const Team = () => {
       rating: 1960,
       image: "aristo.png",
       bio: "Aristo assists in event planning and execution, ensuring smooth operations during club activities.",
+      chessComUsername: "aristo123456",
     },
     {
       name: "Muhammad Zidan Fatonie",
@@ -106,6 +107,7 @@ const Team = () => {
       rating: 1420,
       image: "activist/scaled/sebastian.png",
       bio: "Active member contributing to various club initiatives and events.",
+      chessComUsername: "Bas77z",
     },
     {
       name: "Fahri Fadhil",
