@@ -23,6 +23,12 @@ const TeamCard = ({ name, position, rating, image, bio, className, chessComUsern
     }
   };
 
+  const handleUsernameClick = () => {
+    if (chessComUsername) {
+      window.open(`https://www.chess.com/member/${chessComUsername}`, '_blank');
+    }
+  };
+
   return (
     <div className={cn("bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105", className)}>
       <div className="relative h-60 overflow-hidden">
@@ -60,9 +66,12 @@ const TeamCard = ({ name, position, rating, image, bio, className, chessComUsern
         <h4 className="text-chessGreen font-medium mb-4">{position}</h4>
         <p className="text-gray-600">{bio}</p>
         {chessComUsername && (
-          <p className="text-xs text-gray-500 mt-2">
+          <button
+            onClick={handleUsernameClick}
+            className="text-xs text-gray-500 mt-2 hover:text-chessBlue hover:underline transition-colors cursor-pointer"
+          >
             Chess.com: @{chessComUsername}
-          </p>
+          </button>
         )}
       </div>
     </div>
