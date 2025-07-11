@@ -127,6 +127,7 @@ const Team = () => {
       rating: 1270,
       image: "activist/scaled/owen.png",
       bio: "Active participant in club events and community building efforts.",
+      chessComUsername: "Ony0n",
     },
     {
       name: "Nathanael Vitzgerald",
@@ -263,12 +264,34 @@ const Team = () => {
                   rating={activist.rating}
                   image={activist.image}
                   bio={activist.bio}
-                  chessComUsername={activist.chessComUsername}
                 />
               ))}
             </div>
           </div>
         </section>
+
+        {/* hall of fame Section
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="section-title text-center">Honorable Mention</h2>
+            <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
+              Our dedicated activists who actively participate in club events
+              and contribute to our community.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {activists.map((activist, index) => (
+                <TeamCard
+                  key={index}
+                  name={activist.name}
+                  position={activist.position}
+                  rating={activist.rating}
+                  image={activist.image}
+                  bio={activist.bio}
+                />
+              ))}
+            </div>
+          </div>
+        </section> */}
 
         {/* Join Section */}
         <section className="py-16 bg-chessGreen text-white">
