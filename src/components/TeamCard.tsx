@@ -17,6 +17,12 @@ const TeamCard = ({ name, position, rating, image, bio, className, chessComUsern
   
   const displayRating = liveRating || rating;
 
+  const handleRatingClick = () => {
+    if (chessComUsername) {
+      window.open(`https://www.chess.com/member/${chessComUsername}`, '_blank');
+    }
+  };
+
   return (
     <div className={cn("bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105", className)}>
       <div className="relative h-60 overflow-hidden">
@@ -26,7 +32,16 @@ const TeamCard = ({ name, position, rating, image, bio, className, chessComUsern
           className="w-full h-full object-cover object-center"
         />
         {displayRating && (
-          <span className="absolute top-4 right-4 bg-chessBlue text-white py-1 px-3 rounded-full font-medium text-sm flex items-center gap-1">
+          <button
+            onClick={handleRatingClick}
+            disabled={!chessComUsername}
+            className={cn(
+              "absolute top-4 right-4 py-1 px-3 rounded-full font-medium text-sm flex items-center gap-1 transition-all duration-200",
+              chessComUsername 
+                ? "bg-chessBlue text-white hover:bg-chessBlue-light hover:scale-105 cursor-pointer" 
+                : "bg-chessBlue text-white cursor-default"
+            )}
+          >
             {isLoading ? (
               <span className="animate-pulse">Loading...</span>
             ) : (
@@ -37,7 +52,7 @@ const TeamCard = ({ name, position, rating, image, bio, className, chessComUsern
                 )}
               </>
             )}
-          </span>
+          </button>
         )}
       </div>
       <div className="p-6">
