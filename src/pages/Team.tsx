@@ -10,7 +10,7 @@ const Team = () => {
       rating: 2010,
       image: "galvent.png",
       bio: "Galvent founded the BINUS Chess Club and currently serves as its president, leading with passion and strategic vision.",
-      chessComUsername: "galventchiuwen", // Add actual username if available
+      chessComUsername: "notiamgalvent", // Add actual username if available
     },
     {
       name: "Alessandro Moreno Lawadinata",
@@ -26,6 +26,7 @@ const Team = () => {
       rating: 2010,
       image: "Geoffrey.png",
       bio: "Geoffrey manages all club documentation, meeting minutes, and communications with members.",
+      chessComUsername: "Autumnman19",
     },
     {
       name: "Aristo Ardy Wijaya",
@@ -33,6 +34,7 @@ const Team = () => {
       rating: 1960,
       image: "aristo.png",
       bio: "Aristo assists in event planning and execution, ensuring smooth operations during club activities.",
+      chessComUsername: "aristo123456",
     },
     {
       name: "Muhammad Zidan Fatonie",
@@ -40,6 +42,7 @@ const Team = () => {
       rating: 1460,
       image: "zidan.png",
       bio: "Zidan manages the club's digital presence, website, and technical infrastructure for online tournaments.",
+      chessComUsername: "mzf11125",
     },
     {
       name: "Steven Ang",
@@ -47,6 +50,7 @@ const Team = () => {
       rating: 1240,
       image: "stevenang.png",
       bio: "Steven plans and coordinates all chess events, tournaments, and workshops for the club.",
+      chessComUsername: "PhantomXRG",
     },
     {
       name: "Keven Wilbert Felik",
@@ -71,6 +75,7 @@ const Team = () => {
       rating: 2160,
       image: "activist/scaled/hans.png",
       bio: "Highly skilled activist contributing to club development and member engagement.",
+      chessComUsername: "Countered",
     },
     {
       name: "Stanley Christian Gunawan",
@@ -78,6 +83,7 @@ const Team = () => {
       rating: 1630,
       image: "activist/scaled/stanley.png",
       bio: "Dedicated activist supporting various club initiatives and activities.",
+      chessComUsername: "Stych2312",
     },
     {
       name: "Josevan NoeleDave",
@@ -85,6 +91,7 @@ const Team = () => {
       rating: 1600,
       image: "activist/scaled/noele.png",
       bio: "Active member contributing to the club's growth and community building efforts.",
+      chessComUsername: "NoeleDavee",
     },
     {
       name: "Sia Malvino Al Keane",
@@ -92,6 +99,7 @@ const Team = () => {
       rating: 1510,
       image: "activist/scaled/malvino.png",
       bio: "Enthusiastic activist participating in club events and member development.",
+      chessComUsername: "malmal_l",
     },
     {
       name: "Hibatullah Dony Ananda",
@@ -99,6 +107,7 @@ const Team = () => {
       rating: 1480,
       image: "activist/scaled/hibatullah.png",
       bio: "Committed activist supporting club operations and community outreach.",
+      chessComUsername: "yellowcat2224",
     },
     {
       name: "Dominikus Sebastian Ramli",
@@ -114,6 +123,7 @@ const Team = () => {
       rating: 1400,
       image: "activist/scaled/fahri.png",
       bio: "Dedicated activist supporting club development and member engagement.",
+      chessComUsername: "Codename_Vangeance",
     },
     {
       name: "Melsandi Gunawan",
@@ -121,6 +131,7 @@ const Team = () => {
       rating: 1380,
       image: "activist/scaled/melsandi.png",
       bio: "Enthusiastic member contributing to club activities and growth.",
+      chessComUsername: "MELSANDI",
     },
     {
       name: "Owen Siau",
@@ -136,6 +147,7 @@ const Team = () => {
       rating: 1250,
       image: "activist/scaled/nathanael.png",
       bio: "Committed member supporting various club initiatives and activities.",
+      chessComUsername: "IJN_MuSaNathShi",
     },
     {
       name: "Anthony Vriyatama",
@@ -143,6 +155,7 @@ const Team = () => {
       rating: 1220,
       image: "activist/scaled/anthony.png",
       bio: "Dedicated activist contributing to club development and member engagement.",
+      chessComUsername: "tonyvvv",
     },
     {
       name: "Muhammad Reza Alghifari",
@@ -150,6 +163,7 @@ const Team = () => {
       rating: 1130,
       image: "activist/scaled/reza.png",
       bio: "Active member participating in club events and activities.",
+      chessComUsername: "Expanics",
     },
     {
       name: "Frederick Sawedi",
@@ -157,6 +171,7 @@ const Team = () => {
       rating: 520,
       image: "activist/scaled/frederick.png",
       bio: "Enthusiastic member contributing to club community and development.",
+      chessComUsername: "FrederickSawedi",
     },
     {
       name: "Osel Citta Chen",
@@ -164,6 +179,7 @@ const Team = () => {
       rating: 420,
       image: "activist/scaled/osel.png",
       bio: "Dedicated member supporting club activities and growth initiatives.",
+      chessComUsername: "Spitblaze",
     },
     {
       name: "Jeremiah Chang",
