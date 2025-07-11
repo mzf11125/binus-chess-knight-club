@@ -10,6 +10,7 @@ const Team = () => {
       rating: 2010,
       image: "galvent.png",
       bio: "Galvent founded the BINUS Chess Club and currently serves as its president, leading with passion and strategic vision.",
+      chessComUsername: "galventchiuwen", // Add actual username if available
     },
     {
       name: "Alessandro Moreno Lawadinata",
@@ -17,6 +18,7 @@ const Team = () => {
       rating: 2230,
       image: "alessandromoreno.png",
       bio: "High-rated organizer contributing significantly to club treasuries and finances.",
+      chessComUsername: "alessandromoreno", // Add actual username if available
     },
     {
       name: "Geoffrey Antonio Arifin",
@@ -25,7 +27,6 @@ const Team = () => {
       image: "Geoffrey.png",
       bio: "Geoffrey manages all club documentation, meeting minutes, and communications with members.",
     },
-
     {
       name: "Aristo Ardy Wijaya",
       position: "Event Deputy",
@@ -238,6 +239,7 @@ const Team = () => {
                   rating={organizer.rating}
                   image={organizer.image}
                   bio={organizer.bio}
+                  chessComUsername={organizer.chessComUsername}
                 />
               ))}
             </div>

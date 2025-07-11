@@ -1,5 +1,6 @@
 
 import { cn } from "@/lib/utils";
+import { useChessRating } from "@/hooks/useChessRating";
 
 interface TeamCardProps {
   name: string;
@@ -8,9 +9,14 @@ interface TeamCardProps {
   image: string;
   bio: string;
   className?: string;
+  chessComUsername?: string;
 }
 
-const TeamCard = ({ name, position, rating, image, bio, className }: TeamCardProps) => {
+const TeamCard = ({ name, position, rating, image, bio, className, chessComUsername }: TeamCardProps) => {
+  const { data: liveRating, isLoading } = useChessRating(chessComUsername, rating || 0);
+  
+  const displayRating = liveRating || rating;
+
   return (
     <div className={cn("bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105", className)}>
       <div className="relative h-60 overflow-hidden">
@@ -19,9 +25,18 @@ const TeamCard = ({ name, position, rating, image, bio, className }: TeamCardPro
           alt={name}
           className="w-full h-full object-cover object-center"
         />
-        {rating && (
-          <span className="absolute top-4 right-4 bg-chessBlue text-white py-1 px-3 rounded-full font-medium text-sm">
-            Rating: {rating}
+        {displayRating && (
+          <span className="absolute top-4 right-4 bg-chessBlue text-white py-1 px-3 rounded-full font-medium text-sm flex items-center gap-1">
+            {isLoading ? (
+              <span className="animate-pulse">Loading...</span>
+            ) : (
+              <>
+                Rating: {displayRating}
+                {chessComUsername && !isLoading && (
+                  <span className="text-xs opacity-75">📡</span>
+                )}
+              </>
+            )}
           </span>
         )}
       </div>
@@ -29,6 +44,11 @@ const TeamCard = ({ name, position, rating, image, bio, className }: TeamCardPro
         <h3 className="font-bold text-xl text-chessBlue">{name}</h3>
         <h4 className="text-chessGreen font-medium mb-4">{position}</h4>
         <p className="text-gray-600">{bio}</p>
+        {chessComUsername && (
+          <p className="text-xs text-gray-500 mt-2">
+            Chess.com: @{chessComUsername}
+          </p>
+        )}
       </div>
     </div>
   );
