@@ -18,7 +18,7 @@ const Team = () => {
       rating: 2230,
       image: "alessandromoreno.png",
       bio: "High-rated organizer contributing significantly to club treasuries and finances.",
-      chessComUsername: "alessandromoreno", // Add actual username if available
+      chessComUsername: "AlessandroMoreno96", // Add actual username if available
     },
     {
       name: "Geoffrey Antonio Arifin",
