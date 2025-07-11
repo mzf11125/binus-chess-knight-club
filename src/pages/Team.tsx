@@ -2,6 +2,20 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TeamCard from "@/components/TeamCard";
 
+// TODO:
+/*
+PICTURES:
+Stanley Christian Gunawan
+Fahri Fadhil
+Muhammad Reza Alghifari
+Jordan
+
+CHESSCOM USERNAMES:
+Galvent Chiuwen
+Jordan
+Michaela Zaneta Hwang
+Keven Wilbert Felik
+*/
 const Team = () => {
   const organizers = [
     {
@@ -10,7 +24,6 @@ const Team = () => {
       rating: 2010,
       image: "galvent.png",
       bio: "Galvent founded the BINUS Chess Club and currently serves as its president, leading with passion and strategic vision.",
-      chessComUsername: "notiamgalvent", // Add actual username if available
     },
     {
       name: "Alessandro Moreno Lawadinata",
@@ -18,7 +31,7 @@ const Team = () => {
       rating: 2230,
       image: "alessandromoreno.png",
       bio: "High-rated organizer contributing significantly to club treasuries and finances.",
-      chessComUsername: "AlessandroMoreno96", // Add actual username if available
+      chessComUsername: "AlessandroMoreno96",
     },
     {
       name: "Geoffrey Antonio Arifin",
@@ -26,7 +39,7 @@ const Team = () => {
       rating: 2010,
       image: "Geoffrey.png",
       bio: "Geoffrey manages all club documentation, meeting minutes, and communications with members.",
-      chessComUsername: "Autumnman19",
+      chessComUsername: "AutumnMann19",
     },
     {
       name: "Aristo Ardy Wijaya",
@@ -187,6 +200,7 @@ const Team = () => {
       rating: 400,
       image: "activist/scaled/jeremiah.png",
       bio: "Active participant in club events and community building efforts.",
+      chessComUsername: "Jeremiah-Chang",
     },
     {
       name: "Jordan",
