@@ -33,6 +33,7 @@ const Team = () => {
       rating: 1960,
       image: "aristo.png",
       bio: "Aristo assists in event planning and execution, ensuring smooth operations during club activities.",
+      chessComUsername: "aristo123456",
     },
     {
       name: "Muhammad Zidan Fatonie",
@@ -106,6 +107,7 @@ const Team = () => {
       rating: 1420,
       image: "activist/scaled/sebastian.png",
       bio: "Active member contributing to various club initiatives and events.",
+      chessComUsername: "Bas77z",
     },
     {
       name: "Fahri Fadhil",
@@ -127,6 +129,7 @@ const Team = () => {
       rating: 1270,
       image: "activist/scaled/owen.png",
       bio: "Active participant in club events and community building efforts.",
+      chessComUsername: "Ony0n",
     },
     {
       name: "Nathanael Vitzgerald",
