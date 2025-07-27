@@ -1,7 +1,8 @@
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TeamCard from "@/components/TeamCard";
-import { Trophy, Medal, Award } from "lucide-react";
+import { Trophy, Medal, Award, ChevronDown, ChevronUp } from "lucide-react";
 
 // TODO:
 /*
@@ -18,6 +19,7 @@ Michaela Zaneta Hwang
 Keven Wilbert Felik
 */
 const Team = () => {
+  const [showAllTopMembers, setShowAllTopMembers] = useState(false);
   const organizers = [
     {
       name: "Galvent Chiuwen",
@@ -263,12 +265,12 @@ const Team = () => {
         {/* Hall of Fame Top 10 Section */}
         <section className="py-16 bg-gradient-to-br from-yellow-50 to-amber-50">
           <div className="container mx-auto px-4">
-            <h2 className="section-title text-center">🏆 Top 10 Highest Rated Members</h2>
+            <h2 className="section-title text-center">🏆 Top 5 Highest Rated Members</h2>
             <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
               Our elite chess players with the highest ratings across all club members.
             </p>
             <div className="max-w-2xl mx-auto">
-              {topMembers.map((member, index) => {
+              {topMembers.slice(0, showAllTopMembers ? 10 : 5).map((member, index) => {
                 const getRankIcon = (rank: number) => {
                   if (rank === 1) return <Trophy className="w-6 h-6 text-yellow-500" />;
                   if (rank === 2) return <Medal className="w-6 h-6 text-gray-400" />;
@@ -306,6 +308,24 @@ const Team = () => {
                   </div>
                 );
               })}
+              
+              {/* Expand/Collapse Button */}
+              <div className="text-center mt-6">
+                <button
+                  onClick={() => setShowAllTopMembers(!showAllTopMembers)}
+                  className="flex items-center gap-2 mx-auto text-chessBlue hover:text-chessGreen font-medium transition-colors"
+                >
+                  {showAllTopMembers ? (
+                    <>
+                      Show Less <ChevronUp className="w-4 h-4" />
+                    </>
+                  ) : (
+                    <>
+                      Show More <ChevronDown className="w-4 h-4" />
+                    </>
+                  )}
+                </button>
+              </div>
             </div>
           </div>
         </section>
