@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TeamCard from "@/components/TeamCard";
+import { Trophy, Medal, Award } from "lucide-react";
 
 // TODO:
 /*
@@ -266,24 +267,45 @@ const Team = () => {
             <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
               Our elite chess players with the highest ratings across all club members.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-              {topMembers.map((member, index) => (
-                <div key={index} className="relative">
-                  {/* Ranking Badge */}
-                  <div className="absolute -top-2 -left-2 z-10 w-8 h-8 bg-gradient-to-br from-yellow-400 to-amber-500 text-white rounded-full flex items-center justify-center font-bold text-sm shadow-lg">
-                    {index + 1}
+            <div className="max-w-2xl mx-auto">
+              {topMembers.map((member, index) => {
+                const getRankIcon = (rank: number) => {
+                  if (rank === 1) return <Trophy className="w-6 h-6 text-yellow-500" />;
+                  if (rank === 2) return <Medal className="w-6 h-6 text-gray-400" />;
+                  if (rank === 3) return <Award className="w-6 h-6 text-amber-600" />;
+                  return (
+                    <div className="w-6 h-6 bg-chessBlue text-white rounded-full flex items-center justify-center text-sm font-bold">
+                      {rank}
+                    </div>
+                  );
+                };
+
+                const handleUsernameClick = () => {
+                  if (member.chessComUsername) {
+                    window.open(`https://www.chess.com/member/${member.chessComUsername}`, '_blank');
+                  }
+                };
+
+                return (
+                  <div key={index} className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm mb-3 hover:shadow-md transition-shadow">
+                    {getRankIcon(index + 1)}
+                    <div className="flex-1">
+                      <h3 className="font-bold text-lg text-chessBlue">{member.name}</h3>
+                      <div className="flex items-center gap-4 text-sm">
+                        <span className="text-chessGreen font-medium">Rating: {member.rating}</span>
+                        {member.chessComUsername && (
+                          <button
+                            onClick={handleUsernameClick}
+                            className="text-gray-600 hover:text-chessBlue hover:underline transition-colors"
+                          >
+                            @{member.chessComUsername}
+                          </button>
+                        )}
+                      </div>
+                    </div>
                   </div>
-                  <TeamCard
-                    name={member.name}
-                    position={member.position}
-                    rating={member.rating}
-                    image={member.image}
-                    bio={member.bio}
-                    chessComUsername={member.chessComUsername}
-                    className="h-full"
-                  />
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
