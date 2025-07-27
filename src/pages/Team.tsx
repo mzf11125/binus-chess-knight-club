@@ -24,6 +24,7 @@ const Team = () => {
       rating: 2010,
       image: "galvent.png",
       bio: "Galvent founded the BINUS Chess Club and currently serves as its president, leading with passion and strategic vision.",
+      chessComUsername: "Orangemuffin67"
     },
     {
       name: "Alessandro Moreno Lawadinata",
