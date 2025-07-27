@@ -238,6 +238,10 @@ const Team = () => {
     },
   ];
 
+  // Combine all members and sort by rating for Hall of Fame
+  const allMembers = [...organizers, ...activists].sort((a, b) => b.rating - a.rating);
+  const topMembers = allMembers.slice(0, 10);
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -252,6 +256,35 @@ const Team = () => {
               Meet our top-rated chess players and dedicated club members ranked
               by their chess ratings.
             </p>
+          </div>
+        </section>
+
+        {/* Hall of Fame Top 10 Section */}
+        <section className="py-16 bg-gradient-to-br from-yellow-50 to-amber-50">
+          <div className="container mx-auto px-4">
+            <h2 className="section-title text-center">🏆 Top 10 Highest Rated Members</h2>
+            <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
+              Our elite chess players with the highest ratings across all club members.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+              {topMembers.map((member, index) => (
+                <div key={index} className="relative">
+                  {/* Ranking Badge */}
+                  <div className="absolute -top-2 -left-2 z-10 w-8 h-8 bg-gradient-to-br from-yellow-400 to-amber-500 text-white rounded-full flex items-center justify-center font-bold text-sm shadow-lg">
+                    {index + 1}
+                  </div>
+                  <TeamCard
+                    name={member.name}
+                    position={member.position}
+                    rating={member.rating}
+                    image={member.image}
+                    bio={member.bio}
+                    chessComUsername={member.chessComUsername}
+                    className="h-full"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
