@@ -74,6 +74,11 @@ export default {
 					light: '#2D6C5D',
 					dark: '#0D4C3D'
 				},
+				chessGold: {
+					DEFAULT: '#FFD700',
+					light: '#FFE135',
+					dark: '#E6C200'
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

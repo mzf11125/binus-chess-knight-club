@@ -219,24 +219,11 @@ const Team = () => {
     },
   ];
 
-  const HonorableMention = [
-    {
-      name: "Bakti Amirul Jabar",
-      position: "Club Activist",
-      rating: 2160,
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
-      bio: "Highly skilled activist contributing to club development and member engagement.",
-    },
-    {
-      name: "Bakti Amirul Jabar",
-      position: "Club Activist",
-      rating: 2160,
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
-      bio: "Highly skilled activist contributing to club development and member engagement.",
-    },
-  ];
+  // Get top 10 highest rated members from both organizers and activists
+  const topMembers = [...organizers, ...activists]
+    .filter(member => member.rating && member.rating > 0)
+    .sort((a, b) => (b.rating || 0) - (a.rating || 0))
+    .slice(0, 10);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -303,28 +290,32 @@ const Team = () => {
           </div>
         </section>
 
-        {/* hall of fame Section
-        <section className="py-16">
+        {/* Top Rated Members Section */}
+        <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
-            <h2 className="section-title text-center">Honorable Mention</h2>
+            <h2 className="section-title text-center">🏆 Top 10 Highest Rated Members</h2>
             <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
-              Our dedicated activists who actively participate in club events
-              and contribute to our community.
+              Our highest-rated chess players who represent the pinnacle of skill in our club.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {activists.map((activist, index) => (
-                <TeamCard
-                  key={index}
-                  name={activist.name}
-                  position={activist.position}
-                  rating={activist.rating}
-                  image={activist.image}
-                  bio={activist.bio}
-                />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+              {topMembers.map((member, index) => (
+                <div key={index} className="relative">
+                  <div className="absolute -top-2 -left-2 bg-chessGold text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm z-10">
+                    #{index + 1}
+                  </div>
+                  <TeamCard
+                    name={member.name}
+                    position={member.position}
+                    rating={member.rating}
+                    image={member.image}
+                    bio={member.bio}
+                    chessComUsername={member.chessComUsername}
+                  />
+                </div>
               ))}
             </div>
           </div>
-        </section> */}
+        </section>
 
         {/* Join Section */}
         <section className="py-16 bg-chessGreen text-white">
