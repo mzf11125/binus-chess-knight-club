@@ -85,6 +85,7 @@ const Team = () => {
       rating: 2290,
       image: "activist/scaled/syuja.png",
       bio: "Committed member contributing to various club initiatives and activities.",
+      chessComUsername: "ds0401",
     },
     {
       name: "Hans Kartawinata",
