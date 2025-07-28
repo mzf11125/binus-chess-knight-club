@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useChessRating } from "@/hooks/useChessRating";
+import { useState, useMemo } from "react";
+import { useQueries } from '@tanstack/react-query';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TeamCard from "@/components/TeamCard";
@@ -272,27 +272,10 @@ const Team = () => {
               Our elite chess players with the highest ratings across all club members.
             </p>
             <div className="max-w-2xl mx-auto">
-              {topMembers.slice(0, showAllTopMembers ? 10 : 5).map((member, index) => {
-                const getRankIcon = (rank: number) => {
-                  if (rank === 1) return <Trophy className="w-6 h-6 text-yellow-500" />;
-                  if (rank === 2) return <Medal className="w-6 h-6 text-gray-400" />;
-                  if (rank === 3) return <Award className="w-6 h-6 text-amber-600" />;
-                  return (
-                    <div className="w-6 h-6 bg-chessBlue text-white rounded-full flex items-center justify-center text-sm font-bold">
-                      {rank}
-                    </div>
-                  );
-                };
-
-                return (
-                  <TopRatedMember 
-                    key={index} 
-                    member={member} 
-                    rank={index + 1} 
-                    getRankIcon={getRankIcon}
-                  />
-                );
-              })}
+              <TopRatedMembersList 
+                allMembers={allMembers} 
+                showAll={showAllTopMembers}
+              />
               
               {/* Expand/Collapse Button */}
               <div className="text-center mt-6">
@@ -408,52 +391,115 @@ const Team = () => {
   );
 };
 
-// Component for top-rated member with live Chess.com rating
-const TopRatedMember = ({ member, rank, getRankIcon }: { 
-  member: any; 
-  rank: number; 
-  getRankIcon: (rank: number) => JSX.Element; 
-}) => {
-  const { data: liveRating, isLoading } = useChessRating(member.chessComUsername, member.rating);
-  
-  const displayRating = liveRating || member.rating;
-
-  const handleUsernameClick = () => {
-    if (member.chessComUsername) {
-      window.open(`https://www.chess.com/member/${member.chessComUsername}`, '_blank');
+// Fetch chess.com rating helper function
+const fetchChessComRating = async (username: string): Promise<number | null> => {
+  try {
+    const response = await fetch(`https://api.chess.com/pub/player/${username}/stats`);
+    if (!response.ok) {
+      throw new Error('Player not found');
     }
+    
+    const data = await response.json();
+    
+    // Get all available ratings
+    const ratings = [
+      data.chess_rapid?.last?.rating,
+      data.chess_blitz?.last?.rating,
+      data.chess_bullet?.last?.rating,
+    ].filter((rating): rating is number => rating !== undefined);
+    
+    // Return the highest rating, or null if no ratings found
+    return ratings.length > 0 ? Math.max(...ratings) : null;
+  } catch (error) {
+    console.log(`Failed to fetch rating for ${username}:`, error);
+    return null;
+  }
+};
+
+// Component that handles fetching all ratings and sorting them
+const TopRatedMembersList = ({ allMembers, showAll }: { allMembers: any[]; showAll: boolean }) => {
+  // Fetch ratings for all members with chess.com usernames
+  const ratingQueries = useQueries({
+    queries: allMembers.map((member) => ({
+      queryKey: ['chessRating', member.chessComUsername],
+      queryFn: () => member.chessComUsername ? fetchChessComRating(member.chessComUsername) : Promise.resolve(null),
+      enabled: !!member.chessComUsername,
+      staleTime: 1000 * 60 * 60, // 1 hour
+      retry: 1,
+    }))
+  });
+
+  const sortedMembers = useMemo(() => {
+    // Create members with live ratings
+    const membersWithLiveRatings = allMembers.map((member, index) => {
+      const query = ratingQueries[index];
+      const liveRating = query.data;
+      const isLoading = query.isLoading;
+      
+      return {
+        ...member,
+        liveRating: liveRating || member.rating,
+        isLoadingRating: isLoading,
+        hasLiveData: !!liveRating
+      };
+    });
+
+    // Sort by live rating (descending)
+    return membersWithLiveRatings.sort((a, b) => b.liveRating - a.liveRating);
+  }, [allMembers, ratingQueries]);
+
+  const displayMembers = sortedMembers.slice(0, showAll ? 10 : 5);
+
+  const getRankIcon = (rank: number) => {
+    if (rank === 1) return <Trophy className="w-6 h-6 text-yellow-500" />;
+    if (rank === 2) return <Medal className="w-6 h-6 text-gray-400" />;
+    if (rank === 3) return <Award className="w-6 h-6 text-amber-600" />;
+    return (
+      <div className="w-6 h-6 bg-chessBlue text-white rounded-full flex items-center justify-center text-sm font-bold">
+        {rank}
+      </div>
+    );
+  };
+
+  const handleUsernameClick = (username: string) => {
+    window.open(`https://www.chess.com/member/${username}`, '_blank');
   };
 
   return (
-    <div className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm mb-3 hover:shadow-md transition-shadow">
-      {getRankIcon(rank)}
-      <div className="flex-1">
-        <h3 className="font-bold text-lg text-chessBlue">{member.name}</h3>
-        <div className="flex items-center gap-4 text-sm">
-          <span className="text-chessGreen font-medium">
-            Rating: {isLoading ? (
-              <span className="animate-pulse">Loading...</span>
-            ) : (
-              <>
-                {displayRating}
-                {member.chessComUsername && !isLoading && liveRating && (
-                  <span className="text-xs opacity-75 ml-1">📡</span>
+    <>
+      {displayMembers.map((member, index) => (
+        <div key={`${member.name}-${index}`} className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm mb-3 hover:shadow-md transition-shadow">
+          {getRankIcon(index + 1)}
+          <div className="flex-1">
+            <h3 className="font-bold text-lg text-chessBlue">{member.name}</h3>
+            <div className="flex items-center gap-4 text-sm">
+              <span className="text-chessGreen font-medium">
+                Rating: {member.isLoadingRating ? (
+                  <span className="animate-pulse">Loading...</span>
+                ) : (
+                  <>
+                    {member.liveRating}
+                    {member.chessComUsername && !member.isLoadingRating && member.hasLiveData && (
+                      <span className="text-xs opacity-75 ml-1">📡</span>
+                    )}
+                  </>
                 )}
-              </>
-            )}
-          </span>
-          {member.chessComUsername && (
-            <button
-              onClick={handleUsernameClick}
-              className="text-gray-600 hover:text-chessBlue hover:underline transition-colors"
-            >
-              @{member.chessComUsername}
-            </button>
-          )}
+              </span>
+              {member.chessComUsername && (
+                <button
+                  onClick={() => handleUsernameClick(member.chessComUsername)}
+                  className="text-gray-600 hover:text-chessBlue hover:underline transition-colors"
+                >
+                  @{member.chessComUsername}
+                </button>
+              )}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      ))}
+    </>
   );
 };
 
+// Component for top-rated member with live Chess.com rating
 export default Team;
