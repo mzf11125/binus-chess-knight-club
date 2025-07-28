@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useChessRating } from "@/hooks/useChessRating";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TeamCard from "@/components/TeamCard";
@@ -266,7 +267,7 @@ const Team = () => {
         {/* Hall of Fame Top 10 Section */}
         <section className="py-16 bg-gradient-to-br from-yellow-50 to-amber-50">
           <div className="container mx-auto px-4">
-            <h2 className="section-title text-center">🏆 Top 5 Highest Rated Members</h2>
+            <h2 className="section-title text-center">🏆 Top Highest Rated Members</h2>
             <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
               Our elite chess players with the highest ratings across all club members.
             </p>
@@ -283,30 +284,13 @@ const Team = () => {
                   );
                 };
 
-                const handleUsernameClick = () => {
-                  if (member.chessComUsername) {
-                    window.open(`https://www.chess.com/member/${member.chessComUsername}`, '_blank');
-                  }
-                };
-
                 return (
-                  <div key={index} className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm mb-3 hover:shadow-md transition-shadow">
-                    {getRankIcon(index + 1)}
-                    <div className="flex-1">
-                      <h3 className="font-bold text-lg text-chessBlue">{member.name}</h3>
-                      <div className="flex items-center gap-4 text-sm">
-                        <span className="text-chessGreen font-medium">Rating: {member.rating}</span>
-                        {member.chessComUsername && (
-                          <button
-                            onClick={handleUsernameClick}
-                            className="text-gray-600 hover:text-chessBlue hover:underline transition-colors"
-                          >
-                            @{member.chessComUsername}
-                          </button>
-                        )}
-                      </div>
-                    </div>
-                  </div>
+                  <TopRatedMember 
+                    key={index} 
+                    member={member} 
+                    rank={index + 1} 
+                    getRankIcon={getRankIcon}
+                  />
                 );
               })}
               
@@ -420,6 +404,54 @@ const Team = () => {
         </section>
       </main>
       <Footer />
+    </div>
+  );
+};
+
+// Component for top-rated member with live Chess.com rating
+const TopRatedMember = ({ member, rank, getRankIcon }: { 
+  member: any; 
+  rank: number; 
+  getRankIcon: (rank: number) => JSX.Element; 
+}) => {
+  const { data: liveRating, isLoading } = useChessRating(member.chessComUsername, member.rating);
+  
+  const displayRating = liveRating || member.rating;
+
+  const handleUsernameClick = () => {
+    if (member.chessComUsername) {
+      window.open(`https://www.chess.com/member/${member.chessComUsername}`, '_blank');
+    }
+  };
+
+  return (
+    <div className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm mb-3 hover:shadow-md transition-shadow">
+      {getRankIcon(rank)}
+      <div className="flex-1">
+        <h3 className="font-bold text-lg text-chessBlue">{member.name}</h3>
+        <div className="flex items-center gap-4 text-sm">
+          <span className="text-chessGreen font-medium">
+            Rating: {isLoading ? (
+              <span className="animate-pulse">Loading...</span>
+            ) : (
+              <>
+                {displayRating}
+                {member.chessComUsername && !isLoading && liveRating && (
+                  <span className="text-xs opacity-75 ml-1">📡</span>
+                )}
+              </>
+            )}
+          </span>
+          {member.chessComUsername && (
+            <button
+              onClick={handleUsernameClick}
+              className="text-gray-600 hover:text-chessBlue hover:underline transition-colors"
+            >
+              @{member.chessComUsername}
+            </button>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
