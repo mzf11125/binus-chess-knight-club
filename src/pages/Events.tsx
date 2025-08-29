@@ -6,14 +6,23 @@ import { Button } from "@/components/ui/button";
 
 const Events = () => {
   const upcomingEvents = [
+    // {
+    //   id: "weekly-meeting",
+    //   title: "Blitz Krieg",
+    //   date: "Time: TBA in WhatsApp group",
+    //   location: "BINUS Anggrek Campus, Student Corner 4th floor",
+    //   description:
+    //     "Join us for casual play, puzzles and discussions. All skill levels welcome!",
+    //   image: "events/dailyblitzkrieg.jpeg",
+    // },
     {
-      id: "weekly-meeting",
-      title: "Blitz Krieg",
-      date: "Time: TBA in WhatsApp group",
-      location: "BINUS Anggrek Campus, Student Corner 4th floor",
+      id: "bpjs",
+      title: "BPJS Online Tournament",
+      date: "9-10 September 2025",
+      location: "Online Lichess",
       description:
-        "Join us for casual play, puzzles and discussions. All skill levels welcome!",
-      image: "dailyblitzkrieg.jpeg",
+        "BPJS Cross-University Online Tournament",
+      image: "events/bpjsonline.jpg",
     },
     // {
     //   title: "BINUS Chess Tournament",
@@ -69,7 +78,7 @@ const Events = () => {
       date: "March 13, 2025",
       location: "BINUS Auditorium",
       description: "Our grand launching as official BINUS club.",
-      image: "bcclaunch.jpeg",
+      image: "events/bcclaunch.jpeg",
     },
     // {
     //   title: "Simultaneous Exhibition",
