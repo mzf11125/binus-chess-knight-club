@@ -13,7 +13,14 @@ const Learn = () => {
   const onSquareClick = (square: string) => {
     const clickedPiece = game.get(square as Square);
     
-    // If clicking on a piece of the current player, always select it
+    // If clicking on the same selected square, deselect it
+    if (selectedSquare === square) {
+      setSelectedSquare(null);
+      setLegalMoves([]);
+      return;
+    }
+    
+    // If clicking on a piece of the current player, select it
     if (clickedPiece && clickedPiece.color === game.turn()) {
       setSelectedSquare(square);
       const moves = game.moves({ square: square as Square, verbose: true });
@@ -45,21 +52,8 @@ const Learn = () => {
     }
   };
 
-  const onDrop = ({ sourceSquare, targetSquare }: { sourceSquare: string; targetSquare: string }) => {
-    // Clear selection when dragging
-    setSelectedSquare(null);
-    setLegalMoves([]);
-    
-    const move = game.move({
-      from: sourceSquare as Square,
-      to: targetSquare as Square,
-      promotion: 'q' // Always promote to queen for simplicity
-    });
-
-    if (move) {
-      setPosition(game.fen());
-      return true;
-    }
+  // Disable drag and drop
+  const onDrop = () => {
     return false;
   };
 
@@ -126,6 +120,7 @@ const Learn = () => {
                     onDrop={onDrop}
                     onSquareClick={onSquareClick}
                     squareStyles={getSquareStyles()}
+                    draggable={false}
                     boardStyle={{
                       borderRadius: "8px",
                       boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
@@ -159,9 +154,9 @@ const Learn = () => {
                     <h4 className="font-medium text-card-foreground">How to Play:</h4>
                     <ul className="list-disc list-inside space-y-1">
                       <li>Click on your pieces to select them and see legal moves</li>
+                      <li>Click on the same piece again to deselect it</li>
                       <li>Click on another piece to switch selection</li>
                       <li>Gray dots show available moves, red circles show captures</li>
-                      <li>You can also drag and drop pieces</li>
                     </ul>
                   </div>
                   <div>
