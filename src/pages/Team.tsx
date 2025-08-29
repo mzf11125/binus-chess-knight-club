@@ -8,13 +8,10 @@ import { Trophy, Medal, Award, ChevronDown, ChevronUp } from "lucide-react";
 // TODO:
 /*
 PICTURES:
-Stanley Christian Gunawan
-Fahri Fadhil
 Muhammad Reza Alghifari
 Jordan
 
 CHESSCOM USERNAMES:
-Galvent Chiuwen
 Jordan
 Michaela Zaneta Hwang
 Keven Wilbert Felik
@@ -133,14 +130,14 @@ const Team = () => {
       position: "Club Activist",
       rating: 1420,
       image: "activist/scaled/sebastian.png",
-      bio: "Active member contributing to various club initiatives and events.",
+      bio: "Sebastian helps with web development, along with it's digital presence.",
       chessComUsername: "Bas77z",
     },
     {
       name: "Fahri Fadhil",
       position: "Club Activist",
       rating: 1400,
-      image: "activist/scaled/fahri.png",
+      image: "activist/scaled/fadhil.png",
       bio: "Dedicated activist supporting club development and member engagement.",
       chessComUsername: "Codename_Vangeance",
     },
@@ -166,7 +163,7 @@ const Team = () => {
       rating: 1250,
       image: "activist/scaled/nathanael.png",
       bio: "Committed member supporting various club initiatives and activities.",
-      chessComUsername: "IJN_MuSaNathShi",
+      chessComUsername: "NathXAra",
     },
     {
       name: "Anthony Vriyatama",

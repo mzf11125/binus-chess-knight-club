@@ -19,7 +19,7 @@ const EventDetail = () => {
       location: "BINUS Anggrek Campus, Student Corner 4th floor",
       description:
         "Join us for casual play, puzzles and discussions. All skill levels welcome!",
-      image: "/dailyblitzkrieg.jpeg",
+      image: "/events/dailyblitzkrieg.jpeg",
       type: "upcoming",
       fullDescription:
         "Our Blitz Krieg events are the heart of our chess community. We gather at the Student Corner on the 4th floor of BINUS Anggrek Campus for fast-paced chess action. Whether you're a complete beginner or an experienced player, you'll find a welcoming environment to improve your game through rapid-fire games. Time and date will be announced in our WhatsApp group, so make sure to join us there for updates!",
@@ -30,16 +30,27 @@ const EventDetail = () => {
       date: "March 13, 2025",
       location: "BINUS Auditorium",
       description: "Our grand launching as official BINUS club.",
-      image: "/bcclaunch.jpeg",
+      image: "/events/bcclaunch.jpeg",
       type: "past",
       fullDescription:
         "The grand launching of BINUS Chess Club was a momentous occasion that marked our official recognition as a student organization. The event took place in the main auditorium with over 200 attendees, including faculty members, students, and chess enthusiasts. The ceremony featured opening remarks from university officials, a chess exhibition match, and the unveiling of our club charter. This event established our commitment to promoting chess culture within the BINUS community.",
       gallery: [
-        "/bcclaunch.jpeg",
+        "/events/bcclaunch.jpeg",
         "/together.jpeg",
         "/together2.jpeg",
         "/simul.jpeg"
       ]
+    },
+    {
+      id: "bpjs",
+      title: "BPJS Online Tournament",
+      date: "September 9-10, 2025",
+      location: "Online Lichess",
+      description: "BPJS Cross-University Online Tournament",
+      image: "/events/bpjsonline.jpg",
+      type: "upcoming",
+      fullDescription:
+        "A two-day cross-university chess tournament held online via Lichess. Open to students from different universities to compete and have fun together.",
     },
   ];
 
