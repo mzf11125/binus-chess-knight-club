@@ -11,11 +11,21 @@ const Learn = () => {
   const [legalMoves, setLegalMoves] = useState<string[]>([]);
 
   const onSquareClick = (square: string) => {
+    const clickedPiece = game.get(square as Square);
+    
+    // If clicking on a piece of the current player, always select it
+    if (clickedPiece && clickedPiece.color === game.turn()) {
+      setSelectedSquare(square);
+      const moves = game.moves({ square: square as Square, verbose: true });
+      setLegalMoves(moves.map(move => move.to));
+      return;
+    }
+    
+    // If we have a selected square and clicked on an empty square or opponent piece
     if (selectedSquare) {
-      // Try to make a move
       const move = game.move({
-        from: selectedSquare,
-        to: square,
+        from: selectedSquare as Square,
+        to: square as Square,
         promotion: 'q' // Always promote to queen for simplicity
       });
 
@@ -24,39 +34,30 @@ const Learn = () => {
         setSelectedSquare(null);
         setLegalMoves([]);
       } else {
-        // If move is invalid, select the new square if it has a piece
-        const piece = game.get(square as Square);
-        if (piece && piece.color === game.turn()) {
-          setSelectedSquare(square);
-          const moves = game.moves({ square: square as Square, verbose: true });
-          setLegalMoves(moves.map(move => move.to));
-        } else {
-          setSelectedSquare(null);
-          setLegalMoves([]);
-        }
+        // Invalid move - clear selection
+        setSelectedSquare(null);
+        setLegalMoves([]);
       }
     } else {
-      // Select a square if it has a piece of the current player
-      const piece = game.get(square as Square);
-      if (piece && piece.color === game.turn()) {
-        setSelectedSquare(square);
-        const moves = game.moves({ square: square as Square, verbose: true });
-        setLegalMoves(moves.map(move => move.to));
-      }
+      // No piece selected and clicked on empty square or opponent piece - clear selection
+      setSelectedSquare(null);
+      setLegalMoves([]);
     }
   };
 
   const onDrop = ({ sourceSquare, targetSquare }: { sourceSquare: string; targetSquare: string }) => {
+    // Clear selection when dragging
+    setSelectedSquare(null);
+    setLegalMoves([]);
+    
     const move = game.move({
-      from: sourceSquare,
-      to: targetSquare,
+      from: sourceSquare as Square,
+      to: targetSquare as Square,
       promotion: 'q' // Always promote to queen for simplicity
     });
 
     if (move) {
       setPosition(game.fen());
-      setSelectedSquare(null);
-      setLegalMoves([]);
       return true;
     }
     return false;
@@ -73,19 +74,30 @@ const Learn = () => {
   const getSquareStyles = () => {
     const styles: { [square: string]: any } = {};
     
-    // Highlight selected square
+    // Highlight selected square with yellow
     if (selectedSquare) {
       styles[selectedSquare] = {
-        backgroundColor: 'rgba(255, 255, 0, 0.4)'
+        backgroundColor: 'rgba(255, 255, 0, 0.6)',
+        boxShadow: 'inset 0 0 3px rgba(255, 255, 0, 0.8)'
       };
     }
 
     // Show legal moves with gray circles
     legalMoves.forEach(square => {
-      styles[square] = {
-        background: 'radial-gradient(circle, rgba(0,0,0,.1) 36%, transparent 37%)',
-        borderRadius: '50%'
-      };
+      const piece = game.get(square as Square);
+      if (piece) {
+        // Target square has an opponent piece - show capture indicator
+        styles[square] = {
+          background: 'radial-gradient(circle, rgba(255,0,0,.3) 85%, transparent 85%)',
+          borderRadius: '50%'
+        };
+      } else {
+        // Empty square - show move indicator
+        styles[square] = {
+          background: 'radial-gradient(circle, rgba(0,0,0,.2) 25%, transparent 25%)',
+          borderRadius: '50%'
+        };
+      }
     });
 
     return styles;
@@ -145,7 +157,12 @@ const Learn = () => {
                 <div className="space-y-4 text-sm text-muted-foreground">
                   <div>
                     <h4 className="font-medium text-card-foreground">How to Play:</h4>
-                    <p>Click on a piece to see its legal moves (gray circles), then click on a destination square to move.</p>
+                    <ul className="list-disc list-inside space-y-1">
+                      <li>Click on your pieces to select them and see legal moves</li>
+                      <li>Click on another piece to switch selection</li>
+                      <li>Gray dots show available moves, red circles show captures</li>
+                      <li>You can also drag and drop pieces</li>
+                    </ul>
                   </div>
                   <div>
                     <h4 className="font-medium text-card-foreground">Basic Rules:</h4>
