@@ -44,13 +44,13 @@ const EventDetail = () => {
     {
       id: "bpjs",
       title: "BPJS Online Tournament",
-      date: "September 9-10, 2025",
+      date: "September 9-10, 2025 Pukul 19:00-Selesai",
       location: "Online Lichess",
       description: "BPJS Cross-University Online Tournament",
       image: "/events/bpjsonline.jpg",
       type: "upcoming",
       fullDescription:
-        "Halo #Chesslovers ♟\n\nhttps://www.instagram.com/p/DN45PSAktNd/?igsh=OWlvNG1hMjFzejRw\n\nDi Bulan September 2025 ini, BPJS Kesehatan Chess Club hadir dengan Turnamen Silaturahmi & Kolaborasi Online bareng 12 kampus Top Indonesia yakni UI, UGM, UNAIR, UNDIP, USK, UM, BINUS, UNEJ, UNDIKSHA, UNESA, UPI, & POLBAN 🇲🇨\n\nCatat Waktu & Tglnya:\n📅 Selasa–Rabu, 9–10 September 2025\n🕖 Pukul 19.00 WIB – selesai\n📍 Platform: lichess.org\n\nYuk selain biasakan Berpikir Sebelum Bertindak, mari kita bawa dan tunjukkan semangat INISIATIF kita pada kompetisi kali ini dengan:\n1. Selalu main sportif dengan Integritas\n2. Kompak bareng lewat Kolaborasi\n3. Sajikan pengalaman kece dengan Pelayanan Prima dan Responsifitas\n4. Konsep Full kreatif & Inovatif",
+        "Di Bulan September 2025 ini, BPJS Kesehatan Chess Club hadir dengan Turnamen Silaturahmi & Kolaborasi Online bareng 12 kampus Top Indonesia yakni UI, UGM, UNAIR, UNDIP, USK, UM, BINUS, UNEJ, UNDIKSHA, UNESA, UPI, & POLBAN",
       registrationLink: "https://forms.office.com/r/G38YWnQzHV",
     },
   ];
