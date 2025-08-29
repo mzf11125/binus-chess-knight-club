@@ -2,17 +2,93 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useState } from "react";
 import Chessboard from "chessboardjsx";
+import { Chess, Square } from "chess.js";
 
 const Learn = () => {
-  const [position, setPosition] = useState("start");
+  const [game, setGame] = useState(new Chess());
+  const [position, setPosition] = useState(game.fen());
+  const [selectedSquare, setSelectedSquare] = useState<string | null>(null);
+  const [legalMoves, setLegalMoves] = useState<string[]>([]);
+
+  const onSquareClick = (square: string) => {
+    if (selectedSquare) {
+      // Try to make a move
+      const move = game.move({
+        from: selectedSquare,
+        to: square,
+        promotion: 'q' // Always promote to queen for simplicity
+      });
+
+      if (move) {
+        setPosition(game.fen());
+        setSelectedSquare(null);
+        setLegalMoves([]);
+      } else {
+        // If move is invalid, select the new square if it has a piece
+        const piece = game.get(square as Square);
+        if (piece && piece.color === game.turn()) {
+          setSelectedSquare(square);
+          const moves = game.moves({ square: square as Square, verbose: true });
+          setLegalMoves(moves.map(move => move.to));
+        } else {
+          setSelectedSquare(null);
+          setLegalMoves([]);
+        }
+      }
+    } else {
+      // Select a square if it has a piece of the current player
+      const piece = game.get(square as Square);
+      if (piece && piece.color === game.turn()) {
+        setSelectedSquare(square);
+        const moves = game.moves({ square: square as Square, verbose: true });
+        setLegalMoves(moves.map(move => move.to));
+      }
+    }
+  };
 
   const onDrop = ({ sourceSquare, targetSquare }: { sourceSquare: string; targetSquare: string }) => {
-    // Basic move validation could be added here
-    return true;
+    const move = game.move({
+      from: sourceSquare,
+      to: targetSquare,
+      promotion: 'q' // Always promote to queen for simplicity
+    });
+
+    if (move) {
+      setPosition(game.fen());
+      setSelectedSquare(null);
+      setLegalMoves([]);
+      return true;
+    }
+    return false;
   };
 
   const resetBoard = () => {
-    setPosition("start");
+    const newGame = new Chess();
+    setGame(newGame);
+    setPosition(newGame.fen());
+    setSelectedSquare(null);
+    setLegalMoves([]);
+  };
+
+  const getSquareStyles = () => {
+    const styles: { [square: string]: any } = {};
+    
+    // Highlight selected square
+    if (selectedSquare) {
+      styles[selectedSquare] = {
+        backgroundColor: 'rgba(255, 255, 0, 0.4)'
+      };
+    }
+
+    // Show legal moves with gray circles
+    legalMoves.forEach(square => {
+      styles[square] = {
+        background: 'radial-gradient(circle, rgba(0,0,0,.1) 36%, transparent 37%)',
+        borderRadius: '50%'
+      };
+    });
+
+    return styles;
   };
 
   return (
@@ -36,22 +112,29 @@ const Learn = () => {
                   <Chessboard
                     position={position}
                     onDrop={onDrop}
+                    onSquareClick={onSquareClick}
+                    squareStyles={getSquareStyles()}
                     boardStyle={{
                       borderRadius: "8px",
                       boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
                     }}
-                    squareStyles={{}}
                     lightSquareStyle={{ backgroundColor: "#f0d9b5" }}
                     darkSquareStyle={{ backgroundColor: "#b58863" }}
                   />
                 </div>
-                <div className="mt-4 text-center">
+                <div className="mt-4 text-center space-x-4">
                   <button
                     onClick={resetBoard}
                     className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
                   >
                     Reset Board
                   </button>
+                  <div className="mt-2 text-sm text-muted-foreground">
+                    Current turn: {game.turn() === 'w' ? 'White' : 'Black'}
+                    {game.isCheck() && <span className="text-red-500 ml-2">Check!</span>}
+                    {game.isCheckmate() && <span className="text-red-500 ml-2">Checkmate!</span>}
+                    {game.isDraw() && <span className="text-yellow-500 ml-2">Draw!</span>}
+                  </div>
                 </div>
               </div>
             </div>
@@ -61,8 +144,8 @@ const Learn = () => {
                 <h3 className="text-xl font-semibold mb-4 text-card-foreground">Chess Basics</h3>
                 <div className="space-y-4 text-sm text-muted-foreground">
                   <div>
-                    <h4 className="font-medium text-card-foreground">How to Move Pieces:</h4>
-                    <p>Click and drag pieces to move them on the board.</p>
+                    <h4 className="font-medium text-card-foreground">How to Play:</h4>
+                    <p>Click on a piece to see its legal moves (gray circles), then click on a destination square to move.</p>
                   </div>
                   <div>
                     <h4 className="font-medium text-card-foreground">Basic Rules:</h4>
