@@ -50,7 +50,8 @@ const EventDetail = () => {
       image: "/events/bpjsonline.jpg",
       type: "upcoming",
       fullDescription:
-        "A two-day cross-university chess tournament held online via Lichess. Open to students from different universities to compete and have fun together.",
+        "Halo #Chesslovers ♟\n\nhttps://www.instagram.com/p/DN45PSAktNd/?igsh=OWlvNG1hMjFzejRw\n\nDi Bulan September 2025 ini, BPJS Kesehatan Chess Club hadir dengan Turnamen Silaturahmi & Kolaborasi Online bareng 12 kampus Top Indonesia yakni UI, UGM, UNAIR, UNDIP, USK, UM, BINUS, UNEJ, UNDIKSHA, UNESA, UPI, & POLBAN 🇲🇨\n\nCatat Waktu & Tglnya:\n📅 Selasa–Rabu, 9–10 September 2025\n🕖 Pukul 19.00 WIB – selesai\n📍 Platform: lichess.org\n\nYuk selain biasakan Berpikir Sebelum Bertindak, mari kita bawa dan tunjukkan semangat INISIATIF kita pada kompetisi kali ini dengan:\n1. Selalu main sportif dengan Integritas\n2. Kompak bareng lewat Kolaborasi\n3. Sajikan pengalaman kece dengan Pelayanan Prima dan Responsifitas\n4. Konsep Full kreatif & Inovatif",
+      registrationLink: "https://forms.office.com/r/G38YWnQzHV",
     },
   ];
 
@@ -147,9 +148,17 @@ const EventDetail = () => {
 
                 {event.type === "upcoming" && (
                   <div className="space-y-4">
-                    <Button className="w-full bg-chessBlue hover:bg-chessBlue-light">
-                      Register for Event
-                    </Button>
+                    {event.registrationLink ? (
+                      <Button asChild className="w-full bg-chessBlue hover:bg-chessBlue-light">
+                        <a href={event.registrationLink} target="_blank" rel="noopener noreferrer">
+                          Register Now
+                        </a>
+                      </Button>
+                    ) : (
+                      <Button className="w-full bg-chessBlue hover:bg-chessBlue-light">
+                        Register for Event
+                      </Button>
+                    )}
                     <Button asChild variant="outline" className="w-full">
                       <a href="/contact">Contact for More Info</a>
                     </Button>
