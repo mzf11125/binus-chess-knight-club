@@ -3,6 +3,7 @@ import { useQueries } from '@tanstack/react-query';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TeamCard from "@/components/TeamCard";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Trophy, Medal, Award, ChevronDown, ChevronUp } from "lucide-react";
 
 // TODO:
@@ -219,6 +220,30 @@ const Team = () => {
       image: "activist/scaled/michaela.png",
       bio: "Michaela assists in event planning and execution, ensuring smooth operations during club activities.",
     },
+    {
+      name: "Joel Suwanto",
+      position: "Club Member",
+      rating: 1800,
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+      bio: "Dedicated club member contributing to various chess activities and tournaments.",
+      chessComUsername: "TheUnderDog001",
+    },
+    {
+      name: "Ray Mclung Gunawan",
+      position: "Club Member", 
+      rating: 1600,
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+      bio: "Active chess player and club member participating in various events and competitions.",
+      chessComUsername: "Patrickskakk",
+    },
+    {
+      name: "Christopher Vincentius Kurniawan",
+      position: "Club Member",
+      rating: 1500,
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80", 
+      bio: "Enthusiastic chess player and club member supporting community activities.",
+      chessComUsername: "LVCW",
+    },
   ];
 
   const HonorableMention = [
@@ -264,34 +289,71 @@ const Team = () => {
         {/* Hall of Fame Top 10 Section */}
         <section className="py-16 bg-gradient-to-br from-yellow-50 to-amber-50">
           <div className="container mx-auto px-4">
-            <h2 className="section-title text-center">🏆 Top Highest Rated Members</h2>
+            <h2 className="section-title text-center">🏆 Hall of Fame</h2>
             <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
               Our elite chess players with the highest ratings across all club members.
             </p>
-            <div className="max-w-2xl mx-auto">
-              <TopRatedMembersList 
-                allMembers={allMembers} 
-                showAll={showAllTopMembers}
-              />
+            
+            <Tabs defaultValue="members" className="max-w-4xl mx-auto">
+              <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-8">
+                <TabsTrigger value="members">Members</TabsTrigger>
+                <TabsTrigger value="activists">Activists</TabsTrigger>
+              </TabsList>
               
-              {/* Expand/Collapse Button */}
-              <div className="text-center mt-6">
-                <button
-                  onClick={() => setShowAllTopMembers(!showAllTopMembers)}
-                  className="flex items-center gap-2 mx-auto text-chessBlue hover:text-chessGreen font-medium transition-colors"
-                >
-                  {showAllTopMembers ? (
-                    <>
-                      Show Less <ChevronUp className="w-4 h-4" />
-                    </>
-                  ) : (
-                    <>
-                      Show More <ChevronDown className="w-4 h-4" />
-                    </>
-                  )}
-                </button>
-              </div>
-            </div>
+              <TabsContent value="members" className="space-y-6">
+                <div className="max-w-2xl mx-auto">
+                  <TopRatedMembersList 
+                    allMembers={allMembers} 
+                    showAll={showAllTopMembers}
+                  />
+                  
+                  {/* Expand/Collapse Button */}
+                  <div className="text-center mt-6">
+                    <button
+                      onClick={() => setShowAllTopMembers(!showAllTopMembers)}
+                      className="flex items-center gap-2 mx-auto text-chessBlue hover:text-chessGreen font-medium transition-colors"
+                    >
+                      {showAllTopMembers ? (
+                        <>
+                          Show Less <ChevronUp className="w-4 h-4" />
+                        </>
+                      ) : (
+                        <>
+                          Show More <ChevronDown className="w-4 h-4" />
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </div>
+              </TabsContent>
+              
+              <TabsContent value="activists" className="space-y-6">
+                <div className="max-w-2xl mx-auto">
+                  <TopRatedMembersList 
+                    allMembers={activists} 
+                    showAll={showAllTopMembers}
+                  />
+                  
+                  {/* Expand/Collapse Button */}
+                  <div className="text-center mt-6">
+                    <button
+                      onClick={() => setShowAllTopMembers(!showAllTopMembers)}
+                      className="flex items-center gap-2 mx-auto text-chessBlue hover:text-chessGreen font-medium transition-colors"
+                    >
+                      {showAllTopMembers ? (
+                        <>
+                          Show Less <ChevronUp className="w-4 h-4" />
+                        </>
+                      ) : (
+                        <>
+                          Show More <ChevronDown className="w-4 h-4" />
+                        </>
+                      )}
+                    </button>
+                  </div>
+                </div>
+              </TabsContent>
+            </Tabs>
           </div>
         </section>
 
