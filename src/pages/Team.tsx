@@ -220,6 +220,9 @@ const Team = () => {
       image: "activist/scaled/michaela.png",
       bio: "Michaela assists in event planning and execution, ensuring smooth operations during club activities.",
     },
+  ];
+
+  const members = [
     {
       name: "Joel Suwanto",
       position: "Club Member",
@@ -266,7 +269,7 @@ const Team = () => {
   ];
 
   // Combine all members and sort by rating for Hall of Fame
-  const allMembers = [...organizers, ...activists].sort((a, b) => b.rating - a.rating);
+  const allMembers = [...organizers, ...activists, ...members].sort((a, b) => b.rating - a.rating);
   const topMembers = allMembers.slice(0, 10);
 
   return (
