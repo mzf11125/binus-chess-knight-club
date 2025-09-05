@@ -247,6 +247,38 @@ const Team = () => {
       bio: "Enthusiastic chess player and club member supporting community activities.",
       chessComUsername: "LVCW",
     },
+    {
+      name: "Dhatuyo Budiarto",
+      position: "Club Member",
+      rating: 1400,
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+      bio: "Active chess player and club member participating in club events.",
+      chessComUsername: "dhammiko",
+    },
+    {
+      name: "Clement Lewi Limuel",
+      position: "Club Member",
+      rating: 1300,
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+      bio: "Enthusiastic chess player contributing to club community.",
+      chessComUsername: "WataHata",
+    },
+    {
+      name: "Vincent Oei",
+      position: "Club Member",
+      rating: 1200,
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+      bio: "Dedicated club member supporting chess activities and growth.",
+      chessComUsername: "Yungfu",
+    },
+    {
+      name: "Harry Santosa",
+      position: "Club Member",
+      rating: 1100,
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
+      bio: "Active member participating in club events and tournaments.",
+      chessComUsername: "Hello1nicetomeetyou",
+    },
   ];
 
   const HonorableMention = [
