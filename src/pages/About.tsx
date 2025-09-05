@@ -148,59 +148,75 @@ const About = () => {
         {/* Achievements Section */}
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto">
-              {/* <h2 className="section-title text-center mb-8">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="section-title text-center mb-12">
                 Our Achievements
-              </h2> */}
-              {/* <div className="space-y-6">
-                <div className="flex flex-col md:flex-row md:items-center bg-white p-6 rounded-lg shadow-md">
-                  <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-6">
-                    <div className="w-16 h-16 bg-chessBlue text-white rounded-full flex items-center justify-center font-bold text-xl">
-                      2024
-                    </div>
+              </h2>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* First Achievement Group */}
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <div className="mb-6">
+                    <AspectRatio ratio={16 / 9}>
+                      <img
+                        src="https://images.unsplash.com/photo-1588865198786-9ad7bb833969?w=400&auto=format&fit=crop&q=80"
+                        alt="BINUS Chess Club members with medals"
+                        className="w-full h-full object-cover rounded-lg"
+                      />
+                    </AspectRatio>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-xl text-chessBlue mb-2">
-                      ITB Rapid Chess Championship
-                    </h3>
-                    <p className="text-gray-700">
-                      Participate and ranked in the top 20 out of 30 teams
-                    </p>
+                  <div className="space-y-4">
+                    <div className="flex items-center">
+                      <div className="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-sm mr-3">
+                        2
+                      </div>
+                      <h3 className="font-semibold text-lg text-chessBlue">
+                        Juara 2 Catur Cepat Beregu Putra
+                      </h3>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-8 h-8 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-sm mr-3">
+                        3
+                      </div>
+                      <h3 className="font-semibold text-lg text-chessGreen">
+                        Juara 3 Catur Standar Beregu Putra
+                      </h3>
+                    </div>
+                    <div className="flex items-center">
+                      <div className="w-8 h-8 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-sm mr-3">
+                        3
+                      </div>
+                      <h3 className="font-semibold text-lg text-chessBlue">
+                        Juara 3 Catur Kilat Beregu Putra
+                      </h3>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex flex-col md:flex-row md:items-center bg-white p-6 rounded-lg shadow-md">
-                  <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-6">
-                    <div className="w-16 h-16 bg-chessGreen text-white rounded-full flex items-center justify-center font-bold text-xl">
-                      2023
+                {/* Second Achievement */}
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <div className="mb-6">
+                    <AspectRatio ratio={16 / 9}>
+                      <img
+                        src="https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?w=400&auto=format&fit=crop&q=80"
+                        alt="Trophy from Piala Proklamator Rengasdengklok"
+                        className="w-full h-full object-cover rounded-lg"
+                      />
+                    </AspectRatio>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-sm mr-3">
+                      2
                     </div>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-xl text-chessGreen mb-2">
-                      Indonesian Collegiate Chess Open
+                    <h3 className="font-semibold text-lg text-chessGreen">
+                      Juara 2 Piala Proklamator Rengasdengklok
                     </h3>
-                    <p className="text-gray-700">
-                      Second place in team category and best female player award
-                    </p>
                   </div>
+                  <p className="text-gray-600 mt-4">
+                    Prestigious achievement representing BINUS Chess Club in this regional competition.
+                  </p>
                 </div>
-
-                <div className="flex flex-col md:flex-row md:items-center bg-white p-6 rounded-lg shadow-md">
-                  <div className="flex-shrink-0 mb-4 md:mb-0 md:mr-6">
-                    <div className="w-16 h-16 bg-chessBlue text-white rounded-full flex items-center justify-center font-bold text-xl">
-                      2022
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-xl text-chessBlue mb-2">
-                      ASEAN University Games
-                    </h3>
-                    <p className="text-gray-700">
-                      Bronze medal in mixed team rapid chess
-                    </p>
-                  </div>
-                </div>
-              </div> */}
+              </div>
             </div>
           </div>
         </section>
