@@ -159,7 +159,7 @@ const About = () => {
                   <div className="mb-6">
                     <AspectRatio ratio={16 / 9}>
                       <img
-                        src="https://images.unsplash.com/photo-1588865198786-9ad7bb833969?w=400&auto=format&fit=crop&q=80"
+                        src="/lovable-uploads/c5d0a761-dc86-4d2d-969f-68c90c4946d1.png"
                         alt="BINUS Chess Club members with medals"
                         className="w-full h-full object-cover rounded-lg"
                       />
@@ -198,7 +198,7 @@ const About = () => {
                   <div className="mb-6">
                     <AspectRatio ratio={16 / 9}>
                       <img
-                        src="https://images.unsplash.com/photo-1579952363873-27d3bfad9c0d?w=400&auto=format&fit=crop&q=80"
+                        src="/lovable-uploads/7a491fbf-9589-4734-b24d-7815b5a974cf.png"
                         alt="Trophy from Piala Proklamator Rengasdengklok"
                         className="w-full h-full object-cover rounded-lg"
                       />
@@ -212,9 +212,6 @@ const About = () => {
                       Juara 2 Piala Proklamator Rengasdengklok
                     </h3>
                   </div>
-                  <p className="text-gray-600 mt-4">
-                    Prestigious achievement representing BINUS Chess Club in this regional competition.
-                  </p>
                 </div>
               </div>
             </div>
