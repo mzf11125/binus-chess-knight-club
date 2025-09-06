@@ -486,7 +486,7 @@ const Team = () => {
 };
 
 // Fetch chess.com rating helper function
-const fetchChessComRating = async (username: string): Promise<{current: number | null, peak: number | null} | null> => {
+const fetchChessComRating = async (username: string): Promise<number | null> => {
   try {
     const response = await fetch(`https://api.chess.com/pub/player/${username}/stats`);
     if (!response.ok) {
@@ -496,24 +496,14 @@ const fetchChessComRating = async (username: string): Promise<{current: number |
     const data = await response.json();
     
     // Get all available current ratings
-    const currentRatings = [
+    const ratings = [
       data.chess_rapid?.last?.rating,
       data.chess_blitz?.last?.rating,
       data.chess_bullet?.last?.rating,
     ].filter((rating): rating is number => rating !== undefined);
     
-    // Get all available peak ratings
-    const peakRatings = [
-      data.chess_rapid?.best?.rating,
-      data.chess_blitz?.best?.rating,
-      data.chess_bullet?.best?.rating,
-    ].filter((rating): rating is number => rating !== undefined);
-    
-    // Return the highest ratings for both current and peak
-    return {
-      current: currentRatings.length > 0 ? Math.max(...currentRatings) : null,
-      peak: peakRatings.length > 0 ? Math.max(...peakRatings) : null
-    };
+    // Return the highest current rating, or null if no ratings found
+    return ratings.length > 0 ? Math.max(...ratings) : null;
   } catch (error) {
     console.log(`Failed to fetch rating for ${username}:`, error);
     return null;
@@ -537,30 +527,19 @@ const TopRatedMembersList = ({ allMembers, showAll }: { allMembers: any[]; showA
     // Create members with live ratings
     const membersWithLiveRatings = allMembers.map((member, index) => {
       const query = ratingQueries[index];
-      const ratingData = query.data;
+      const currentRating = query.data;
       const isLoading = query.isLoading;
-      
-      // Debug logging
-      console.log('Rating data for', member.name, ':', ratingData);
-      
-      // Ensure we extract proper numbers from the rating data
-      const currentRating = (ratingData && typeof ratingData === 'object' && ratingData.current) 
-        ? ratingData.current 
-        : member.rating;
-      const peakRating = (ratingData && typeof ratingData === 'object' && ratingData.peak) 
-        ? ratingData.peak 
-        : member.rating;
       
       return {
         ...member,
-        currentRating: Number(currentRating),
-        peakRating: Number(peakRating),
+        currentRating: currentRating || member.rating,
+        peakRating: member.rating, // Use static rating as peak
         isLoadingRating: isLoading,
-        hasLiveData: !!(ratingData && typeof ratingData === 'object' && (ratingData.peak || ratingData.current))
+        hasLiveData: !!currentRating
       };
     });
 
-    // Sort by peak rating (descending)
+    // Sort by static peak rating (descending) - which is member.rating
     return membersWithLiveRatings.sort((a, b) => b.peakRating - a.peakRating);
   }, [allMembers, ratingQueries]);
 
@@ -594,9 +573,9 @@ const TopRatedMembersList = ({ allMembers, showAll }: { allMembers: any[]; showA
                   <span className="animate-pulse">Loading...</span>
                 ) : (
                   <>
-                    <span className="font-semibold">Peak: {typeof member.peakRating === 'number' ? member.peakRating : member.rating}</span>
+                    <span className="font-semibold">Peak: {member.peakRating}</span>
                     {member.currentRating && member.currentRating !== member.peakRating && (
-                      <span className="text-gray-600 ml-2">Current: {typeof member.currentRating === 'number' ? member.currentRating : member.rating}</span>
+                      <span className="text-gray-600 ml-2">Current: {member.currentRating}</span>
                     )}
                     {member.chessComUsername && !member.isLoadingRating && member.hasLiveData && (
                       <span className="text-xs opacity-75 ml-1">📡</span>
