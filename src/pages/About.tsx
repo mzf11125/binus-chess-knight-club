@@ -146,77 +146,79 @@ const About = () => {
         </section>
 
         {/* Achievements Section */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="section-title text-center mb-12">
-                Our Achievements
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* First Achievement Group */}
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <div className="mb-6">
-                    <AspectRatio ratio={4 / 3}>
-                      <img
-                        src="/lovable-uploads/c5d0a761-dc86-4d2d-969f-68c90c4946d1.png"
-                        alt="BINUS Chess Club members with medals"
-                        className="w-full h-full object-cover rounded-lg"
-                      />
-                    </AspectRatio>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex items-center">
-                      <div className="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-sm mr-3">
-                        2
-                      </div>
-                      <h3 className="font-semibold text-lg text-chessBlue">
-                        Juara 2 Catur Cepat Beregu Putra
-                      </h3>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-8 h-8 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-sm mr-3">
-                        3
-                      </div>
-                      <h3 className="font-semibold text-lg text-chessGreen">
-                        Juara 3 Catur Standar Beregu Putra
-                      </h3>
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-8 h-8 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-sm mr-3">
-                        3
-                      </div>
-                      <h3 className="font-semibold text-lg text-chessBlue">
-                        Juara 3 Catur Kilat Beregu Putra
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Second Achievement */}
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <div className="mb-6">
-                    <AspectRatio ratio={4 / 3}>
-                      <img
-                        src="/lovable-uploads/7a491fbf-9589-4734-b24d-7815b5a974cf.png"
-                        alt="Trophy from Piala Proklamator Rengasdengklok"
-                        className="w-full h-full object-cover rounded-lg"
-                      />
-                    </AspectRatio>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-sm mr-3">
-                      2
-                    </div>
-                    <h3 className="font-semibold text-lg text-chessGreen">
-                      Juara 2 Piala Proklamator Rengasdengklok
-                    </h3>
-                  </div>
-                </div>
-              </div>
-            </div>
+<section className="py-16 bg-gray-50">
+  <div className="container mx-auto px-4">
+    <div className="max-w-4xl mx-auto">
+      <h2 className="section-title text-center mb-12">Our Achievements</h2>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* First Achievement Group */}
+        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+          <h3 className="font-semibold text-xl text-chessBlue mb-4 text-center">
+            POMPROV DKI Jakarta
+          </h3>
+          <div className="h-48 mb-6 overflow-hidden rounded-lg">
+            <img
+              src="/lovable-uploads/c5d0a761-dc86-4d2d-969f-68c90c4946d1.png"
+              alt="BINUS Chess Club members with medals"
+              className="w-full h-full object-contain"
+            />
           </div>
-        </section>
+          <ul className="space-y-3">
+            <li className="flex items-center">
+              <div className="w-6 h-6 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-sm mr-3">
+                2
+              </div>
+              <span className="text-lg text-chessBlue">
+                Juara 2 Catur Cepat Beregu Putra
+              </span>
+            </li>
+            <li className="flex items-center">
+              <div className="w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-sm mr-3">
+                3
+              </div>
+              <span className="text-lg text-chessGreen">
+                Juara 3 Catur Standar Beregu Putra
+              </span>
+            </li>
+            <li className="flex items-center">
+              <div className="w-6 h-6 bg-amber-600 text-white rounded-full flex items-center justify-center font-bold text-sm mr-3">
+                3
+              </div>
+              <span className="text-lg text-chessBlue">
+                Juara 3 Catur Kilat Beregu Putra
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        {/* Second Achievement */}
+        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+          <h3 className="font-semibold text-xl text-chessGreen mb-4 text-center">
+            Piala Proklamator Rengasdengklok
+          </h3>
+          <div className="h-48 mb-6 overflow-hidden rounded-lg">
+            <img
+              src="/lovable-uploads/7a491fbf-9589-4734-b24d-7815b5a974cf.png"
+              alt="Trophy from Piala Proklamator Rengasdengklok"
+              className="w-full h-full object-contain"
+            />
+          </div>
+          <ul className="space-y-3">
+            <li className="flex items-center">
+              <div className="w-6 h-6 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-sm mr-3">
+                2
+              </div>
+              <span className="text-lg text-chessGreen">
+                Juara 2 Piala Proklamator Rengasdengklok
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* CTA Section */}
         <section className="py-16 bg-chessBlue text-white">

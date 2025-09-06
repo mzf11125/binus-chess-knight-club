@@ -41,7 +41,7 @@ const Contact = () => {
         `Message:\n${formData.message}`
     );
 
-    const mailtoUrl = `mailto:binuschessclub@gmail.com?subject=${subject}&body=${body}`;
+    const mailtoUrl = `mailto:binuschess.club@binus.ac.id?subject=${subject}&body=${body}`;
 
     // Open default email client
     window.location.href = mailtoUrl;
@@ -199,7 +199,7 @@ const Contact = () => {
                     <Mail className="text-chessGreen mr-4 mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="font-medium text-lg">Email</h3>
-                      <p className="text-gray-600">binuschessclub@gmail.com</p>
+                      <p className="text-gray-600">binuschess.club@binus.ac.id</p>
                     </div>
                   </div>
 
