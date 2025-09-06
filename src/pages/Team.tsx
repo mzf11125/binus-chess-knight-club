@@ -23,7 +23,7 @@ const Team = () => {
     {
       name: "Galvent Chiuwen",
       position: "President & Founder",
-      rating: 2046,
+      rating: 2010,
       image: "galvent.png",
       bio: "Galvent founded the BINUS Chess Club and currently serves as its president, leading with passion and strategic vision.",
       chessComUsername: "Orangemuffin67"
@@ -31,7 +31,7 @@ const Team = () => {
     {
       name: "Alessandro Moreno Lawadinata",
       position: "Treasurer",
-      rating: 2263,
+      rating: 2230,
       image: "alessandromoreno.png",
       bio: "High-rated organizer contributing significantly to club treasuries and finances.",
       chessComUsername: "AlessandroMoreno96",
@@ -39,7 +39,7 @@ const Team = () => {
     {
       name: "Geoffrey Antonio Arifin",
       position: "Secretary",
-      rating: 2005,
+      rating: 2010,
       image: "Geoffrey.png",
       bio: "Geoffrey manages all club documentation, meeting minutes, and communications with members.",
       chessComUsername: "AutumnMann19",
@@ -47,7 +47,7 @@ const Team = () => {
     {
       name: "Aristo Ardy Wijaya",
       position: "Event Deputy",
-      rating: 1964,
+      rating: 1960,
       image: "aristo.png",
       bio: "Aristo assists in event planning and execution, ensuring smooth operations during club activities.",
       chessComUsername: "aristo123456",
@@ -226,7 +226,7 @@ const Team = () => {
     {
       name: "Joel Suwanto",
       position: "Club Member",
-      rating: 2929,
+      rating: 1800,
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
       bio: "Dedicated club member contributing to various chess activities and tournaments.",
       chessComUsername: "TheUnderDog001",
@@ -234,7 +234,7 @@ const Team = () => {
     {
       name: "Ray Mclung Gunawan",
       position: "Club Member", 
-      rating: 2792,
+      rating: 1600,
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
       bio: "Active chess player and club member participating in various events and competitions.",
       chessComUsername: "Patrickskakk",
@@ -242,7 +242,7 @@ const Team = () => {
     {
       name: "Christopher Vincentius Kurniawan",
       position: "Club Member",
-      rating: 2258,
+      rating: 1500,
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80", 
       bio: "Enthusiastic chess player and club member supporting community activities.",
       chessComUsername: "LVCW",
@@ -258,7 +258,7 @@ const Team = () => {
     {
       name: "Clement Lewi Limuel",
       position: "Club Member",
-      rating: 2200,
+      rating: 1300,
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
       bio: "Enthusiastic chess player contributing to club community.",
       chessComUsername: "WataHata",
@@ -266,7 +266,7 @@ const Team = () => {
     {
       name: "Vincent Oei",
       position: "Club Member",
-      rating: 2116,
+      rating: 1200,
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
       bio: "Dedicated club member supporting chess activities and growth.",
       chessComUsername: "Yungfu",
@@ -274,7 +274,7 @@ const Team = () => {
     {
       name: "Harry Santosa",
       position: "Club Member",
-      rating: 1760,
+      rating: 1100,
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
       bio: "Active member participating in club events and tournaments.",
       chessComUsername: "Hello1nicetomeetyou",
@@ -495,14 +495,14 @@ const fetchChessComRating = async (username: string): Promise<number | null> => 
     
     const data = await response.json();
     
-    // Get all available current ratings
+    // Get all available ratings
     const ratings = [
       data.chess_rapid?.last?.rating,
       data.chess_blitz?.last?.rating,
       data.chess_bullet?.last?.rating,
     ].filter((rating): rating is number => rating !== undefined);
     
-    // Return the highest current rating, or null if no ratings found
+    // Return the highest rating, or null if no ratings found
     return ratings.length > 0 ? Math.max(...ratings) : null;
   } catch (error) {
     console.log(`Failed to fetch rating for ${username}:`, error);
@@ -527,20 +527,19 @@ const TopRatedMembersList = ({ allMembers, showAll }: { allMembers: any[]; showA
     // Create members with live ratings
     const membersWithLiveRatings = allMembers.map((member, index) => {
       const query = ratingQueries[index];
-      const currentRating = query.data;
+      const liveRating = query.data;
       const isLoading = query.isLoading;
       
       return {
         ...member,
-        currentRating: currentRating || member.rating,
-        peakRating: member.rating, // Use static rating as peak
+        liveRating: liveRating || member.rating,
         isLoadingRating: isLoading,
-        hasLiveData: !!currentRating
+        hasLiveData: !!liveRating
       };
     });
 
-    // Sort by static peak rating (descending) - which is member.rating
-    return membersWithLiveRatings.sort((a, b) => b.peakRating - a.peakRating);
+    // Sort by live rating (descending)
+    return membersWithLiveRatings.sort((a, b) => b.liveRating - a.liveRating);
   }, [allMembers, ratingQueries]);
 
   const displayMembers = sortedMembers.slice(0, showAll ? 10 : 5);
@@ -569,14 +568,11 @@ const TopRatedMembersList = ({ allMembers, showAll }: { allMembers: any[]; showA
             <h3 className="font-bold text-lg text-chessBlue">{member.name}</h3>
             <div className="flex items-center gap-4 text-sm">
               <span className="text-chessGreen font-medium">
-                {member.isLoadingRating ? (
+                Rating: {member.isLoadingRating ? (
                   <span className="animate-pulse">Loading...</span>
                 ) : (
                   <>
-                    <span className="font-semibold">Peak: {member.peakRating}</span>
-                    {member.currentRating && member.currentRating !== member.peakRating && (
-                      <span className="text-gray-600 ml-2">Current: {member.currentRating}</span>
-                    )}
+                    {member.liveRating}
                     {member.chessComUsername && !member.isLoadingRating && member.hasLiveData && (
                       <span className="text-xs opacity-75 ml-1">📡</span>
                     )}
