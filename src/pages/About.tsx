@@ -157,7 +157,7 @@ const About = () => {
                 {/* First Achievement Group */}
                 <div className="bg-white p-6 rounded-lg shadow-md">
                   <div className="mb-6">
-                    <AspectRatio ratio={16 / 9}>
+                    <AspectRatio ratio={4 / 3}>
                       <img
                         src="/lovable-uploads/c5d0a761-dc86-4d2d-969f-68c90c4946d1.png"
                         alt="BINUS Chess Club members with medals"
@@ -196,7 +196,7 @@ const About = () => {
                 {/* Second Achievement */}
                 <div className="bg-white p-6 rounded-lg shadow-md">
                   <div className="mb-6">
-                    <AspectRatio ratio={16 / 9}>
+                    <AspectRatio ratio={4 / 3}>
                       <img
                         src="/lovable-uploads/7a491fbf-9589-4734-b24d-7815b5a974cf.png"
                         alt="Trophy from Piala Proklamator Rengasdengklok"
