@@ -23,7 +23,7 @@ const Team = () => {
     {
       name: "Galvent Chiuwen",
       position: "President & Founder",
-      rating: 2010,
+      rating: 2046,
       image: "galvent.png",
       bio: "Galvent founded the BINUS Chess Club and currently serves as its president, leading with passion and strategic vision.",
       chessComUsername: "Orangemuffin67"
@@ -31,7 +31,7 @@ const Team = () => {
     {
       name: "Alessandro Moreno Lawadinata",
       position: "Treasurer",
-      rating: 2230,
+      rating: 2263,
       image: "alessandromoreno.png",
       bio: "High-rated organizer contributing significantly to club treasuries and finances.",
       chessComUsername: "AlessandroMoreno96",
@@ -39,7 +39,7 @@ const Team = () => {
     {
       name: "Geoffrey Antonio Arifin",
       position: "Secretary",
-      rating: 2010,
+      rating: 2005,
       image: "Geoffrey.png",
       bio: "Geoffrey manages all club documentation, meeting minutes, and communications with members.",
       chessComUsername: "AutumnMann19",
@@ -47,7 +47,7 @@ const Team = () => {
     {
       name: "Aristo Ardy Wijaya",
       position: "Event Deputy",
-      rating: 1960,
+      rating: 1964,
       image: "aristo.png",
       bio: "Aristo assists in event planning and execution, ensuring smooth operations during club activities.",
       chessComUsername: "aristo123456",
@@ -81,7 +81,7 @@ const Team = () => {
     {
       name: "Syuja Ardhanu",
       position: "Club Activist",
-      rating: 2290,
+      rating: 2416,
       image: "activist/scaled/syuja.png",
       bio: "Committed member contributing to various club initiatives and activities.",
       chessComUsername: "ds0401",
@@ -89,7 +89,7 @@ const Team = () => {
     {
       name: "Hans Kartawinata",
       position: "Club Activist",
-      rating: 2160,
+      rating: 2373,
       image: "activist/scaled/hans.png",
       bio: "Highly skilled activist contributing to club development and member engagement.",
       chessComUsername: "Countered",
@@ -226,7 +226,7 @@ const Team = () => {
     {
       name: "Joel Suwanto",
       position: "Club Member",
-      rating: 1800,
+      rating: 2929,
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
       bio: "Dedicated club member contributing to various chess activities and tournaments.",
       chessComUsername: "TheUnderDog001",
@@ -234,7 +234,7 @@ const Team = () => {
     {
       name: "Ray Mclung Gunawan",
       position: "Club Member", 
-      rating: 1600,
+      rating: 2792,
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
       bio: "Active chess player and club member participating in various events and competitions.",
       chessComUsername: "Patrickskakk",
@@ -242,7 +242,7 @@ const Team = () => {
     {
       name: "Christopher Vincentius Kurniawan",
       position: "Club Member",
-      rating: 1500,
+      rating: 2258,
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80", 
       bio: "Enthusiastic chess player and club member supporting community activities.",
       chessComUsername: "LVCW",
@@ -258,7 +258,7 @@ const Team = () => {
     {
       name: "Clement Lewi Limuel",
       position: "Club Member",
-      rating: 1300,
+      rating: 2200,
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
       bio: "Enthusiastic chess player contributing to club community.",
       chessComUsername: "WataHata",
@@ -266,7 +266,7 @@ const Team = () => {
     {
       name: "Vincent Oei",
       position: "Club Member",
-      rating: 1200,
+      rating: 2116,
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
       bio: "Dedicated club member supporting chess activities and growth.",
       chessComUsername: "Yungfu",
@@ -274,7 +274,7 @@ const Team = () => {
     {
       name: "Harry Santosa",
       position: "Club Member",
-      rating: 1100,
+      rating: 1760,
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
       bio: "Active member participating in club events and tournaments.",
       chessComUsername: "Hello1nicetomeetyou",
