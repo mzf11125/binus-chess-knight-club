@@ -81,7 +81,7 @@ const Team = () => {
     {
       name: "Syuja Ardhanu",
       position: "Club Activist",
-      rating: 2416,
+      rating: 2290,
       image: "activist/scaled/syuja.png",
       bio: "Committed member contributing to various club initiatives and activities.",
       chessComUsername: "ds0401",
@@ -89,7 +89,7 @@ const Team = () => {
     {
       name: "Hans Kartawinata",
       position: "Club Activist",
-      rating: 2373,
+      rating: 2160,
       image: "activist/scaled/hans.png",
       bio: "Highly skilled activist contributing to club development and member engagement.",
       chessComUsername: "Countered",
