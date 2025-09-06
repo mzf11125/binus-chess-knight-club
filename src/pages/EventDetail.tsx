@@ -53,6 +53,17 @@ const EventDetail = () => {
         "Di Bulan September 2025 ini, BPJS Kesehatan Chess Club hadir dengan Turnamen Silaturahmi & Kolaborasi Online bareng 12 kampus Top Indonesia yakni UI, UGM, UNAIR, UNDIP, USK, UM, BINUS, UNEJ, UNDIKSHA, UNESA, UPI, & POLBAN",
       registrationLink: "https://forms.office.com/r/G38YWnQzHV",
     },
+    {
+      id: "simulchess",
+      title: "Simultaneous Chess",
+      date: "13 March 2025",
+      location: "BINUS Anggrek, Food Court Lt.1",
+      description: "Our professor Pak Bakti held a simul exhibition",
+      image: "/events/SimulChess.jpg",
+      type: "past",
+      fullDescription:
+        "Our professor Pak Bakti held a simul exhibition",
+    },
   ];
 
   console.log("Available events:", allEvents.map(e => e.id));

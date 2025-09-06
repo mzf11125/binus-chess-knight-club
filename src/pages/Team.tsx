@@ -69,6 +69,14 @@ const Team = () => {
       chessComUsername: "PhantomXRG",
     },
     {
+      name: "Dominikus Sebastian Ramli",
+      position: "Club Activist",
+      rating: 1420,
+      image: "activist/scaled/sebastian.png",
+      bio: "Sebastian helps with web development, along with managing the club's LinkedIn.",
+      chessComUsername: "Bas77z",
+    },
+    {
       name: "Keven Wilbert Felik",
       position: "Marketing Manager",
       rating: 1,
@@ -125,14 +133,6 @@ const Team = () => {
       image: "activist/scaled/hibatullah.png",
       bio: "Committed activist supporting club operations and community outreach.",
       chessComUsername: "yellowcat2224",
-    },
-    {
-      name: "Dominikus Sebastian Ramli",
-      position: "Club Activist",
-      rating: 1420,
-      image: "activist/scaled/sebastian.png",
-      bio: "Sebastian helps with web development, along with it's digital presence.",
-      chessComUsername: "Bas77z",
     },
     {
       name: "Fahri Fadhil",
@@ -226,7 +226,7 @@ const Team = () => {
     {
       name: "Joel Suwanto",
       position: "Club Member",
-      rating: 1800,
+      rating: 2670,
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
       bio: "Dedicated club member contributing to various chess activities and tournaments.",
       chessComUsername: "TheUnderDog001",
@@ -234,7 +234,7 @@ const Team = () => {
     {
       name: "Ray Mclung Gunawan",
       position: "Club Member", 
-      rating: 1600,
+      rating: 2560,
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
       bio: "Active chess player and club member participating in various events and competitions.",
       chessComUsername: "Patrickskakk",
@@ -242,23 +242,15 @@ const Team = () => {
     {
       name: "Christopher Vincentius Kurniawan",
       position: "Club Member",
-      rating: 1500,
+      rating: 2260,
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80", 
       bio: "Enthusiastic chess player and club member supporting community activities.",
       chessComUsername: "LVCW",
     },
     {
-      name: "Dhatuyo Budiarto",
-      position: "Club Member",
-      rating: 1400,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
-      bio: "Active chess player and club member participating in club events.",
-      chessComUsername: "dhammiko",
-    },
-    {
       name: "Clement Lewi Limuel",
       position: "Club Member",
-      rating: 1300,
+      rating: 2140,
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
       bio: "Enthusiastic chess player contributing to club community.",
       chessComUsername: "WataHata",
@@ -266,7 +258,7 @@ const Team = () => {
     {
       name: "Vincent Oei",
       position: "Club Member",
-      rating: 1200,
+      rating: 1970,
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
       bio: "Dedicated club member supporting chess activities and growth.",
       chessComUsername: "Yungfu",
@@ -274,7 +266,7 @@ const Team = () => {
     {
       name: "Harry Santosa",
       position: "Club Member",
-      rating: 1100,
+      rating: 1760,
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80",
       bio: "Active member participating in club events and tournaments.",
       chessComUsername: "Hello1nicetomeetyou",
@@ -340,6 +332,7 @@ const Team = () => {
                   <TopRatedMembersList 
                     allMembers={allMembers} 
                     showAll={showAllTopMembers}
+                    useStaticRating={true}
                   />
                   
                   {/* Expand/Collapse Button */}
@@ -365,8 +358,9 @@ const Team = () => {
               <TabsContent value="activists" className="space-y-6">
                 <div className="max-w-2xl mx-auto">
                   <TopRatedMembersList 
-                    allMembers={activists} 
+                    allMembers={[...organizers, ...activists]} 
                     showAll={showAllTopMembers}
+                    useStaticRating={false}
                   />
                   
                   {/* Expand/Collapse Button */}
@@ -440,29 +434,6 @@ const Team = () => {
           </div>
         </section>
 
-        {/* hall of fame Section
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <h2 className="section-title text-center">Honorable Mention</h2>
-            <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
-              Our dedicated activists who actively participate in club events
-              and contribute to our community.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {activists.map((activist, index) => (
-                <TeamCard
-                  key={index}
-                  name={activist.name}
-                  position={activist.position}
-                  rating={activist.rating}
-                  image={activist.image}
-                  bio={activist.bio}
-                />
-              ))}
-            </div>
-          </div>
-        </section> */}
-
         {/* Join Section */}
         <section className="py-16 bg-chessGreen text-white">
           <div className="container mx-auto px-4 text-center">
@@ -485,10 +456,12 @@ const Team = () => {
   );
 };
 
-// Fetch chess.com rating helper function
+
+// Component that handles fetching all ratings and sorting them
 const fetchChessComRating = async (username: string): Promise<number | null> => {
+  const lowerUsername = username.toLowerCase();
   try {
-    const response = await fetch(`https://api.chess.com/pub/player/${username}/stats`);
+    const response = await fetch(`https://api.chess.com/pub/player/${lowerUsername}/stats`);
     if (!response.ok) {
       throw new Error('Player not found');
     }
@@ -511,38 +484,62 @@ const fetchChessComRating = async (username: string): Promise<number | null> => 
 };
 
 // Component that handles fetching all ratings and sorting them
-const TopRatedMembersList = ({ allMembers, showAll }: { allMembers: any[]; showAll: boolean }) => {
-  // Fetch ratings for all members with chess.com usernames
+const TopRatedMembersList = ({ allMembers, showAll, useStaticRating }: { allMembers: any[]; showAll: boolean; useStaticRating?: boolean }) => {
+  // Filter members with usernames for querying
+  const membersWithUsernames = useMemo(() => allMembers.filter(member => !!member.chessComUsername), [allMembers]);
+
+  // Only fetch live ratings if useStaticRating is false
   const ratingQueries = useQueries({
-    queries: allMembers.map((member) => ({
+    queries: useStaticRating ? [] : membersWithUsernames.map((member) => ({
       queryKey: ['chessRating', member.chessComUsername],
-      queryFn: () => member.chessComUsername ? fetchChessComRating(member.chessComUsername) : Promise.resolve(null),
-      enabled: !!member.chessComUsername,
+      queryFn: () => fetchChessComRating(member.chessComUsername),
       staleTime: 1000 * 60 * 60, // 1 hour
       retry: 1,
-    }))
+    })),
   });
 
-  const sortedMembers = useMemo(() => {
-    // Create members with live ratings
-    const membersWithLiveRatings = allMembers.map((member, index) => {
+  // Create a map of usernames to live ratings and loading states
+  const liveDataMap = useMemo(() => {
+    const map = new Map<string, { liveRating: number | null; isLoading: boolean }>();
+    membersWithUsernames.forEach((member, index) => {
       const query = ratingQueries[index];
-      const liveRating = query.data;
-      const isLoading = query.isLoading;
-      
+      const liveRating = query?.data ?? null;
+      const isLoading = query?.isLoading || false;
+      map.set(member.chessComUsername, { liveRating, isLoading });
+    });
+    return map;
+  }, [membersWithUsernames, ratingQueries]);
+
+  const sortedMembers = useMemo(() => {
+    if (useStaticRating) {
+      // Use static ratings and sort by rating
+      return [...allMembers].sort((a, b) => b.rating - a.rating).map(member => ({
+        ...member,
+        liveRating: member.rating, // Use static rating
+        isLoadingRating: false,
+        hasLiveData: false
+      }));
+    }
+
+    // Assign live ratings using the map
+    const membersWithLiveRatings = allMembers.map((member) => {
+      const data = member.chessComUsername ? liveDataMap.get(member.chessComUsername) : null;
+      const liveRating = data?.liveRating ?? member.rating;
+      const isLoading = data?.isLoading ?? false;
+      const hasLiveData = data?.liveRating !== null;
+
       return {
         ...member,
-        liveRating: liveRating || member.rating,
+        liveRating,
         isLoadingRating: isLoading,
-        hasLiveData: !!liveRating
+        hasLiveData
       };
     });
 
-    // Sort by live rating (descending)
     return membersWithLiveRatings.sort((a, b) => b.liveRating - a.liveRating);
-  }, [allMembers, ratingQueries]);
+  }, [allMembers, liveDataMap, useStaticRating]);
 
-  const displayMembers = sortedMembers.slice(0, showAll ? 10 : 5);
+  const displayMembers = sortedMembers.slice(0, showAll ? 12 : 5);
 
   const getRankIcon = (rank: number) => {
     if (rank === 1) return <Trophy className="w-6 h-6 text-yellow-500" />;
@@ -596,4 +593,4 @@ const TopRatedMembersList = ({ allMembers, showAll }: { allMembers: any[]; showA
 };
 
 // Component for top-rated member with live Chess.com rating
-export default Team;
+export default Team;  

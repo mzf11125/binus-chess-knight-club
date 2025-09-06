@@ -80,15 +80,16 @@ const Events = () => {
       description: "Our grand launching as official BINUS club.",
       image: "events/bcclaunch.jpeg",
     },
-    // {
-    //   title: "Simultaneous Exhibition",
-    //   date: "March 5, 2025",
-    //   location: "BINUS Main Hall",
-    //   description:
-    //     "Indonesian IM played against 20 club members simultaneously.",
-    //   image:
-    //     "https://images.unsplash.com/photo-1628359355624-855775b5c9c4?w=800&auto=format&fit=crop&q=80",
-    // },
+    {
+      id:"simulchess",
+      title: "Simultaneous Exhibition",
+      date: "March 13, 2025",
+      location: "BINUS Anggrek, Food Court",
+      description:
+        "Indonesian IM played against 20 club members simultaneously.",
+      image:
+        "events/SimulChess.jpg",
+    },
   ];
 
   return (
