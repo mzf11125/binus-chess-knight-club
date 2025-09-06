@@ -486,7 +486,7 @@ const Team = () => {
 };
 
 // Fetch chess.com rating helper function
-const fetchChessComRating = async (username: string): Promise<number | null> => {
+const fetchChessComRating = async (username: string): Promise<{current: number | null, peak: number | null} | null> => {
   try {
     const response = await fetch(`https://api.chess.com/pub/player/${username}/stats`);
     if (!response.ok) {
@@ -495,15 +495,25 @@ const fetchChessComRating = async (username: string): Promise<number | null> => 
     
     const data = await response.json();
     
-    // Get all available ratings
-    const ratings = [
+    // Get all available current ratings
+    const currentRatings = [
       data.chess_rapid?.last?.rating,
       data.chess_blitz?.last?.rating,
       data.chess_bullet?.last?.rating,
     ].filter((rating): rating is number => rating !== undefined);
     
-    // Return the highest rating, or null if no ratings found
-    return ratings.length > 0 ? Math.max(...ratings) : null;
+    // Get all available peak ratings
+    const peakRatings = [
+      data.chess_rapid?.best?.rating,
+      data.chess_blitz?.best?.rating,
+      data.chess_bullet?.best?.rating,
+    ].filter((rating): rating is number => rating !== undefined);
+    
+    // Return the highest ratings for both current and peak
+    return {
+      current: currentRatings.length > 0 ? Math.max(...currentRatings) : null,
+      peak: peakRatings.length > 0 ? Math.max(...peakRatings) : null
+    };
   } catch (error) {
     console.log(`Failed to fetch rating for ${username}:`, error);
     return null;
@@ -527,19 +537,20 @@ const TopRatedMembersList = ({ allMembers, showAll }: { allMembers: any[]; showA
     // Create members with live ratings
     const membersWithLiveRatings = allMembers.map((member, index) => {
       const query = ratingQueries[index];
-      const liveRating = query.data;
+      const ratingData = query.data;
       const isLoading = query.isLoading;
       
       return {
         ...member,
-        liveRating: liveRating || member.rating,
+        currentRating: ratingData?.current || member.rating,
+        peakRating: ratingData?.peak || member.rating,
         isLoadingRating: isLoading,
-        hasLiveData: !!liveRating
+        hasLiveData: !!ratingData?.peak || !!ratingData?.current
       };
     });
 
-    // Sort by live rating (descending)
-    return membersWithLiveRatings.sort((a, b) => b.liveRating - a.liveRating);
+    // Sort by peak rating (descending)
+    return membersWithLiveRatings.sort((a, b) => b.peakRating - a.peakRating);
   }, [allMembers, ratingQueries]);
 
   const displayMembers = sortedMembers.slice(0, showAll ? 10 : 5);
@@ -568,11 +579,14 @@ const TopRatedMembersList = ({ allMembers, showAll }: { allMembers: any[]; showA
             <h3 className="font-bold text-lg text-chessBlue">{member.name}</h3>
             <div className="flex items-center gap-4 text-sm">
               <span className="text-chessGreen font-medium">
-                Rating: {member.isLoadingRating ? (
+                {member.isLoadingRating ? (
                   <span className="animate-pulse">Loading...</span>
                 ) : (
                   <>
-                    {member.liveRating}
+                    <span className="font-semibold">Peak: {member.peakRating}</span>
+                    {member.currentRating && member.currentRating !== member.peakRating && (
+                      <span className="text-gray-600 ml-2">Current: {member.currentRating}</span>
+                    )}
                     {member.chessComUsername && !member.isLoadingRating && member.hasLiveData && (
                       <span className="text-xs opacity-75 ml-1">📡</span>
                     )}
