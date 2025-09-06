@@ -540,12 +540,23 @@ const TopRatedMembersList = ({ allMembers, showAll }: { allMembers: any[]; showA
       const ratingData = query.data;
       const isLoading = query.isLoading;
       
+      // Debug logging
+      console.log('Rating data for', member.name, ':', ratingData);
+      
+      // Ensure we extract proper numbers from the rating data
+      const currentRating = (ratingData && typeof ratingData === 'object' && ratingData.current) 
+        ? ratingData.current 
+        : member.rating;
+      const peakRating = (ratingData && typeof ratingData === 'object' && ratingData.peak) 
+        ? ratingData.peak 
+        : member.rating;
+      
       return {
         ...member,
-        currentRating: ratingData?.current || member.rating,
-        peakRating: ratingData?.peak || member.rating,
+        currentRating: Number(currentRating),
+        peakRating: Number(peakRating),
         isLoadingRating: isLoading,
-        hasLiveData: !!ratingData?.peak || !!ratingData?.current
+        hasLiveData: !!(ratingData && typeof ratingData === 'object' && (ratingData.peak || ratingData.current))
       };
     });
 
@@ -583,9 +594,9 @@ const TopRatedMembersList = ({ allMembers, showAll }: { allMembers: any[]; showA
                   <span className="animate-pulse">Loading...</span>
                 ) : (
                   <>
-                    <span className="font-semibold">Peak: {member.peakRating}</span>
+                    <span className="font-semibold">Peak: {typeof member.peakRating === 'number' ? member.peakRating : member.rating}</span>
                     {member.currentRating && member.currentRating !== member.peakRating && (
-                      <span className="text-gray-600 ml-2">Current: {member.currentRating}</span>
+                      <span className="text-gray-600 ml-2">Current: {typeof member.currentRating === 'number' ? member.currentRating : member.rating}</span>
                     )}
                     {member.chessComUsername && !member.isLoadingRating && member.hasLiveData && (
                       <span className="text-xs opacity-75 ml-1">📡</span>
