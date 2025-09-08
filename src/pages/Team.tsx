@@ -220,6 +220,22 @@ const Team = () => {
       image: "activist/scaled/michaela.png",
       bio: "Michaela assists in event planning and execution, ensuring smooth operations during club activities.",
     },
+    {
+      name: "Aureylius Crystaldo Darmadji",
+      position: "Marketing",
+      rating: 900,
+      image: "activist/scaled/aureylius.png",
+      bio: "Rey contributes to marketing and club outreach",
+      chessComUsername: "aniyeo"
+    },
+    {
+      name: "Evan Edward",
+      position:"Club Activist",
+      rating: 400,
+      image:"activist/scaled/evan.png",
+      bio: "Evan assists in organizing club events and community outreach.",
+      chessComUsername: "NsxRagna"
+    }
   ];
 
   const members = [
