@@ -27,17 +27,17 @@ export const allEvents: Event[] = [
     registrationLink: "https://forms.office.com/r/G38YWnQzHV",
   },
   {
-    id: "weekly-meeting",
-    title: "Blitz Krieg",
-    date: "Time: TBA in WhatsApp group",
-    dateObject: new Date(2025, 11, 31), // Future placeholder date
-    location: "BINUS Anggrek Campus, Student Corner 4th floor",
+    id: "clashofbatches",
+    title: "Clash of Batches",
+    date: "13 September 2025",
+    dateObject: new Date(2025, 8, 13), // Future placeholder date
+    location: "Online Lichess",
     description:
-      "Join us for casual play, puzzles and discussions. All skill levels welcome!",
-    image: "/events/dailyblitzkrieg.jpeg",
+      "Get ready for the Clash of Batches, an exciting arena-style tournament on Lichess! The batch scoring the most points declared the ultimate winner. Join the chess frenzy!",
+    image: "/events/clashofbatches.jpg",
     type: "upcoming",
     fullDescription:
-      "Our Blitz Krieg events are the heart of our chess community. We gather at the Student Corner on the 4th floor of BINUS Anggrek Campus for fast-paced chess action. Whether you're a complete beginner or an experienced player, you'll find a welcoming environment to improve your game through rapid-fire games. Time and date will be announced in our WhatsApp group, so make sure to join us there for updates!",
+      "Welcome to the Clash of Batches, an exciting arena-style chess tournament on Lichess, pitting our community’s batches against each other in a fast-paced showdown. Participants compete in rated games, earning points for wins, draws, and strategic moves like berserk, with the batch scoring the highest total declared the champion.",
   },
   {
     id: "grand-launching",
@@ -70,6 +70,56 @@ export const allEvents: Event[] = [
     fullDescription:
       "Indonesian IM played against 20 club members simultaneously.",
   },
+  {
+    id: "pomprovpreparation",
+    title: "POMPROV Preparation",
+    date: "May 11, 2025",
+    dateObject: new Date(2025, 4, 11),
+    location: "BINUS Kemanggisan",
+    description:
+      "We honed our skills with intensive preparation and training sessions for Pomprov DKI Jakarta! Our efforts sharpened our abilities and strategized for the provincial chess championship.",
+    image: "/events/pomprovprepare/pomprovprepare.jpg",
+    type: "past",
+    fullDescription:
+    "Through a series of focused training sessions, we covered advanced tactics, opening theories, endgame techniques, and match practice, tailored to enhance individual and team performance. Led by experienced coaches and top-rated players, these sessions included simulated matches and personalized feedback to address specific weaknesses. Held in the lead-up to the event, this program fostered teamwork and determination, ensuring our club was well-prepared to represent BINUS with pride at Pomprov DKI Jakarta!",
+    gallery: [
+      "/events/pomprovprepare/1.jpg",
+      "/events/pomprovprepare/2.jpg",
+      "/events/pomprovprepare/zoom.jpg"
+
+    ]
+  },
+  {
+  id: "superchessseries",
+  title: "SUPER CHESS Series III",
+  date: "July 19, 2025",
+  dateObject: new Date(2025, 6, 19), // July 19, 2025
+  location: "PISET Square, Kota Bandung",
+  description: "We showcased our skills at the prestigious SUPER CHESS Series III, an offline tournament hosted by ITB! Our team competed fiercely in this national championship.",
+  image: "/events/superchess/poster.jpg",
+  type: "past",
+  fullDescription: "The SUPER CHESS Series III, hosted by Institut Teknologi Bandung (ITB), was a prestigious offline national tournament held on July 19–20, 2025, at PISET Square in Bandung. Our BINUS Chess Club team participated in this exciting event, competing in a Swiss system format with a 10-minute + 5-second increment time control across four categories: Open Class, 18+ Class, Veteran Class, and College Group Class. With a total prize pool of Rp150 million, the tournament tested our strategic abilities and teamwork. Guided by experienced coaches, we prepared through intensive training, focusing on tactics and match simulations, ensuring we represented BINUS with pride. This event highlighted our growth and competitive spirit on a national stage!",
+  gallery: [
+    "/events/superchess/superchess.JPG",
+    "/events/superchess/1.JPG",
+    "/events/superchess/2.JPG",
+  ]
+  },
+  {
+  id: "pknstan",
+  title: "PKN STAN x BCC Sparring",
+  date: "May 13, 2025",
+  dateObject: new Date(2025, 4, 31), // May 31, 2025 (corrected from July 19)
+  location: "BINUS Kemanggisan",
+  description: "We honed our skills in an exciting sparring session with PKN STAN! This friendly match boosted our teamwork and readiness for future competitions.",
+  image: "/events/pknstan/pknstan.jpg",
+  type: "past",
+  fullDescription: "The PKN STAN x BCC Sparring, held on May 31, 2025, at BINUS Kemanggisan, was a dynamic friendly match that brought together members of the BINUS Chess Club and PKN STAN for an enriching chess experience. This event featured a series of casual yet competitive games, allowing both teams to test their strategies, improve their gameplay, and build camaraderie. Guided by our coaches, we focused on tactical drills and real-time feedback during the session, which helped strengthen our team coordination and individual skills. This sparring session was a valuable opportunity to prepare for upcoming tournaments and foster a spirit of collaboration with PKN STAN, leaving us better equipped for future challenges!",
+  gallery: [
+    "/events/pknstan/1.jpg",
+    "/events/pknstan/2.jpg",
+  ]
+},
 ];
 
 export const getUpcomingEvents = (): Event[] => {
