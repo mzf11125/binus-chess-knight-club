@@ -3,94 +3,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import EventCard from "@/components/EventCard";
 import { Button } from "@/components/ui/button";
+import { getUpcomingEvents, getPastEvents } from "@/data/events";
 
 const Events = () => {
-  const upcomingEvents = [
-    // {
-    //   id: "weekly-meeting",
-    //   title: "Blitz Krieg",
-    //   date: "Time: TBA in WhatsApp group",
-    //   location: "BINUS Anggrek Campus, Student Corner 4th floor",
-    //   description:
-    //     "Join us for casual play, puzzles and discussions. All skill levels welcome!",
-    //   image: "events/dailyblitzkrieg.jpeg",
-    // },
-    {
-      id: "bpjs",
-      title: "BPJS Online Tournament",
-      date: "9-10 September 2025",
-      location: "Online Lichess",
-      description:
-        "BPJS Cross-University Online Tournament",
-      image: "events/bpjsonline.jpg",
-    },
-    // {
-    //   title: "BINUS Chess Tournament",
-    //   date: "June 15, 2025",
-    //   location: "BINUS Auditorium",
-    //   description:
-    //     "Our annual chess tournament with prizes for different categories and skill levels.",
-    //   image:
-    //     "https://images.unsplash.com/photo-1581006852262-e4307cf6283a?w=800&auto=format&fit=crop&q=80",
-    // },
-    // {
-    //   title: "Grandmaster Workshop",
-    //   date: "July 5, 2025",
-    //   location: "BINUS Conference Room",
-    //   description:
-    //     "Learn advanced strategies from an international chess grandmaster.",
-    //   image:
-    //     "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=800&auto=format&fit=crop&q=80",
-    // },
-    // {
-    //   title: "Blitz Chess Night",
-    //   date: "May 28, 2025, 6:00 PM",
-    //   location: "BINUS Student Center",
-    //   description:
-    //     "Fast-paced blitz games with 5-minute time controls. Fun, casual environment!",
-    //   image:
-    //     "https://images.unsplash.com/photo-1637276661836-9998e801a144?w=800&auto=format&fit=crop&q=80",
-    // },
-    // {
-    //   title: "Chess Strategy Seminar",
-    //   date: "June 3, 2025, 3:00 PM",
-    //   location: "Online Zoom Session",
-    //   description:
-    //     "Learn key middlegame strategies and tactical patterns to improve your game.",
-    //   image:
-    //     "https://images.unsplash.com/photo-1611195974226-a6a9be9dd763?w=800&auto=format&fit=crop&q=80",
-    // },
-    // {
-    //   title: "Inter-University Chess Match",
-    //   date: "July 25, 2025",
-    //   location: "University of Indonesia",
-    //   description:
-    //     "Represent BINUS in this friendly match against other university chess clubs.",
-    //   image:
-    //     "https://images.unsplash.com/photo-1587019158091-1a103c5dd17f?w=800&auto=format&fit=crop&q=80",
-    // },
-  ];
-
-  const pastEvents = [
-    {
-      id: "grand-launching",
-      title: "Grand Launching BCC",
-      date: "March 13, 2025",
-      location: "BINUS Auditorium",
-      description: "Our grand launching as official BINUS club.",
-      image: "events/bcclaunch.jpeg",
-    },
-    {
-      id:"simulchess",
-      title: "Simultaneous Exhibition",
-      date: "March 13, 2025",
-      location: "BINUS Anggrek, Food Court",
-      description:
-        "Indonesian IM played against 20 club members simultaneously.",
-      image:
-        "events/SimulChess.jpg",
-    },
-  ];
+  const upcomingEvents = getUpcomingEvents();
+  const pastEvents = getPastEvents();
 
   return (
     <div className="flex flex-col min-h-screen">
