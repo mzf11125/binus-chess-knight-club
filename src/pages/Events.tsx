@@ -75,7 +75,7 @@ const Events = () => {
             <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
               Take a look at our previous chess events and activities.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {pastEvents.map((event, index) => (
                 <EventCard
                   key={index}
