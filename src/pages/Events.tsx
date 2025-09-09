@@ -4,10 +4,12 @@ import Footer from "@/components/Footer";
 import EventCard from "@/components/EventCard";
 import { Button } from "@/components/ui/button";
 import { getUpcomingEvents, getPastEvents } from "@/data/events";
+import { useState } from "react";
 
 const Events = () => {
+  const [pastEventsSortOrder, setPastEventsSortOrder] = useState<"asc" | "desc">("desc");
   const upcomingEvents = getUpcomingEvents();
-  const pastEvents = getPastEvents();
+  const pastEvents = getPastEvents(pastEventsSortOrder);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -71,10 +73,22 @@ const Events = () => {
         {/* Past Events */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <h2 className="section-title text-center">Past Events</h2>
-            <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
-              Take a look at our previous chess events and activities.
-            </p>
+            <div className="flex justify-between items-center mb-12">
+              <div>
+                <h2 className="section-title text-left">Past Events</h2>
+                <p className="text-lg text-gray-600 max-w-3xl">
+                  Take a look at our previous chess events and activities.
+                </p>
+              </div>
+              <Button
+                variant="outline"
+                onClick={() => setPastEventsSortOrder(pastEventsSortOrder === "desc" ? "asc" : "desc")}
+                className="flex items-center gap-2"
+              >
+                Sort by Date
+                {pastEventsSortOrder === "desc" ? "↓" : "↑"}
+              </Button>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {pastEvents.map((event, index) => (
                 <EventCard

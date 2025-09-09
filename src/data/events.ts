@@ -2,6 +2,7 @@ export interface Event {
   id: string;
   title: string;
   date: string;
+  dateObject: Date; // For reliable sorting
   location: string;
   description: string;
   image: string;
@@ -16,6 +17,7 @@ export const allEvents: Event[] = [
     id: "bpjs",
     title: "BPJS Online Tournament",
     date: "September 9-10, 2025 Pukul 19:00-Selesai",
+    dateObject: new Date(2025, 8, 9), // September 9, 2025
     location: "Online Lichess",
     description: "BPJS Cross-University Online Tournament",
     image: "/events/bpjsonline.jpg",
@@ -28,6 +30,7 @@ export const allEvents: Event[] = [
     id: "weekly-meeting",
     title: "Blitz Krieg",
     date: "Time: TBA in WhatsApp group",
+    dateObject: new Date(2025, 11, 31), // Future placeholder date
     location: "BINUS Anggrek Campus, Student Corner 4th floor",
     description:
       "Join us for casual play, puzzles and discussions. All skill levels welcome!",
@@ -40,6 +43,7 @@ export const allEvents: Event[] = [
     id: "grand-launching",
     title: "Grand Launching BCC",
     date: "March 13, 2025",
+    dateObject: new Date(2025, 2, 13), // March 13, 2025
     location: "BINUS Auditorium",
     description: "Our grand launching as official BINUS club.",
     image: "/events/bcclaunch.jpeg",
@@ -57,6 +61,7 @@ export const allEvents: Event[] = [
     id: "simulchess",
     title: "Simultaneous Exhibition",
     date: "March 13, 2025",
+    dateObject: new Date(2025, 2, 13), // March 13, 2025
     location: "BINUS Anggrek, Food Court",
     description:
       "Indonesian IM played against 20 club members simultaneously.",
@@ -71,8 +76,15 @@ export const getUpcomingEvents = (): Event[] => {
   return allEvents.filter(event => event.type === "upcoming");
 };
 
-export const getPastEvents = (): Event[] => {
-  return allEvents.filter(event => event.type === "past");
+export const getPastEvents = (sortOrder: "asc" | "desc" = "desc"): Event[] => {
+  const pastEvents = allEvents.filter(event => event.type === "past");
+  return pastEvents.sort((a, b) => {
+    if (sortOrder === "asc") {
+      return a.dateObject.getTime() - b.dateObject.getTime();
+    } else {
+      return b.dateObject.getTime() - a.dateObject.getTime();
+    }
+  });
 };
 
 export const getEventById = (id: string): Event | undefined => {
