@@ -25,7 +25,7 @@ const EventCard = ({
 }: EventCardProps) => {
   return (
     <div className={cn("bg-white rounded-lg shadow-md overflow-hidden flex flex-col", className)}>
-      <div className="h-48 overflow-hidden">
+      <div className="h-64 overflow-hidden">
         <img
           src={image}
           alt={title}
