@@ -19,22 +19,15 @@ Keven Wilbert Felik
 */
 const Team = () => {
   const [showAllTopMembers, setShowAllTopMembers] = useState(false);
-  const organizers = [
+  // General Board (DPI Umum)
+  const generalBoard = [
     {
       name: "Galvent Chiuwen",
-      position: "President & Founder",
+      position: "President",
       rating: 2010,
       image: "galvent.png",
       bio: "Galvent founded the BINUS Chess Club and currently serves as its president, leading with passion and strategic vision.",
       chessComUsername: "Orangemuffin67"
-    },
-    {
-      name: "Alessandro Moreno Lawadinata",
-      position: "Treasurer",
-      rating: 2230,
-      image: "alessandromoreno.png",
-      bio: "High-rated organizer contributing significantly to club treasuries and finances.",
-      chessComUsername: "AlessandroMoreno96",
     },
     {
       name: "Geoffrey Antonio Arifin",
@@ -45,45 +38,72 @@ const Team = () => {
       chessComUsername: "AutumnMann19",
     },
     {
+      name: "Alessandro Moreno Lawadinata",
+      position: "Treasurer",
+      rating: 2230,
+      image: "alessandromoreno.png",
+      bio: "High-rated organizer contributing significantly to club treasuries and finances.",
+      chessComUsername: "AlessandroMoreno96",
+    },
+  ];
+
+  // Regional Representatives (PIC Region)
+  const regionalReps = [
+    {
+      name: "Steven Ang",
+      position: "Regional Head - Kemanggisan",
+      rating: 1240,
+      image: "stevenang.png",
+      bio: "Steven leads the Kemanggisan region and coordinates regional activities.",
+      chessComUsername: "PhantomXRG",
+    },
+    {
+      name: "Owen Siau",
+      position: "Regional Head - Alsut",
+      rating: 1270,
+      image: "activist/scaled/owen.png",
+      bio: "Owen leads the Alsut region and manages regional coordination.",
+      chessComUsername: "Ony0n",
+    },
+  ];
+
+  // Division Heads (Kepala Divisi Umum)
+  const divisionHeads = [
+    {
+      name: "Keven Wilbert Felik",
+      position: "Head of Marketing",
+      rating: 1,
+      image: "keven.png",
+      bio: "Keven manages promotional activities, social media, and outreach campaigns for the club.",
+    },
+    {
       name: "Aristo Ardy Wijaya",
-      position: "Event Deputy",
+      position: "Head of Event",
       rating: 1960,
       image: "aristo.png",
-      bio: "Aristo assists in event planning and execution, ensuring smooth operations during club activities.",
+      bio: "Aristo leads event planning and execution, ensuring smooth operations during club activities.",
       chessComUsername: "aristo123456",
     },
     {
       name: "Muhammad Zidan Fatonie",
-      position: "IT Staff",
+      position: "Head of IT",
       rating: 1460,
       image: "zidan.png",
       bio: "Zidan manages the club's digital presence, website, and technical infrastructure for online tournaments.",
       chessComUsername: "mzf11125",
     },
     {
-      name: "Steven Ang",
-      position: "Event Manager",
-      rating: 1240,
-      image: "stevenang.png",
-      bio: "Steven plans and coordinates all chess events, tournaments, and workshops for the club.",
-      chessComUsername: "PhantomXRG",
-    },
-    {
       name: "Dominikus Sebastian Ramli",
-      position: "Club Activist",
+      position: "Deputy of IT",
       rating: 1420,
       image: "activist/scaled/sebastian.png",
-      bio: "Sebastian helps with web development, along with managing the club's LinkedIn.",
+      bio: "Sebastian assists in IT operations, web development, and manages the club's LinkedIn.",
       chessComUsername: "Bas77z",
     },
-    {
-      name: "Keven Wilbert Felik",
-      position: "Marketing Manager",
-      rating: 1,
-      image: "keven.png",
-      bio: "Keven manages promotional activities, social media, and outreach campaigns for the club.",
-    },
   ];
+
+  // Combine all organizers for Hall of Fame
+  const organizers = [...generalBoard, ...regionalReps, ...divisionHeads];
 
   const activists = [
     {
@@ -406,22 +426,63 @@ const Team = () => {
         <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
             <h2 className="section-title text-center">Club Organizers</h2>
-            <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
+            <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-16">
               Our leadership team and organizers who coordinate club activities
               and strategic planning.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {organizers.map((organizer, index) => (
-                <TeamCard
-                  key={index}
-                  name={organizer.name}
-                  position={organizer.position}
-                  rating={organizer.rating}
-                  image={organizer.image}
-                  bio={organizer.bio}
-                  chessComUsername={organizer.chessComUsername}
-                />
-              ))}
+            
+            {/* General Board */}
+            <div className="mb-16">
+              <h3 className="text-2xl font-bold text-chessBlue text-center mb-8">General Board</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                {generalBoard.map((member, index) => (
+                  <TeamCard
+                    key={index}
+                    name={member.name}
+                    position={member.position}
+                    rating={member.rating}
+                    image={member.image}
+                    bio={member.bio}
+                    chessComUsername={member.chessComUsername}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Regional Representatives */}
+            <div className="mb-16">
+              <h3 className="text-2xl font-bold text-chessBlue text-center mb-8">Regional Representatives</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                {regionalReps.map((member, index) => (
+                  <TeamCard
+                    key={index}
+                    name={member.name}
+                    position={member.position}
+                    rating={member.rating}
+                    image={member.image}
+                    bio={member.bio}
+                    chessComUsername={member.chessComUsername}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Division Heads */}
+            <div>
+              <h3 className="text-2xl font-bold text-chessBlue text-center mb-8">Division Heads</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {divisionHeads.map((member, index) => (
+                  <TeamCard
+                    key={index}
+                    name={member.name}
+                    position={member.position}
+                    rating={member.rating}
+                    image={member.image}
+                    bio={member.bio}
+                    chessComUsername={member.chessComUsername}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </section>
