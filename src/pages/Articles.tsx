@@ -1,10 +1,49 @@
+import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { articles, upcomingArticles } from "@/data/articles";
+import { upcomingArticles } from "@/data/articles2";
 import { Clock, User, TrendingUp } from "lucide-react";
+import matter from 'gray-matter';
 
 const Articles = () => {
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const articleModules = import.meta.glob('../data/articles/*.md', { as: 'raw' });
+        if (Object.keys(articleModules).length === 0) {
+          console.warn('No Markdown files found in ../data/articles/');
+          setArticles([]);
+          setLoading(false);
+          return;
+        }
+        const loadedArticles = await Promise.all(
+          Object.entries(articleModules).map(async ([path, load]) => {
+            try {
+              const rawContent = await load();
+              const { data } = matter(rawContent);
+              const id = path.split('/').pop().replace('.md', '');
+              return { id, ...data };
+            } catch (e) {
+              console.error(`Error processing file ${path}:`, e);
+              return null;
+            }
+          })
+        );
+        setArticles(loadedArticles.filter((article) => article !== null));
+        setLoading(false);
+      } catch (e) {
+        console.error('Error fetching articles:', e);
+        setArticles([]);
+        setLoading(false);
+      }
+    };
+    fetchArticles();
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -26,64 +65,74 @@ const Articles = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <h2 className="section-title text-center mb-12">Available Guides</h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              {articles.map((article) => (
-                <article key={article.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                  {/* Article Header */}
-                  <div className="bg-gradient-to-r from-chessBlue to-chessGreen p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="bg-white/20 text-white px-3 py-1 rounded-full text-sm font-medium">
-                        {article.ratingRange}
-                      </span>
-                      <div className="flex items-center text-white/80 text-sm">
-                        <Clock className="w-4 h-4 mr-1" />
-                        {article.readTime}
-                      </div>
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-2">
-                      {article.title}
-                    </h3>
-                  </div>
-
-                  {/* Article Content */}
-                  <div className="p-6">
-                    <p className="text-gray-600 mb-4 line-clamp-3">
-                      {article.excerpt}
-                    </p>
-
-                    {/* Author Info */}
-                    <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 rounded-full bg-chessBlue/10 flex items-center justify-center mr-3">
-                        <User className="w-5 h-5 text-chessBlue" />
-                      </div>
-                      <div>
-                        <p className="font-medium text-chessBlue">{article.author}</p>
-                        <p className="text-sm text-gray-500">{article.authorRole}</p>
-                      </div>
-                    </div>
-
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {article.tags.map((tag) => (
-                        <span key={tag} className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
-                          {tag}
+            {loading ? (
+              <div className="text-center">Loading guides...</div>
+            ) : articles.length === 0 ? (
+              <div className="text-center">
+                <p className="text-gray-600">No guides available yet.</p>
+                <Link to="/" className="text-chessBlue hover:text-chessGreen">
+                  Back to Home
+                </Link>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                {articles.map((article) => (
+                  <article key={article.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    {/* Article Header */}
+                    <div className="bg-gradient-to-r from-chessBlue to-chessGreen p-6">
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="bg-white/20 text-white px-3 py-1 rounded-full text-sm font-medium">
+                          {article.ratingRange}
                         </span>
-                      ))}
+                        <div className="flex items-center text-white/80 text-sm">
+                          <Clock className="w-4 h-4 mr-1" />
+                          {article.readTime}
+                        </div>
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-2">
+                        {article.title}
+                      </h3>
                     </div>
 
-                    {/* Read More Button */}
-                    <Link
-                      to={`/articles/${article.id}`}
-                      className="inline-flex items-center text-chessBlue hover:text-chessGreen font-medium transition-colors"
-                    >
-                      Read Full Guide
-                      <TrendingUp className="w-4 h-4 ml-1" />
-                    </Link>
-                  </div>
-                </article>
-              ))}
-            </div>
+                    {/* Article Content */}
+                    <div className="p-6">
+                      <p className="text-gray-600 mb-4 line-clamp-3">
+                        {article.excerpt}
+                      </p>
+
+                      {/* Author Info */}
+                      <div className="flex items-center mb-4">
+                        <div className="w-10 h-10 rounded-full bg-chessBlue/10 flex items-center justify-center mr-3">
+                          <User className="w-5 h-5 text-chessBlue" />
+                        </div>
+                        <div>
+                          <p className="font-medium text-chessBlue">{article.author}</p>
+                          <p className="text-sm text-gray-500">{article.authorRole}</p>
+                        </div>
+                      </div>
+
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {article.tags.map((tag) => (
+                          <span key={tag} className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Read More Button */}
+                      <Link
+                        to={`/articles/${article.id}`}
+                        className="inline-flex items-center text-chessBlue hover:text-chessGreen font-medium transition-colors"
+                      >
+                        Read Full Guide
+                        <TrendingUp className="w-4 h-4 ml-1" />
+                      </Link>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            )}
           </div>
         </section>
 
@@ -92,10 +141,9 @@ const Articles = () => {
           <div className="container mx-auto px-4">
             <h2 className="section-title text-center mb-12">Coming Soon</h2>
             <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-              Our club members are working on comprehensive guides for higher rating ranges. 
+              Our club members are working on comprehensive guides for higher rating ranges.
               Stay tuned for expert-level content!
             </p>
-            
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
               {upcomingArticles.map((article, index) => (
                 <div key={index} className="bg-white rounded-lg p-6 shadow-md">
@@ -120,7 +168,7 @@ const Articles = () => {
               Want to Contribute?
             </h2>
             <p className="text-lg max-w-2xl mx-auto mb-8">
-              Are you an experienced player who wants to share knowledge? 
+              Are you an experienced player who wants to share knowledge?
               We're always looking for contributors to write guides for specific rating ranges.
             </p>
             <Link

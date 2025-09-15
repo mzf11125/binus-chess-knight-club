@@ -1,15 +1,63 @@
+import { useState, useEffect } from 'react';
 import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { articles } from "@/data/articles";
 import { ArrowLeft, Clock, User, Calendar, TrendingUp } from "lucide-react";
 import { format } from "date-fns";
+import matter from 'gray-matter';
+import { marked } from 'marked';
+
+const articleModules = import.meta.glob('../data/articles/*.md', { as: 'raw' });
 
 const ArticleDetail = () => {
   const { id } = useParams<{ id: string }>();
-  const article = articles.find(a => a.id === id);
+  const [article, setArticle] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
-  if (!article) {
+  useEffect(() => {
+    const fetchArticle = async () => {
+      setLoading(true);
+      setError(false);
+
+      const path = `../data/articles/${id}.md`;
+      const loadArticleContent = articleModules[path];
+
+      if (loadArticleContent) {
+        try {
+          const markdownText = await loadArticleContent();
+          const { data, content } = matter(markdownText);
+          const contentHtml = await marked(content);
+          setArticle({ id, ...data, contentHtml });
+        } catch (e) {
+          console.error(`Error processing article ${id}:`, e);
+          setError(true);
+        }
+      } else {
+        setError(true);
+      }
+
+      setLoading(false);
+    };
+
+    fetchArticle();
+  }, [id]);
+
+  if (loading) {
+    return (
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <main className="flex-grow flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-2xl font-bold text-gray-800 mb-4">Loading...</h1>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (error || !article) {
     return (
       <div className="flex flex-col min-h-screen">
         <Navbar />
@@ -39,7 +87,6 @@ const ArticleDetail = () => {
         <section className="bg-gradient-to-r from-chessBlue to-chessGreen text-white py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              {/* Back Button */}
               <Link
                 to="/articles"
                 className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors"
@@ -47,20 +94,14 @@ const ArticleDetail = () => {
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to Articles
               </Link>
-
-              {/* Rating Range Badge */}
               <div className="mb-4">
                 <span className="bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium">
                   {article.ratingRange}
                 </span>
               </div>
-
-              {/* Title */}
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 {article.title}
               </h1>
-
-              {/* Article Meta */}
               <div className="flex flex-wrap items-center gap-6 text-white/80">
                 <div className="flex items-center">
                   <User className="w-5 h-5 mr-2" />
@@ -83,45 +124,10 @@ const ArticleDetail = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              {/* Article Body */}
-              <div className="prose prose-lg max-w-none">
-                <div 
-                  className="text-gray-800 leading-relaxed"
-                  dangerouslySetInnerHTML={{ 
-                    __html: article.content
-                      .split('\n')
-                      .map(line => {
-                        if (line.startsWith('# ')) {
-                          return `<h1 class="text-3xl font-bold text-chessBlue mt-8 mb-4">${line.slice(2)}</h1>`;
-                        }
-                        if (line.startsWith('## ')) {
-                          return `<h2 class="text-2xl font-bold text-chessBlue mt-6 mb-3">${line.slice(3)}</h2>`;
-                        }
-                        if (line.startsWith('### ')) {
-                          return `<h3 class="text-xl font-semibold text-gray-800 mt-4 mb-2">${line.slice(4)}</h3>`;
-                        }
-                        if (line.startsWith('#### ')) {
-                          return `<h4 class="text-lg font-semibold text-gray-700 mt-3 mb-2">${line.slice(5)}</h4>`;
-                        }
-                        if (line.startsWith('- **') && line.includes('**:')) {
-                          const [term, ...descParts] = line.slice(2).split('**:');
-                          const desc = descParts.join('**:');
-                          return `<li class="mb-2"><strong class="text-chessBlue">${term}</strong>:${desc}</li>`;
-                        }
-                        if (line.startsWith('- ')) {
-                          return `<li class="mb-1">${line.slice(2)}</li>`;
-                        }
-                        if (line.trim() === '') {
-                          return '<br />';
-                        }
-                        return `<p class="mb-4">${line}</p>`;
-                      })
-                      .join('')
-                  }}
-                />
-              </div>
-
-              {/* Article Tags */}
+              <div
+                className="prose prose-lg max-w-none text-gray-800 leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: article.contentHtml }}
+              />
               <div className="mt-12 pt-8 border-t border-gray-200">
                 <h4 className="font-semibold text-gray-800 mb-4">Tags:</h4>
                 <div className="flex flex-wrap gap-2">
@@ -132,8 +138,6 @@ const ArticleDetail = () => {
                   ))}
                 </div>
               </div>
-
-              {/* Navigation */}
               <div className="mt-12 pt-8 border-t border-gray-200 flex justify-between items-center">
                 <Link
                   to="/articles"
@@ -142,7 +146,6 @@ const ArticleDetail = () => {
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   All Articles
                 </Link>
-                
                 <Link
                   to="/contact"
                   className="inline-flex items-center text-chessGreen hover:text-chessBlue font-medium transition-colors"
