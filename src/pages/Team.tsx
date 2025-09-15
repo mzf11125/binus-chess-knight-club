@@ -394,7 +394,7 @@ const Team = () => {
               <TabsContent value="activists" className="space-y-6">
                 <div className="max-w-2xl mx-auto">
                   <TopRatedMembersList 
-                    allMembers={activists} 
+                    allMembers={[...organizers, ...activists]} 
                     showAll={showAllTopMembers}
                     useStaticRating={false}
                   />
