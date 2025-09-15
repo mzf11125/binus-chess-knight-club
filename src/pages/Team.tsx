@@ -394,7 +394,7 @@ const Team = () => {
               <TabsContent value="activists" className="space-y-6">
                 <div className="max-w-2xl mx-auto">
                   <TopRatedMembersList 
-                    allMembers={[...organizers, ...activists]} 
+                    allMembers={activists} 
                     showAll={showAllTopMembers}
                     useStaticRating={false}
                   />
@@ -562,8 +562,17 @@ const fetchChessComRating = async (username: string): Promise<number | null> => 
 
 // Component that handles fetching all ratings and sorting them
 const TopRatedMembersList = ({ allMembers, showAll, useStaticRating }: { allMembers: any[]; showAll: boolean; useStaticRating?: boolean }) => {
-  // Filter members with usernames for querying
-  const membersWithUsernames = useMemo(() => allMembers.filter(member => !!member.chessComUsername), [allMembers]);
+  // Filter members with usernames for querying (dedupe by username to avoid index shifts)
+  const membersWithUsernames = useMemo(() => {
+    const seen = new Set<string>();
+    return allMembers.filter((member) => {
+      if (!member.chessComUsername) return false;
+      const key = member.chessComUsername.toLowerCase();
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }, [allMembers]);
 
   // Only fetch live ratings if useStaticRating is false
   const ratingQueries = useQueries({
@@ -582,10 +591,6 @@ const TopRatedMembersList = ({ allMembers, showAll, useStaticRating }: { allMemb
       const query = ratingQueries[index];
       const liveRating = query?.data ?? null;
       const isLoading = query?.isLoading || false;
-      
-      // Debug logging
-      console.log(`Mapping ${member.name} (${member.chessComUsername}) -> rating: ${liveRating}, index: ${index}`);
-      
       map.set(member.chessComUsername, { liveRating, isLoading });
     });
     return map;
@@ -609,10 +614,6 @@ const TopRatedMembersList = ({ allMembers, showAll, useStaticRating }: { allMemb
       const isLoading = data?.isLoading ?? false;
       const hasLiveData = data?.liveRating !== null;
 
-      // Debug logging for member assignment
-      if (member.name === 'Hans Kartawinata' || member.name === 'Syuja Ardhanu') {
-        console.log(`${member.name} (${member.chessComUsername}) -> live: ${data?.liveRating}, static: ${member.rating}, final: ${liveRating}`);
-      }
 
       return {
         ...member,
