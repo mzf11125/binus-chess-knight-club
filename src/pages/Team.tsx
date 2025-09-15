@@ -582,6 +582,10 @@ const TopRatedMembersList = ({ allMembers, showAll, useStaticRating }: { allMemb
       const query = ratingQueries[index];
       const liveRating = query?.data ?? null;
       const isLoading = query?.isLoading || false;
+      
+      // Debug logging
+      console.log(`Mapping ${member.name} (${member.chessComUsername}) -> rating: ${liveRating}, index: ${index}`);
+      
       map.set(member.chessComUsername, { liveRating, isLoading });
     });
     return map;
@@ -604,6 +608,11 @@ const TopRatedMembersList = ({ allMembers, showAll, useStaticRating }: { allMemb
       const liveRating = data?.liveRating ?? member.rating;
       const isLoading = data?.isLoading ?? false;
       const hasLiveData = data?.liveRating !== null;
+
+      // Debug logging for member assignment
+      if (member.name === 'Hans Kartawinata' || member.name === 'Syuja Ardhanu') {
+        console.log(`${member.name} (${member.chessComUsername}) -> live: ${data?.liveRating}, static: ${member.rating}, final: ${liveRating}`);
+      }
 
       return {
         ...member,
