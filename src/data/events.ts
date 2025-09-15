@@ -21,7 +21,7 @@ export const allEvents: Event[] = [
     location: "Online Lichess",
     description: "BPJS Cross-University Online Tournament",
     image: "/events/bpjsonline.jpg",
-    type: "upcoming",
+    type: "past",
     fullDescription:
       "Di Bulan September 2025 ini, BPJS Kesehatan Chess Club hadir dengan Turnamen Silaturahmi & Kolaborasi Online bareng 12 kampus Top Indonesia yakni UI, UGM, UNAIR, UNDIP, USK, UM, BINUS, UNEJ, UNDIKSHA, UNESA, UPI, & POLBAN",
     registrationLink: "https://forms.office.com/r/G38YWnQzHV",
@@ -35,7 +35,7 @@ export const allEvents: Event[] = [
     description:
       "Get ready for the Clash of Batches, an exciting arena-style tournament on Lichess! The batch scoring the most points declared the ultimate winner. Join the chess frenzy!",
     image: "/events/clashofbatches.jpg",
-    type: "upcoming",
+    type: "past",
     fullDescription:
       "Welcome to the Clash of Batches, an exciting arena-style chess tournament on Lichess, pitting our community’s batches against each other in a fast-paced showdown. Participants compete in rated games, earning points for wins, draws, and strategic moves like berserk, with the batch scoring the highest total declared the champion.",
   },
