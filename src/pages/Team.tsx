@@ -396,7 +396,7 @@ const Team = () => {
                   <TopRatedMembersList 
                     allMembers={[...organizers, ...activists]} 
                     showAll={showAllTopMembers}
-                    useStaticRating={true}
+                    useStaticRating={false}
                   />
                   
                   {/* Expand/Collapse Button */}
