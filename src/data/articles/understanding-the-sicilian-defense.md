@@ -15,15 +15,15 @@ The Sicilian Defense is one of the most popular and respected responses to White
 
 ---
 
-<iframe 
-  width="560" 
-  height="315" 
-  src="https://www.youtube.com/embed/0iAyyKxh3zc" 
-  title="YouTube video player" 
-  frameborder="0" 
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-  allowfullscreen>
-</iframe>
+<div class="video-responsive">
+  <iframe 
+    src="https://www.youtube.com/embed/0iAyyKxh3zc" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
+</div>
 
 ## Why Play the Sicilian?
 
