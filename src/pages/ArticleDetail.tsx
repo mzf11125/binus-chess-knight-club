@@ -1,3 +1,4 @@
+// src/components/ArticleDetail.jsx
 import { useState, useEffect } from 'react';
 import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -5,9 +6,23 @@ import Footer from "@/components/Footer";
 import { ArrowLeft, Clock, User, Calendar, TrendingUp } from "lucide-react";
 import { format } from "date-fns";
 import matter from 'gray-matter';
-import { marked } from 'marked';
+import ReactMarkdown from 'react-markdown';
+import PGNViewer from "@/components/PGNViewer";
+import rehypeRaw from 'rehype-raw';
+import remarkGfm from 'remark-gfm';
 
 const articleModules = import.meta.glob('../data/articles/*.md', { as: 'raw' });
+
+const components = {
+  code({ node, inline, className, children, ...props }) {
+    const match = /language-pgn/.exec(className || '');
+    if (!inline && match) {
+      const pgn = String(children).trim();
+      return <PGNViewer pgn={pgn} />;
+    }
+    return <code className={className} {...props}>{children}</code>;
+  },
+};
 
 const ArticleDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -27,8 +42,7 @@ const ArticleDetail = () => {
         try {
           const markdownText = await loadArticleContent();
           const { data, content } = matter(markdownText);
-          const contentHtml = await marked(content);
-          setArticle({ id, ...data, contentHtml });
+          setArticle({ id, ...data, content });
         } catch (e) {
           console.error(`Error processing article ${id}:`, e);
           setError(true);
@@ -124,10 +138,15 @@ const ArticleDetail = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <div
-                className="prose prose-lg max-w-none text-gray-800 leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: article.contentHtml }}
-              />
+              <div className="prose prose-lg max-w-none text-gray-800 leading-relaxed">
+                <ReactMarkdown
+                  components={components}
+                  rehypePlugins={[rehypeRaw]}
+                  remarkPlugins={[remarkGfm]}
+                >
+                  {article.content}
+                </ReactMarkdown>
+              </div>
               <div className="mt-12 pt-8 border-t border-gray-200">
                 <h4 className="font-semibold text-gray-800 mb-4">Tags:</h4>
                 <div className="flex flex-wrap gap-2">
