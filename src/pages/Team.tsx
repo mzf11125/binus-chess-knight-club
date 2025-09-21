@@ -430,7 +430,7 @@ const Team = () => {
             {/* Club President */}
             <div className="mb-16">
               <h3 className="text-2xl font-bold text-chessBlue text-center mb-8">Club President</h3>
-              <div className="flex justify-center">
+              <div className="grid grid-cols-1 gap-8 max-w-sm mx-auto">
                 {clubPresident.map((member, index) => (
                   <TeamCard
                     key={index}
