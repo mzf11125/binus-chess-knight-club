@@ -19,8 +19,8 @@ Keven Wilbert Felik
 */
 const Team = () => {
   const [showAllTopMembers, setShowAllTopMembers] = useState(false);
-  // General Board (DPI Umum)
-  const generalBoard = [
+  // Club President
+  const clubPresident = [
     {
       name: "Galvent Chiuwen",
       position: "President",
@@ -29,6 +29,10 @@ const Team = () => {
       bio: "Galvent founded the BINUS Chess Club and currently serves as its president, leading with passion and strategic vision.",
       chessComUsername: "Orangemuffin67"
     },
+  ];
+
+  // General Board (DPI Umum)
+  const generalBoard = [
     {
       name: "Geoffrey Antonio Arifin",
       position: "Secretary",
@@ -103,7 +107,7 @@ const Team = () => {
   ];
 
   // Combine all organizers for Hall of Fame
-  const organizers = [...generalBoard, ...regionalReps, ...divisionHeads];
+  const organizers = [...clubPresident, ...generalBoard, ...regionalReps, ...divisionHeads];
 
   const activists = [
     {
@@ -169,14 +173,6 @@ const Team = () => {
       image: "activist/scaled/melsandi.png",
       bio: "Enthusiastic member contributing to club activities and growth.",
       chessComUsername: "MELSANDI",
-    },
-    {
-      name: "Owen Siau",
-      position: "Club Activist",
-      rating: 1270,
-      image: "activist/scaled/owen.png",
-      bio: "Active participant in club events and community building efforts.",
-      chessComUsername: "Ony0n",
     },
     {
       name: "Nathanael Vitzgerald",
@@ -431,10 +427,28 @@ const Team = () => {
               and strategic planning.
             </p>
             
+            {/* Club President */}
+            <div className="mb-16">
+              <h3 className="text-2xl font-bold text-chessBlue text-center mb-8">Club President</h3>
+              <div className="flex justify-center">
+                {clubPresident.map((member, index) => (
+                  <TeamCard
+                    key={index}
+                    name={member.name}
+                    position={member.position}
+                    rating={member.rating}
+                    image={member.image}
+                    bio={member.bio}
+                    chessComUsername={member.chessComUsername}
+                  />
+                ))}
+              </div>
+            </div>
+
             {/* General Board */}
             <div className="mb-16">
               <h3 className="text-2xl font-bold text-chessBlue text-center mb-8">General Board</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
                 {generalBoard.map((member, index) => (
                   <TeamCard
                     key={index}
