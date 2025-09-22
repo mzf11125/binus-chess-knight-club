@@ -215,6 +215,78 @@ const About = () => {
             </li>
           </ul>
         </div>
+
+        {/* Super Chess Series III */}
+        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+          <h3 className="font-semibold text-xl text-chessBlue mb-4 text-center">
+            Super Chess Series III
+          </h3>
+          <div className="h-48 mb-6 overflow-hidden rounded-lg">
+            <img
+              src="/achievements/superchess.jpg"
+              alt="BINUS Chess Club at Super Chess Series III"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <ul className="space-y-3">
+            <li className="flex items-center">
+              <div className="w-6 h-6 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm mr-3">
+                6
+              </div>
+              <span className="text-lg text-chessBlue">
+                Team A - 6th Place
+              </span>
+            </li>
+            <li className="flex items-center">
+              <div className="w-6 h-6 bg-slate-500 text-white rounded-full flex items-center justify-center font-bold text-sm mr-3">
+                13
+              </div>
+              <span className="text-lg text-chessGreen">
+                Team B - 13th Place
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        {/* BPJS Online INISIATIF */}
+        <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
+          <h3 className="font-semibold text-xl text-chessGreen mb-4 text-center">
+            BPJS Online INISIATIF
+          </h3>
+          <div className="h-48 mb-6 overflow-hidden rounded-lg">
+            <img
+              src="/achievements/bpjs-chess-battle.jpg"
+              alt="Ray Mclung Gunawan at BPJS Chess Battle"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <ul className="space-y-3">
+            <li className="flex items-center">
+              <div className="w-6 h-6 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-sm mr-3">
+                2
+              </div>
+              <span className="text-lg text-chessGreen">
+                Ray Mclung Gunawan - 2nd Place
+              </span>
+            </li>
+            <li className="flex items-center">
+              <div className="w-6 h-6 bg-slate-500 text-white rounded-full flex items-center justify-center font-bold text-sm mr-3">
+                13
+              </div>
+              <span className="text-lg text-chessBlue">
+                Hibatullah Dony Ananda - 13th Place
+              </span>
+            </li>
+            <li className="flex items-center">
+              <div className="w-6 h-6 bg-slate-500 text-white rounded-full flex items-center justify-center font-bold text-sm mr-3">
+                21
+              </div>
+              <span className="text-lg text-chessGreen">
+                Jonathan Saputra - 21st Place
+              </span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
