@@ -13,19 +13,19 @@ export interface Event {
 }
 
 export const allEvents: Event[] = [
-  {
-    id: "bpjs",
-    title: "BPJS Online Tournament",
-    date: "September 9-10, 2025 Pukul 19:00-Selesai",
-    dateObject: new Date(2025, 8, 9), // September 9, 2025
-    location: "Online Lichess",
-    description: "BPJS Cross-University Online Tournament",
-    image: "/events/bpjsonline.jpg",
-    type: "past",
-    fullDescription:
-      "Di Bulan September 2025 ini, BPJS Kesehatan Chess Club hadir dengan Turnamen Silaturahmi & Kolaborasi Online bareng 12 kampus Top Indonesia yakni UI, UGM, UNAIR, UNDIP, USK, UM, BINUS, UNEJ, UNDIKSHA, UNESA, UPI, & POLBAN",
-    registrationLink: "https://forms.office.com/r/G38YWnQzHV",
-  },
+  // {
+  //   id: "bpjs",
+  //   title: "BPJS Online Tournament",
+  //   date: "September 9-10, 2025 Pukul 19:00-Selesai",
+  //   dateObject: new Date(2025, 8, 9), // September 9, 2025
+  //   location: "Online Lichess",
+  //   description: "BPJS Cross-University Online Tournament",
+  //   image: "/events/bpjsonline.jpg",
+  //   type: "past",
+  //   fullDescription:
+  //     "Di Bulan September 2025 ini, BPJS Kesehatan Chess Club hadir dengan Turnamen Silaturahmi & Kolaborasi Online bareng 12 kampus Top Indonesia yakni UI, UGM, UNAIR, UNDIP, USK, UM, BINUS, UNEJ, UNDIKSHA, UNESA, UPI, & POLBAN",
+  //   registrationLink: "https://forms.office.com/r/G38YWnQzHV",
+  // },
   {
     id: "clashofbatches",
     title: "Clash of Batches",
@@ -89,22 +89,22 @@ export const allEvents: Event[] = [
 
     ]
   },
-  {
-  id: "superchessseries",
-  title: "SUPER CHESS Series III",
-  date: "July 19, 2025",
-  dateObject: new Date(2025, 6, 19), // July 19, 2025
-  location: "PISET Square, Kota Bandung",
-  description: "We showcased our skills at the prestigious SUPER CHESS Series III, an offline tournament hosted by ITB! Our team competed fiercely in this national championship.",
-  image: "/events/superchess/poster.jpg",
-  type: "past",
-  fullDescription: "The SUPER CHESS Series III, hosted by Institut Teknologi Bandung (ITB), was a prestigious offline national tournament held on July 19–20, 2025, at PISET Square in Bandung. Our BINUS Chess Club team participated in this exciting event, competing in a Swiss system format with a 10-minute + 5-second increment time control across four categories: Open Class, 18+ Class, Veteran Class, and College Group Class. With a total prize pool of Rp150 million, the tournament tested our strategic abilities and teamwork. Guided by experienced coaches, we prepared through intensive training, focusing on tactics and match simulations, ensuring we represented BINUS with pride. This event highlighted our growth and competitive spirit on a national stage!",
-  gallery: [
-    "/events/superchess/superchess.JPG",
-    "/events/superchess/1.JPG",
-    "/events/superchess/2.JPG",
-  ]
-  },
+  // {
+  // id: "superchessseries",
+  // title: "SUPER CHESS Series III",
+  // date: "July 19, 2025",
+  // dateObject: new Date(2025, 6, 19), // July 19, 2025
+  // location: "PISET Square, Kota Bandung",
+  // description: "We showcased our skills at the prestigious SUPER CHESS Series III, an offline tournament hosted by ITB! Our team competed fiercely in this national championship.",
+  // image: "/events/superchess/poster.jpg",
+  // type: "past",
+  // fullDescription: "The SUPER CHESS Series III, hosted by Institut Teknologi Bandung (ITB), was a prestigious offline national tournament held on July 19–20, 2025, at PISET Square in Bandung. Our BINUS Chess Club team participated in this exciting event, competing in a Swiss system format with a 10-minute + 5-second increment time control across four categories: Open Class, 18+ Class, Veteran Class, and College Group Class. With a total prize pool of Rp150 million, the tournament tested our strategic abilities and teamwork. Guided by experienced coaches, we prepared through intensive training, focusing on tactics and match simulations, ensuring we represented BINUS with pride. This event highlighted our growth and competitive spirit on a national stage!",
+  // gallery: [
+  //   "/events/superchess/superchess.JPG",
+  //   "/events/superchess/1.JPG",
+  //   "/events/superchess/2.JPG",
+  // ]
+  // },
   {
   id: "pknstan",
   title: "PKN STAN x BCC Sparring",
@@ -118,6 +118,7 @@ export const allEvents: Event[] = [
   gallery: [
     "/events/pknstan/1.jpg",
     "/events/pknstan/2.jpg",
+    "/events/pknstan/3.jpg",
   ]
 },
 ];
