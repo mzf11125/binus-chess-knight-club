@@ -231,14 +231,14 @@ const Team = () => {
     },
     {
       name: "Michaela Zaneta Hwang",
-      position: "Event Deputy",
+      position: "Club Activist",
       rating: 400,
       image: "activist/scaled/michaela.png",
       bio: "Michaela assists in event planning and execution, ensuring smooth operations during club activities.",
     },
     {
       name: "Aureylius Crystaldo Darmadji",
-      position: "Marketing",
+      position: "Club Activist",
       rating: 900,
       image: "activist/scaled/aureylius.png",
       bio: "Rey contributes to marketing and club outreach",
