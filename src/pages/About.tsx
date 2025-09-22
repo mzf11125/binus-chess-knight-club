@@ -225,7 +225,7 @@ const About = () => {
             <img
               src="/achievements/superchess.jpg"
               alt="BINUS Chess Club at Super Chess Series III"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
           </div>
           <ul className="space-y-3">
@@ -257,7 +257,7 @@ const About = () => {
             <img
               src="/achievements/bpjs-chess-battle.jpg"
               alt="Ray Mclung Gunawan at BPJS Chess Battle"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
             />
           </div>
           <ul className="space-y-3">
