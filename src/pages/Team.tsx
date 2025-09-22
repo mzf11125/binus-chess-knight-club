@@ -251,6 +251,21 @@ const Team = () => {
       image:"activist/scaled/evan.png",
       bio: "Evan assists in organizing club events and community outreach.",
       chessComUsername: "NsxRagna"
+    },
+    {
+      name: "Erwin Rommel Immanuel",
+      position: "Club Activist",
+      rating: 400,
+      image: "activist/scaled/reza.png",
+      bio: "Active member participating in club events and activities."
+    },
+    {
+      name: "Fadli Oktaviano Raynhadi",
+      position: "Club Activist", 
+      rating: 400,
+      image: "activist/scaled/reza.png",
+      bio: "Dedicated activist contributing to club development and member engagement.",
+      chessComUsername: "oktrayn"
     }
   ];
 
