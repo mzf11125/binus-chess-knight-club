@@ -1,10 +1,12 @@
-import { useState, useMemo } from "react";
+'use client'
+import { useState, useMemo, useEffect, useRef } from "react";
 import { useQueries } from '@tanstack/react-query';
+import { motion, useInView, animate } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import TeamCard from "@/components/TeamCard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Trophy, Medal, Award, ChevronDown, ChevronUp } from "lucide-react";
+import { Trophy, Medal, Award, ChevronDown, ChevronUp, Users, Key } from "lucide-react";
 
 // TODO:
 /*
@@ -17,6 +19,30 @@ Jordan
 Michaela Zaneta Hwang
 Keven Wilbert Felik
 */
+
+// Animated Counter Component for the member count
+function AnimatedCounter({ value }: { value: number }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (isInView && ref.current) {
+      const node = ref.current;
+      const controls = animate(0, value, {
+        duration: 2,
+        ease: "easeOut",
+        onUpdate(latest) {
+          node.textContent = Math.round(latest).toString();
+        },
+      });
+      return () => controls.stop();
+    }
+  }, [isInView, value]);
+
+  return <span ref={ref}>0</span>;
+}
+
+
 const Team = () => {
   const [showAllTopMembers, setShowAllTopMembers] = useState(false);
   // Club President
@@ -347,17 +373,26 @@ const Team = () => {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="bg-chessBlue text-white py-16">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Hall of Fame
-            </h1>
-            <p className="text-xl max-w-2xl mx-auto">
-              Meet our top-rated chess players and dedicated club members ranked
-              by their chess ratings.
-            </p>
-          </div>
+        {/* NEW Member Count Section - Redesigned */}
+        <section className="bg-chessBlue text-gray-800 py-20">
+            <div className="container mx-auto px-4 text-center flex flex-col items-center text-white">
+                <Users className="w-16 h-16 mb-4 text-white" />
+                <h1 className="text-7xl font-extrabold tracking-tight">
+                    <AnimatedCounter value={188} />
+                </h1>
+                <p className="text-2xl font-medium text-white mt-2">
+                    Active Club Members
+                </p>
+                <p className="text-lg text-slate-400 max-w-xl mx-auto mt-4">
+                    Our community is growing! We are proud to have a strong and active group of chess enthusiasts.
+                </p>
+                <a 
+                    href="/contact"
+                    className="mt-8 inline-block bg-chessGreen text-white font-bold px-8 py-3 rounded-lg transition-all shadow-md hover:shadow-lg"
+                >
+                    Join Our Club
+                </a>
+            </div>
         </section>
 
         {/* Hall of Fame Top 10 Section */}
@@ -709,4 +744,4 @@ const TopRatedMembersList = ({ allMembers, showAll, useStaticRating }: { allMemb
 };
 
 // Component for top-rated member with live Chess.com rating
-export default Team;  
+export default Team;
