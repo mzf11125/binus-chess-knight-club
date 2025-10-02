@@ -49,7 +49,7 @@ const Team = () => {
   const clubPresident = [
     {
       name: "Galvent Chiuwen",
-      position: "President",
+      position: "Founder & President",
       rating: 2010,
       image: "galvent.png",
       bio: "Galvent founded the BINUS Chess Club and currently serves as its president, leading with passion and strategic vision.",
@@ -144,14 +144,15 @@ const Team = () => {
       bio: "Committed member contributing to various club initiatives and activities.",
       chessComUsername: "ds0401",
     },
-    {
-      name: "Hans Kartawinata",
-      position: "Club Activist",
-      rating: 2160,
-      image: "activist/scaled/hans.png",
-      bio: "Highly skilled activist contributing to club development and member engagement.",
-      chessComUsername: "Countered",
-    },
+    // RESIGNED
+    // {
+    //   name: "Hans Kartawinata",
+    //   position: "Club Activist",
+    //   rating: 2160,
+    //   image: "activist/scaled/hans.png",
+    //   bio: "Highly skilled activist contributing to club development and member engagement.",
+    //   chessComUsername: "Countered",
+    // },
     {
       name: "Stanley Christian Gunawan",
       position: "Club Activist",
