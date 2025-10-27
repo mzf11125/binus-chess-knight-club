@@ -379,7 +379,7 @@ const Team = () => {
             <div className="container mx-auto px-4 text-center flex flex-col items-center text-white">
                 <Users className="w-16 h-16 mb-4 text-white" />
                 <h1 className="text-7xl font-extrabold tracking-tight">
-                    <AnimatedCounter value={188} />
+                    <AnimatedCounter value={214} />
                 </h1>
                 <p className="text-2xl font-medium text-white mt-2">
                     Active Club Members
