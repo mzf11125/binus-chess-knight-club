@@ -141,7 +141,7 @@ const Team = () => {
       position: "Club Activist",
       rating: 2290,
       image: "activist/scaled/syuja.png",
-      bio: "Committed member contributing to various club initiatives and activities.",
+      bio: "",
       chessComUsername: "ds0401",
     },
     // RESIGNED
@@ -158,7 +158,7 @@ const Team = () => {
       position: "Club Activist",
       rating: 1630,
       image: "activist/scaled/stanley.png",
-      bio: "Dedicated activist supporting various club initiatives and activities.",
+      bio: "",
       chessComUsername: "Stych2312",
     },
     {
@@ -166,7 +166,7 @@ const Team = () => {
       position: "Club Activist",
       rating: 1600,
       image: "activist/scaled/noele.png",
-      bio: "Active member contributing to the club's growth and community building efforts.",
+      bio: "",
       chessComUsername: "NoeleDavee",
     },
     {
@@ -174,7 +174,7 @@ const Team = () => {
       position: "Club Activist",
       rating: 1510,
       image: "activist/scaled/malvino.png",
-      bio: "Enthusiastic activist participating in club events and member development.",
+      bio: "",
       chessComUsername: "malmal_l",
     },
     {
@@ -182,7 +182,7 @@ const Team = () => {
       position: "Club Activist",
       rating: 1480,
       image: "activist/scaled/hibatullah.png",
-      bio: "Committed activist supporting club operations and community outreach.",
+      bio: "",
       chessComUsername: "yellowcat2224",
     },
     {
@@ -190,7 +190,7 @@ const Team = () => {
       position: "Club Activist",
       rating: 1400,
       image: "activist/scaled/fadhil.png",
-      bio: "Dedicated activist supporting club development and member engagement.",
+      bio: "",
       chessComUsername: "Codename_Vangeance",
     },
     {
@@ -198,7 +198,7 @@ const Team = () => {
       position: "Club Activist",
       rating: 1380,
       image: "activist/scaled/melsandi.png",
-      bio: "Enthusiastic member contributing to club activities and growth.",
+      bio: "",
       chessComUsername: "MELSANDI",
     },
     {
@@ -206,7 +206,7 @@ const Team = () => {
       position: "Club Activist",
       rating: 1250,
       image: "activist/scaled/nathanael.png",
-      bio: "Committed member supporting various club initiatives and activities.",
+      bio: "",
       chessComUsername: "NathXAra",
     },
     {
@@ -214,7 +214,7 @@ const Team = () => {
       position: "Club Activist",
       rating: 1220,
       image: "activist/scaled/anthony.png",
-      bio: "Dedicated activist contributing to club development and member engagement.",
+      bio: "",
       chessComUsername: "tonyvvv",
     },
     {
@@ -222,7 +222,7 @@ const Team = () => {
       position: "Club Activist",
       rating: 1130,
       image: "activist/scaled/reza.png",
-      bio: "Active member participating in club events and activities.",
+      bio: "",
       chessComUsername: "Expanics",
     },
     {
@@ -230,7 +230,7 @@ const Team = () => {
       position: "Club Activist",
       rating: 520,
       image: "activist/scaled/frederick.png",
-      bio: "Enthusiastic member contributing to club community and development.",
+      bio: "",
       chessComUsername: "FrederickSawedi",
     },
     {
@@ -238,7 +238,7 @@ const Team = () => {
       position: "Club Activist",
       rating: 420,
       image: "activist/scaled/osel.png",
-      bio: "Dedicated member supporting club activities and growth initiatives.",
+      bio: "",
       chessComUsername: "Spitblaze",
     },
     {
@@ -246,7 +246,7 @@ const Team = () => {
       position: "Club Activist",
       rating: 400,
       image: "activist/scaled/jeremiah.png",
-      bio: "Active participant in club events and community building efforts.",
+      bio: "",
       chessComUsername: "Jeremiah-Chang",
     },
     {
@@ -254,21 +254,21 @@ const Team = () => {
       position: "Club Activist",
       rating: 400,
       image: "activist/scaled/jordan.png",
-      bio: "Committed member contributing to various club initiatives and activities.",
+      bio: "",
     },
     {
       name: "Michaela Zaneta Hwang",
       position: "Club Activist",
       rating: 400,
       image: "activist/scaled/michaela.png",
-      bio: "Michaela assists in event planning and execution, ensuring smooth operations during club activities.",
+      bio: "",
     },
     {
       name: "Aureylius Crystaldo Darmadji",
       position: "Club Activist",
       rating: 900,
       image: "activist/scaled/aureylius.png",
-      bio: "Rey contributes to marketing and club outreach",
+      bio: "",
       chessComUsername: "aniyeo"
     },
     {
@@ -276,7 +276,7 @@ const Team = () => {
       position:"Club Activist",
       rating: 400,
       image:"activist/scaled/evan.png",
-      bio: "Evan assists in organizing club events and community outreach.",
+      bio: "",
       chessComUsername: "NsxRagna"
     },
     {
@@ -284,14 +284,14 @@ const Team = () => {
       position: "Club Activist",
       rating: 400,
       image: "activist/scaled/reza.png",
-      bio: "Active member participating in club events and activities."
+      bio: ""
     },
     {
       name: "Fadli Oktaviano Raynhadi",
       position: "Club Activist", 
       rating: 400,
       image: "activist/scaled/reza.png",
-      bio: "Dedicated activist contributing to club development and member engagement.",
+      bio: "",
       chessComUsername: "oktrayn"
     }
   ];
