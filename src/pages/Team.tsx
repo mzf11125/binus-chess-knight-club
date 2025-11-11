@@ -89,7 +89,7 @@ const Team = () => {
     },
     {
       name: "Owen Siau",
-      position: "Regional Head - Alsut",
+      position: "Regional Head - Alam Sutera",
       rating: 1270,
       image: "activist/scaled/owen.png",
       bio: "Owen leads the Alsut region and manages regional coordination.",
